@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Substack Articles Report</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+         "Helvetica Neue", Arial, sans-serif;
+         background: #f4f6f9; color: #1a2b4a; line-height: 1.5;
+         font-size: 13px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; }
+  header { background: #1a2b4a; color: #fff; padding: 20px 24px;
+            margin-bottom: 24px; }
+  header h1 { font-size: 20px; font-weight: 600; margin: 0; }
+  header .subtitle { color: #a0b4d0; font-size: 12px; margin-top: 4px; }
+  h2 { color: #1a2b4a; font-size: 15px; margin: 28px 0 10px;
+       border-bottom: 2px solid #2e5c9a; padding-bottom: 4px; }
+  h3 { color: #2e5c9a; font-size: 14px; margin: 20px 0 8px; }
+
+  /* Tables */
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px;
+           font-size: 12px; }
+  th { background: #2e5c9a; color: #fff; padding: 7px 10px;
+       text-align: left; font-size: 11px; text-transform: uppercase;
+       letter-spacing: 0.5px; }
+  td { padding: 6px 10px; border-bottom: 1px solid #dde3ec; }
+  tr:nth-child(even) { background: #f0f3f8; }
+  tr:hover { background: #e4eaf4; }
+  caption { text-align: left; font-weight: 600; color: #1a2b4a;
+            margin-bottom: 6px; font-size: 13px; }
+
+  /* Cards / sections */
+  .card { background: #fff; border-radius: 6px; padding: 18px 20px;
+           margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .card h3 { margin-top: 0; }
+
+  /* Utility */
+  .text-muted { color: #6b7a8d; font-size: 11px; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+  a { color: #2e5c9a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tag { display: inline-block; background: #e8edf5; color: #2e5c9a;
+          padding: 2px 8px; border-radius: 3px; font-size: 11px;
+          margin: 2px 2px; }
+
+  /* Footer */
+  footer { margin-top: 32px; padding-top: 12px;
+           border-top: 1px solid #dde3ec; color: #6b7a8d;
+           font-size: 11px; text-align: center; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Substack Articles Report</h1>
+  <div class='subtitle'>Publication: substack.com | Days back: 30</div>
+</header>
+<div class="container">
+<main>
+<h2>Article Index</h2>
+<table><thead><tr><th>#</th><th>Title</th><th>Author</th><th>Publication</th><th>Date</th><th>Read Time</th></tr></thead><tbody><tr><td>1</td><td><a href="https://substack.com/inbox/post/188159016">Fabricated Knowledge</a></td><td>Doug O&#x27;Laughlin</td><td>substack.com</td><td></td><td>18 min</td></tr></tbody></table>
+<h2>Executive Summary</h2>
+<div class="card"><p>This Fabricated Knowledge podcast episode features Doug O&#x27;Laughlin and Val from WEKA discussing the rapidly evolving KV cache and context memory storage market. The conversation highlights how market conditions have shifted dramatically with exploding NAND and memory prices, accelerating agentic AI adoption driving trillion-token daily consumption by enterprises, and industry validation through Jensen Huang&#x27;s CES context memory endorsement. The episode reveals concrete adoption metrics showing SemiAnalysis consuming half a billion tokens daily, with broader industry adoption at billion-token-per-day levels, and substantial investments in extended context windows despite emerging context rot concerns.</p></div>
+<h2>Summary by Article (Purpose &amp; Key Points)</h2>
+<div class="card"><h3>1. Fabricated Knowledge: Another conversation about KV Cache!</h3><p><strong>Purpose:</strong> To discuss the evolving KV cache and context memory storage market with updated perspective on memory pricing, agentic AI demand, and enterprise adoption patterns.</p><ul><li>NAND and memory prices have experienced significant increases since the previous conversation, shifting market dynamics around KV cache offloading</li><li>Agentic AI demand has exploded post-CES, validating earlier predictions and creating routine trillion-token consumption by AI startups on a daily basis</li><li>SemiAnalysis reports running approximately half a billion tokens per day, with many organizations now operating at around one billion tokens per day and growing rapidly</li><li>OpenAI&#x27;s Claude Opus 4.6 fast charges $225 per million output tokens for contexts above 200,000 tokens, with pricing differentiation below and above the 200K-token threshold</li><li>Enterprise adoption is widespread, with every programmer at SemiAnalysis using the 1-million-token context window as standard, indicating strong market demand for extended context despite context rot concerns</li><li>Jensen Huang&#x27;s CES announcement formally anointed the &#x27;context memory&#x27; market and &#x27;context memory storage&#x27; terminology, extending storage optimization beyond HBM and DRAM to NVMe solutions</li></ul></div>
+<h2>Cross-Cutting Themes</h2>
+<div class="card"><ol>
+<li>**Market Validation &amp; Acceleration**: Jensen Huang&#x27;s CES announcement formalized the KV cache/context memory market, shifting from confusion and ecosystem unpreparedness to industry-wide recognition and rapid adoption</li>
+<li>**Explosive Demand Growth**: Agentic AI and AI startups are consuming tokens at unprecedented scale (billion tokens/day becoming routine), validating earlier predictions about context window demand</li>
+<li>**Cost-Benefit Trade-offs**: Despite context rot concerns, enterprises are investing heavily in extended context windows (1-million-token standard at SemiAnalysis) because the benefits outweigh limitations</li>
+<li>**Infrastructure Evolution**: Context memory storage is expanding beyond traditional HBM/DRAM into NVMe and external storage solutions, requiring new architectural approaches</li>
+<li>**Pricing Dynamics**: API providers like OpenAI implement tiered pricing ($225/million tokens above 200K context) reflecting the resource costs of extended context handling</li>
+<li>**Enterprise Standardization**: Extended context windows are becoming organizational baseline rather than optional features, indicating market maturation and widespread value recognition</li>
+</ol></div>
+<h2>Article Summaries</h2>
+<div class="card">
+<h3>1. <a href="https://substack.com/inbox/post/188159016">Fabricated Knowledge</a></h3>
+<p class="text-muted">By Doug O&#x27;Laughlin | in substack.com | 18 min</p>
+<p>Another conversation about KV Cache!
+
+---
+
+Doug:Welcome back to the Fabricated Knowledge podcast. I have Val from WEKA once again, and we are here to talk about memory. I think from last time to now, it was actually a pretty complete podcast. We were rambling a little bit about KV cache, NAND offloading. And I think from then to now, we’ve really seen quite a different market. NAND prices have exploded. All memory prices have exploded. And I still think it’s the same story. I wanted to update ev...</p>
+</div>
+<h2>Full Article Text</h2>
+<div class="card"><h3>1. <a href="https://substack.com/inbox/post/188159016">Fabricated Knowledge</a></h3>
+<p>Another conversation about KV Cache!</p>
+<hr>
+<p>Doug:Welcome back to the Fabricated Knowledge podcast. I have Val from WEKA once again, and we are here to talk about memory. I think from last time to now, it was actually a pretty complete podcast. We were rambling a little bit about KV cache, NAND offloading. And I think from then to now, we’ve really seen quite a different market. NAND prices have exploded. All memory prices have exploded. And I still think it’s the same story. I wanted to update everything, talk to Val, and get some more current thoughts on the whole market. Thanks for being here.</p>
+<p>Val:It’s a pleasure. Happy to be a repeat guest.</p>
+<p>Doug:Thanks for coming. I think we were talking about this a little bit before — let’s actually talk about the Jensen conversation, because at CES, the big news was — and people took this to the utmost extreme, everyone’s like, “everyone needs 16 terabytes per GPU.” Maybe that’s a little bit of a BlueField advertisement, but let’s just talk about the endorsement of the KV cache market overall.</p>
+<p>Val:Absolutely. Like we were saying earlier, it was kind of a confusing topic last summer. The ecosystem wasn’t really ready for KV offloading. Agentic demand hadn’t exploded yet, even though you and I probably anticipated it back then. We’re here now, right? Agents are exploding — even pre-Claude Code. We’re all Claude Code-pilled over the past holidays. We’re seeing trillion-token consumption by AI startups now as a routine thing, daily sometimes. So the demand is there, and it’s cool to see that different vendors had different names for it before Jensen just anointed it as the “context memory” market — and particularly “context memory storage” as we extend storage beyond HBM and DRAM onto NVMe.</p>
+<p>Doug:It’s kind of a big deal. I’m actually going to try to do this live and see what SemiAnalysis is paying in terms of OpenAI, because for a company that doesn’t have a massive engineering team — we have a few programmers for sure — but we are definitely adopting this on a pretty hardcore basis. We’re running at like half a billion tokens a day.</p>
+<p>Val:I see a lot of organizations around that billion tokens a day, and this number is climbing rapidly. It was funny because we were just chatting about the pricing yesterday. Opus 4.6 fast above 200,000-token context is $225 per million output tokens.</p>
+<p>Doug:Wow. I got it wrong.</p>
+<p>Val:No, no — there’s actually two tiers. If you’re below 200K tokens and above 200K tokens. I was thinking of the above-200K tier.</p>
+<p>Doug:Yeah. Well, let’s be clear — I think everyone at our firm uses the 1-million-token context window. That’s it. It’s so much better. It really is. It’s crazy.</p>
+<p>And I feel like maybe that’s the logical segue — the last time we talked, we discussed essentially how you’d have an infinite context window. I think since then, the thing that’s changed is the context rot problem does seem to be real. But that doesn’t mean you don’t need more context. In fact, you need a ton of context. If 2023–2024 was about prompting, context management is the new prompting, right? Thinking about how to intelligently manage all of that.</p>
+<p>Let’s chat about how that looks for the current workflow — multi-turn, high concurrency. How does WEKA do that? Maybe go through a basic primer for people.</p>
+<p>Val:The big thing is concurrency. Fundamentally, there’s no such thing as a single agent. I kept saying it’s either no agents or agent swarms. And agent swarms implicitly mean a lot of concurrent subtasks happening, typically orchestrated by one or more orchestration agents. That’s where we typically want to pay the Opus price — but usually for execution, we find sometimes Opus is either more efficient or just obviously better-quality tokens.</p>
+<p>High concurrency implicitly means we’re often accessing the same codebase, same documentation, same libraries, similar tool calling — and that results in very high KV cache utilization. There’s a really important nuance here for the audience: there are already two kinds of KV caching. There’s a**logical**kind, where you’re seeing the actual reuse in your context amongst the various parallel subtasks. And then there’s the**physical**KV caching — what the inference provider platform can actually do.</p>
+<p>The tell is if we go to Anthropic’s prompt caching pricing page. It started off as a very simple page six or seven months ago, especially as Claude Code was launching — just “use caching, it’s cheaper.” Now it’s an encyclopedia of advice on exactly how many cache writes to pre-buy. You’ve got 5-minute tiers, which are very common across the industry, or 1-hour tiers — and nothing above. That’s a really important tell. Then of course you’ve got all sorts of arbitrage opportunities around the pricing for cache reads based on how many cache writes you’ve pre-purchased.</p>
+<p>Doug:Let’s actually talk about that. What’s the important tell on the above-1-hour? Is it what I’m thinking — DRAM versus NAND?</p>
+<p>Val:It’s multiple tiers. Right now, the tell — if you can’t offer more than an hour — is that there’s no cache offloading beyond DRAM. You’re not offloading to NVMe yet. You’re doing HBM, maybe DRAM pooling, maybe CXL, but that’s basically musical chairs around very finite resources. We’re still talking about 1 to 2 terabytes at most of DRAM per node. With the bigger Blackwells, if that’s what’s being used for inference, maybe collectively about 2 terabytes of HBM across the 8 GPUs. Super finite when you consider trillion-parameter model weights and million-token context windows per user.</p>
+<p>Doug:It’s definitely going to go up. I know for the video side — but I’m not quite a believer of 16 terabytes per GPU. I think we’re not quite there. And also, on the training side, it can be very sparse. You don’t actually need that much, because you’re so compute-constrained.</p>
+<p>Val:For traditional forward passes, yeah. Maybe another first principles topic here — context memory is not that valuable for traditional pre-training. Reinforcement learning is different. We’re doing a lot of RL loops, and inference is the critical middle part of those RL loops. But for traditional pre-training, no — context memory storage is not a thing. For RL, and particularly for inference, context memory storage is everything in an agentic era.</p>
+<p>Doug:And it’s obviously becoming a big thing. I wanted to go back to this because honestly, I didn’t fully understand it when we had this conversation last time. Logical caching versus physical caching — could you explain the two differences?</p>
+<p>Val:Sure. When you have multiple turns of an agent, especially an orchestration agent with multiple subtasks, you naturally build up reusable, cacheable tokens. We actually documented this — we released an open-source project called KVCacheTester from WEKA, authored by Callum Fox. He wrote an observability tool that shows you turn-by-turn the logical cache consumption for any set of prompts on any model, because it’s just a proxy. And he’s got a load generator if you want to simulate this or replay existing real-world traces.</p>
+<p>What happens is you do naturally build up, after the system prompts, reusable tokens — cacheable tokens. You get insane reusability. You were saying you’re reaching 90%. You can reach 99%.</p>
+<p>Doug:I actually looked at this yesterday and it wasn’t quite what I thought it was. It varies a lot. The very high caching rate — I would say it averages around the 70s. There are definitely sessions where you can see heavy usage of the same tokens over and over — boom, 90%. But when you start a new session or have a ramp-down, you can have much lower rates. Blended, I’d say north of 50%, but probably in that 60% range for the actual cache hit rate.</p>
+<p>That’s interesting because the variability in pricing on input/output is massive. We were modeling this and it’s like — hey, if it was all uncached and you’re paying the raw price, you’re talking insane numbers. Just paying list price for input.</p>
+<p>Val:List price, yeah. It’s like $5 per million input tokens at crazy volumes.</p>
+<p>Doug:100%. And then if you’re doing cache reads, it’s what — a dollar?</p>
+<p>Val:The Anthropic cached price is 10% of list — so it’s about 50 cents. A nice 10x difference.</p>
+<p>Doug:It’s a big deal. It’s kind of this — OK, so let’s actually talk about this. Specifically, you said this phrase: “logical versus actual.”</p>
+<p>Val:Right. So we’re looking at — and hopefully we’ll be able to do a screenshot for people — the logical cache is exactly what we’re seeing here. Variability, but peaks of up to 90–99% KV cache rate, because certain libraries, system prompts, certain tools are very common and absolutely reasonable to reuse across multiple subtasks.</p>
+<p>But the 1-hour limit on cache writes you can pre-buy is the tell. What it explicitly tells you is that your KV cache will be evicted after an hour. If you didn’t pay for the hour premium and only bought 5 minutes of cache writes, your KV cache gets evicted after 5 minutes. What tends to happen is either you go on the stereotypical coffee break while an agent runs, or an orchestrator’s got dozens or hundreds of subtasks and not all of them complete at the same time — there’s going to be enough lag time that you’ll easily have a 5-minute gap between subtasks. So it evicts KV cache.</p>
+<p>Already you’re seeing the difference between logical and physical KV cache. In reality, with billions of tokens per day and agent swarms, the physical KV cache — as opposed to the logical — you’re evicting all the time. You’re certainly evicting within 5 minutes.</p>
+<p>Doug:OK. I see what you mean. Logical versus physical. I imagine the actual token factory tries to keep HBM warm and move things as fast as possible.</p>
+<p>Val:Yeah. And now it’s a struggle with the volumes and very finite memory. Actually, it’s about keeping DRAM warm — because HBM is fundamentally for attention computation, and DRAM has been the staging layer for many months now. We keep that warm so we can feed HBM, but we’re totally out of the ability to even keep anything warm. That’s the issue. We’re just refilling over and over again.</p>
+<p>Doug:What do you mean by “keeping warm”? As in, it’s constantly being used? You’re saying DRAM is effectively just holding cache — sitting there waiting. It’s not actually doing read/writes.</p>
+<p>Val:That’s correct. The Flash Attention algorithms — at least Flash Attention 4; we don’t know what happens with Rubin onwards — don’t calculate attention from DRAM. They move data into HBM, and even that gets moved into SRAM, and that’s how you ultimately do the actual Flash Attention computation. DRAM is a staging area. It’s a green room. And the green room is overloaded right now.</p>
+<p>The only fallback is traditional NVMe storage, and it isn’t nearly fast enough to keep up with even just feeding the green room. So what you do is just keep refilling and refilling off the GPU itself, consuming tons of energy, pretty much lighting up the rack every few seconds.</p>
+<p>Doug:I want to talk about CXL here, because — you know, memory rack guy over here. I think it’s funny and interesting because I remember writing about CXL in like ‘22, talking about hyperscalers. The original intended purpose was essentially having a giant disaggregated rack system for hyperscalers. It’s crazy to talk about because that use case doesn’t even register to me anymore. It’s useless. Pointless. And now CXL has been zombified for another vision entirely — which is essentially a hot rack for these attention mechanisms.</p>
+<p>Val:Totally with you. Ten years ago, this was the classic solution looking for a problem. No one — everyone thought it was geeky, cool, not commercially viable.</p>
+<p>Doug:I thought it was because the history of computing is you just disaggregate, pull it out as big as you can, making bigger and bigger elastic pools. It’s funny — we are making elastic pools, but it’s kind of the opposite. Everything is so constrained by the physical pool capacity.</p>
+<p>Val:In many ways, it’s going back to the future over and over again. We’re creating separate networks to try to access — it’s not like a mainframe — just really enhanced I/O to complement compute and not have overallocation or starvation. My original memory of CXL way back was like, “Wow, we need to network PCIe.” But that was before Ethernet got so phenomenally fast.</p>
+<p>Doug:That itself is a really interesting conversation. I think that wasn’t an accident — it was also because of AI. Ethernet sped up because of AI, and PCIe just isn’t going to be the — well, we’ll see.</p>
+<p>Val:That game is over. We’re into common 800-gig ports right now, 1.6 terabits. With PCIe Gen 6 or 7? That’s done.</p>
+<p>Doug:I mean, there are still some PCIe accelerators. But I think what’s crazy is now I’ve heard some really wild stories of what they’re doing — like brownfielding DDR4, essentially using the CXL 1.0 spec, and just plugging it into accelerators. It’s kind of crazy. In this shortage, we’re finally seeing the pull-forward demand for CXL. The solution finally has a problem. It’s just very weird.</p>
+<p>Val:There’s a really interesting tension right now, because NVIDIA architects would really love this — and I’m not picking on NVIDIA alone, it’s just that they document this so well. They want a separate front-end network, the north-south. They want a very dedicated, untouchable east-west network for NVLink and nothing else. Now they’re saying you want a third network, a BlueField-based network for context memory storage. That’s just a lot of ports without co-packaged optics. And in a shortage, it’s one thing to pay a premium for this — at least you can get it. Can’t get this shit now.</p>
+<p>My mind keeps going back to 2024 and one of those original DeepSeek whitepapers that said, “Fuck it, we ball — we’re just going to use all the ports for training, for RL, for inference, all the time. We’re going to dynamically allocate them, actually be elastic with the ports and not have this very hard network segregation.”</p>
+<p>Doug:Yeah, that was one of the really impressive innovations around DeepSeek V1. They cracked the algorithm side, which is its own thing. And this is the coolest part about AI — it’s so best-of-breed. It reinvents everything over and over again.</p>
+<p>If I had to guess, it feels like if you’re going to attach context memory, you’re going to do it on the north-south with BlueField. I know there’s a third network, but my brain just says the NIC is so close. What’s the future going forward? Do we even need to connect these things to the internet?</p>
+<p>Val:I think the future is the DeepSeek approach. For customers that don’t have the staff or the expertise and want to buy a blueprint from a vendor that just works — it’s going to be overprovisioned. It’s going to be expensive.</p>
+<p>Doug:Because the vendor overhead is real.</p>
+<p>Val:For someone that’s really scrutinizing their gross margins, their hard opex — every microsecond, every micro-cent of token cost matters — you’re going to DeepSeek this. You’re going to put a crack set of engineers on it. You’re going to do congestion control on these networks, and you’re going to oversubscribe instead of overprovision. And that’s how you’re going to have really good gross margin — maybe even positive gross margin on OpenRouter for years.</p>
+<p>Doug:What I was going to say — because everyone loves to spec things out, “Oh, this is the possible network” — but we know message sizes aren’t taking up the whole bit. There is slack. My brain goes to the power grid, actually, where everyone is obsessed with the spec for 100% utilization. There’s actually a lot of networking that’s not utilized, and being creative about it matters.</p>
+<p>Val:Headers are a thing. Encryption is a thing. But — and this is my one shameless plug — we do pride ourselves on 4KB KV cache offloading over high-speed networks, whether they’re dedicated east-west or otherwise. We’re getting 95% line rate. On just a Hopper-class system — keeping it modest, H200 — we’re getting 3.12 terabits per second for KV cache offflow. That’s CXL-and-above speeds, which is what makes the economics of applying NVMe to a DRAM/DIMM problem so exciting. The arbitrage is massive.</p>
+<p>Doug:But for NAND pricing, it’s up so much.</p>
+<p>Val:Revenge of the supply chains.</p>
+<p>Doug:Month by month, that math might change. I actually want to take it back to DeepSeek. I didn’t have time to read the nGram paper. DeepSeek V4 is probably happening this week.</p>
+<p>Val:Maybe as we’re recording.</p>
+<p>Doug:Maybe as we’re recording. It’s Chinese model week, guys.</p>
+<p>Val:If you’re not familiar, they like to drop things Saturday morning their time — Friday evening Silicon Valley time — just to mess with people.</p>
+<p>Doug:Historically, it’s been done on holidays. President’s Day is a good opportunity — I’m hoping. And then GLM-5 yesterday, pretty good. Qwen 2.5 — I’m a fan. I’m a fan of all of it. I’d love to hear what you think nGram could look like.</p>
+<p>Val:EnGram is an indicator of absolutely the future. We just don’t know if it’s going to be this month, this quarter — definitely this year. First principles again: if inference servers are spending so much time — and we didn’t even talk about SGLang, HiCache, Dynamo, TensorRT-LLM, and all sorts of stuff AMD is going to do with ROCm — if inference servers are spending all this time just staging tokens to be processed, why don’t the models become natively aware of all this staging?</p>
+<p>Why don’t models natively become aware that we have multiple tiers now, including some interesting NVMe tiers, and directly figure out how to allocate or load weights just in time so we’re not hogging memory? Maybe only load the weights that are going to be active for a particular subset of mixture-of-experts. Have models store static common tokens in one tier, and only keep dynamic tokens in HBM. The concept is: we have sparse models, mixtures of experts, conditional compute today — and nGram is going to be conditional memory, loading just in time.</p>
+<p>Doug:It feels almost like speculative decoding, where the hardware is aware of what’s around it in order to pull things just in time, and it’s baked into the hardware — the hardware’s problem. In this case, the model is the hardware. So it becomes memory-aware across what is available to it. Is that the right way to think about it?</p>
+<p>Val:Yeah, that’s the best way to describe it. The models are now memory-aware. They’re not relying on the inference servers to work around the memory limitations models have.</p>
+<p>Doug:Because right now, you force an infrastructure decision and then the model folds into the memory space it has — versus the model being able to elastically consider, “I have this much NVMe, this much HBM, this much DRAM.” That’s really interesting. How does the mechanism actually work? That seems really ambitious. And honestly, it makes a lot of sense because I’m starting to believe that the models, at some level, are an extension of hardware.</p>
+<p>Val:That’s exactly where it’s going. And it’s a natural DeepSeek approach, right? Always first principles. Take a look at all the limited available resources — they must be laughing now because the whole world has limited resources, not just China — and say, “Let’s absolutely extract everything we can.” If we can do it more efficiently with the attention algorithm and the forward passing within the model, why offload that optimization responsibility to the inference server at test time? Let’s do it not just at training time, but even pre-reasoning. All sorts of implications around what that means for positional embeddings and beyond.</p>
+<p>Doug:Yeah. The V4, we’ll see.</p>
+<p>Val:We will see. The paper is out there, so we’ll see whether they deliver.</p>
+<p>Doug:I’m pretty interested. Honestly, the state-of-the-art dance has been a lot closer than it’s ever been. Anthropic is spiritually in the lead right now, I think, and OpenAI is now responding, but I feel like OpenAI had a whole year where their capabilities were really about pushing infrastructure and total capacity, not about pushing the bleeding edge. So now everyone’s kind of caught up. I’m really interested in this nGram thing. I’m excited to monitor the situation.</p>
+<p>Val:Well, you’ve got to get used to the fact that a year ago OpenAI was a clear leader. Now they’re not. This is the year where one or more Chinese models will be in that top mix, where OpenAI and Anthropic will no longer be the clear leaders.</p>
+<p>Doug:We’re already seeing the jagged frontier. Gemini continues to take consumer usage in a way that OpenAI used to have. Gemini is crushing it in the West for video and image. Opus clearly has a giant coding lead — something very special is happening there; you hear everyone saying it. And in China, the video models are insane. They’re probably already state of the art. Seedance is definitely number one right now in my view. And we’re starting to see some interesting things — I mean, I’m obsessed with the agent swarm work from Kimi.</p>
+<p>Val:I think the models are the precursor to nGram — which is basically bringing the swarming that happens outside the model inside the model.</p>
+<p>Doug:We’ll see. It’s funny that the swarm has to run on like a 16-node H100 cluster. Wow. Just to get this thing going.</p>
+<p>Val:Bill Gurley says this so well — this is a sport of kings. At the end of the day, unless you’re doing a desktop local quantized model, you’ve got to be a big inference provider to be in this game.</p>
+<p>Doug:It’s pretty crazy. The fact that in order to use a leading-edge capability, we’re talking about what was hundreds of thousands of dollars of compute just to do something at the frontier.</p>
+<p>OK, I feel like I hit most of the topics. Is there something I’m missing?</p>
+<p>Val:I don’t know if we want to touch on the ramifications for SaaS. I had this simplistic notion that we’d see a $20,000-per-seat agent because we saw $2,000-per-seat agents last year. It’s not shaping up that way. These crazy token costs — API costs into the thousands per day — is what we’re actually seeing.</p>
+<p>Doug:I think everyone doesn’t want the per-seat model at the end of the day. It’s interesting — we’ll see. The seat model, if it continues to work, feels super deflationary. That’s my big-brain take I’ve been thinking about — too much volume is going to be deflationary.</p>
+<p>Right now at SemiAnalysis, we’re all using fast mode on Opus 4.6. The context window limit is 200K on fast mode. We have a vibe-coding competition every week — whoever has the best project done wins. So yeah, we’re definitely trying to push intelligence per person.</p>
+<p>But it’s kind of interesting — maybe this is something I wanted to talk about. Whenever these new models come out, everyone’s like, “Oh, they become so stupid.” It’s quantization, and it’s so painful.</p>
+<p>Val:Yeah.</p>
+<p>Doug:That’s the key topic. I really wish there was enough capacity to just do full precision — or at least FP16.</p>
+<p>Val:It’s not a compute problem at inference time — it’s a memory problem. That’s the key thing. If you reduce the amount of redundant prefills — take that O(N) operation where N could be thousands or millions at scale, down to one — certainly per agent swarm session, because you’ve prefilled all the tokens all the agents and subtasks will need for that swarm — you now have massive savings in accelerator compute time. You can reallocate those GPUs.</p>
+<p>We have a little slider demo where you literally detune the number of prefill nodes so you can increase the number of decode nodes. You’ve just got more parallel decode capability at your disposal that improves latency and raises token throughput.</p>
+<p>Doug:Yeah, definitely the scale-out version of this.</p>
+<p>Val:Meaning you can actually afford to keep high-precision FP8, or even FP16 if you really want it, because now you’re not redundantly doing all those matmuls over and over again on the prefill side.</p>
+<p>Doug:I was going to ask — because this is definitely a conversation in the investor world — memory is having its beautiful moment. And I see nothing to stop it anytime soon. Do you think all of the value just accrues to memory? I mean, I’ve seen this story before. Memory is clearly essential — KV cache and scaling it is like an original sin of transformers. We’re definitely struggling. But will that persist?</p>
+<p>Val:This is the key question. If we’re in a world where transformers are eating the world — diffusion-transformer hybrids, and Mamba is fundamentally still optimized transformers — as we continue to optimize, if we don’t want a Gartner hype cycle moment for every model release where the inference providers get the non-quantized version to evaluate, all the influencers and benchmarkers get the full-precision version, and then you and I a week later get the quantized version — if we want to avoid that cycle, then yes, memory will rule for a long, long time.</p>
+<p>Memory solves this problem. Memory gives you prefill nodes back so you can do full precision, and decode doesn’t matter at that point. You’re able to get the best of all worlds. The memory wall is the thing — you’ve got to scale the memory wall, and most people can’t right now.</p>
+<p>The tell will be OpenRouter. I love OpenRouter. They just crossed — I don’t know how many trillions of tokens.</p>
+<p>Doug:I think it’s like 1 trillion a day.</p>
+<p>Val:Exactly. They’re a real proxy for the industry right now. OpenRouter has been ahead of this — they’ve had, for every model and every provider, input/output pricing plus cache read and cache write pricing. Very few open-model providers even have cache reads as a product offering. And almost none — maybe one or two exceptions that prove the rule — have any kind of cache write functionality and cache write pricing. When those two columns fill up, we’re going to see an explosion of performance and efficiency and higher-quality tokens, because people won’t have to make that tradeoff.</p>
+<p>Doug:That makes sense. Cool — anything else you want to talk about?</p>
+<p>Val:Next pod. So much to cover.</p>
+<p>Doug:Enough conversation for today. Thanks for listening to our high-powered conversation. And thanks for coming by, Val.</p>
+<p>Val:We’ll talk soon. Looking forward to it. Bye.</p>
+</div>
+</main>
+<footer>Generated 2026-04-15 08:43 &mdash; Market Research Skills</footer>
+</div>
+</body>
+</html>
