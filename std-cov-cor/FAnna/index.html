@@ -17,8 +17,6 @@
   header .subtitle { color: #a0b4d0; font-size: 12px; margin-top: 4px; }
   h2 { color: #1a2b4a; font-size: 15px; margin: 28px 0 10px;
        border-bottom: 2px solid #2e5c9a; padding-bottom: 4px; }
-  h3 { color: #2e5c9a; font-size: 14px; margin: 20px 0 8px; }
-  /* Tables */
   table { border-collapse: collapse; width: 100%; margin: 12px 0 20px;
           font-size: 12px; }
   th { background: #2e5c9a; color: #fff; padding: 7px 10px;
@@ -27,23 +25,9 @@
   td { padding: 6px 10px; border-bottom: 1px solid #dde3ec; }
   tr:nth-child(even) { background: #f0f3f8; }
   tr:hover { background: #e4eaf4; }
-  caption { text-align: left; font-weight: 600; color: #1a2b4a;
-            margin-bottom: 6px; font-size: 13px; }
-  /* Cards / sections */
-  .card { background: #fff; border-radius: 6px; padding: 18px 20px;
-          margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-  .card h3 { margin-top: 0; }
-  /* Utility */
   .text-muted { color: #6b7a8d; font-size: 11px; }
-  .text-right { text-align: right; }
-  .text-center { text-align: center; }
-  .num { font-variant-numeric: tabular-nums; text-align: right; }
   a { color: #2e5c9a; text-decoration: none; }
   a:hover { text-decoration: underline; }
-  .tag { display: inline-block; background: #e8edf5; color: #2e5c9a;
-         padding: 2px 8px; border-radius: 3px; font-size: 11px;
-         margin: 2px 2px; }
-  /* Footer */
   footer { margin-top: 32px; padding-top: 12px;
            border-top: 1px solid #dde3ec; color: #6b7a8d;
            font-size: 11px; text-align: center; }
@@ -57,20 +41,43 @@
 <div class="container">
 <main>
 <h2>FAnna Reports</h2>
-<p class="text-muted">5 reports available</p>
+<p class="text-muted" id="count">Loading...</p>
 <table>
 <thead><tr><th>Report</th><th>Date</th></tr></thead>
-<tbody>
-  <tr><td><a href="Portfolio_Risk_April-16-2026.html">Portfolio Risk — April 16, 2026</a></td><td>2026-04-16</td></tr>
-  <tr><td><a href="Portfolio_Risk_April-15-2026.html">Portfolio Risk — April 15, 2026</a></td><td>2026-04-15</td></tr>
-  <tr><td><a href="Portfolio_Risk_April-14-2026.html">Portfolio Risk — April 14, 2026</a></td><td>2026-04-14</td></tr>
-  <tr><td><a href="Portfolio_Risk_April-13-2026.html">Portfolio Risk — April 13, 2026</a></td><td>2026-04-13</td></tr>
-  <tr><td><a href="Portfolio_Risk_April-10-2026.html">Portfolio Risk — April 10, 2026</a></td><td>2026-04-10</td></tr>
+<tbody id="report-list">
+  <tr><td colspan="2">Loading reports...</td></tr>
 </tbody>
 </table>
 <p><a href="../index.html">&larr; Back to std-cov-cor</a></p>
 </main>
 <footer>Market Research Skills — GitHub Pages</footer>
 </div>
+
+<script>
+  const OWNER = 'MainStreet';
+  const REPO  = 'market-research-pages';
+  const PATH  = 'std-cov-cor/FAnna';
+
+  fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`)
+    .then(r => r.json())
+    .then(files => {
+      const reports = files
+        .filter(f => f.name !== 'index.html' && f.name.endsWith('.html'))
+        .sort((a, b) => b.name.localeCompare(a.name)); // newest first
+
+      document.getElementById('count').textContent =
+        reports.length + ' report' + (reports.length !== 1 ? 's' : '') + ' available';
+
+      const tbody = document.getElementById('report-list');
+      tbody.innerHTML = reports.map(f => {
+        const label = f.name.replace('Portfolio_Risk_', '').replace('.html', '').replace(/-/g, ' ');
+        return `<tr><td><a href="${f.name}">${label}</a></td><td>${f.name.match(/\d{4}-\d{2}-\d{2}/) ? f.name.match(/(\d{4})-(\d{2})-(\d{2})/).slice(1).join('-') : ''}</td></tr>`;
+      }).join('');
+    })
+    .catch(() => {
+      document.getElementById('report-list').innerHTML =
+        '<tr><td colspan="2">Could not load reports.</td></tr>';
+    });
+</script>
 </body>
 </html>
