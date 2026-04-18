@@ -114,6 +114,9 @@
 </tr>
 </tbody></table>
 </div><div class="card">
+<h3>Benchmarks &amp; Portfolio Beta</h3>
+<table><thead><tr><th>Metric</th><th class="text-right">SPY</th><th class="text-right">QQQ</th></tr></thead><tbody><tr><td>Annualised std dev</td><td class="num">18.02%</td><td class="num">22.13%</td></tr><tr><td>Portfolio β vs benchmark</td><td class="num">1.366</td><td class="num">1.150</td></tr><tr><td>Portfolio ρ vs benchmark</td><td class="num">0.952</td><td class="num">0.984</td></tr><tr><td>Aligned observations</td><td class="num">365</td><td class="num">365</td></tr><tr><td>Aligned window</td><td class="num">2024-10-31 → 2026-04-17</td><td class="num">2024-10-31 → 2026-04-17</td></tr></tbody></table><p class='text-muted'>Portfolio daily return = Σ wᵢ·rᵢ (tradable tickers only; cash contributes 0). β = Cov(Rₚ, R_M) / Var(R_M); ρ = Cov(Rₚ, R_M) / (σₚ·σ_M). Aligned obs may be slightly smaller than the main observation window because the benchmarks add another intersection constraint.</p>
+</div><div class="card">
 <h3>Cash / Zero-Volatility Positions</h3>
 <table>
 <caption>2 cash / zero-vol positions</caption>
@@ -500,10 +503,10 @@
 </tbody></table>
 </div><div class="card">
 <h3>Methodology</h3>
-<p>Portfolio variance = wᵀ Σ w where Σ is the daily covariance matrix of simple returns for tradable positions and w is the weight vector from the source CSV. Cash / money-market / delisted positions are detected and contribute 0 to variance but are still counted in the total portfolio weight, so the annualised std dev reflects the cash drag on realised portfolio volatility.</p><p class='text-muted'>Full covariance matrix and matrix JSONs are cached on disk and are not embedded in this page — open the PDF for the full covariance view.</p>
+<p>Portfolio variance = wᵀ Σ w where Σ is the daily covariance matrix of simple returns for tradable positions and w is the weight vector from the source CSV. Cash / money-market / delisted / short-history positions are detected and contribute 0 to variance but are still counted in the total portfolio weight, so the annualised std dev reflects the cash drag on realised portfolio volatility.</p><p>Portfolio beta: β_M = Cov(R_p, R_M) / Var(R_M), using daily simple returns on the intersection of portfolio and benchmark dates. Correlation: ρ_M = Cov(R_p, R_M) / (σ_p · σ_M).</p><p class='text-muted'>Full covariance matrix and matrix JSONs are cached on disk and are not embedded in this page — open the PDF for the full covariance view.</p>
 </div>
 </main>
-<footer>Generated 2026-04-18 07:05 &mdash; Market Research Skills</footer>
+<footer>Generated 2026-04-18 08:31 &mdash; Market Research Skills</footer>
 </div>
 </body>
 </html>
