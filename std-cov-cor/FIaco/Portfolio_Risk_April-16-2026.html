@@ -114,6 +114,37 @@
 </tr>
 </tbody></table>
 </div><div class="card">
+<h3>Benchmarks &amp; Portfolio Beta</h3>
+<p class="text-muted">Aligned period: 2025-04-01 → 2026-04-17 (263 observations).
+Portfolio daily return = Σ wᵢ·rᵢ using CSV weights (cash weight contributes 0).
+β = Cov(Rₚ, R_M) / Var(R_M). Benchmarks: SPY (S&amp;P 500 proxy), QQQ (Nasdaq-100 proxy).</p>
+<table>
+<thead><tr>
+<th>Metric</th>
+<th>SPY (S&amp;P 500)</th>
+<th>QQQ (Nasdaq-100)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Annualised std dev</td>
+<td class="num">18.77%</td>
+<td class="num">22.31%</td>
+</tr>
+<tr>
+<td>Portfolio β vs benchmark</td>
+<td class="num">1.547</td>
+<td class="num">1.363</td>
+</tr>
+<tr>
+<td>Portfolio ρ vs benchmark</td>
+<td class="num">0.911</td>
+<td class="num">0.954</td>
+</tr>
+</tbody>
+</table>
+<p class="text-muted">Reference: portfolio annualised &sigma; = 31.89% on this aligned window. The top-of-report &sigma; of 31.84% uses the full aligned matrix of 264 rows — the small gap (264 vs 263 rows) is from adding SPY/QQQ to the intersection.</p>
+</div>
+<div class="card">
 <h3>Cash / Zero-Volatility Positions</h3>
 <table>
 <caption>10 cash / zero-vol positions</caption>
