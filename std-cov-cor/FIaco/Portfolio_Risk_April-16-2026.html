@@ -138,6 +138,9 @@
 </tr>
 </tbody></table><p class='text-muted'>Dropped tickers are reclassified as cash (contribute 0 to variance) but their weight is still counted in the portfolio total, so any cash drag on realised σ is preserved.</p>
 </div><div class="card">
+<h3>Short-History Sensitivity — Tier 1 vs Tier 2</h3>
+<p class='text-muted'>This card auto-appears because the short-history filter dropped at least one ticker with weight &gt; 0.50% (max dropped weight: 1.51%). It shows how much the filter is moving the reported numbers. Tier 2 recomputes variance on all original tradables, trimming the window to the shortest common history (legacy behaviour).</p><table><thead><tr><th>Metric</th><th class='text-right'>Tier 2 (no filter, trim window)</th><th class='text-right'>Tier 1 (filter, wide window) — current</th></tr></thead><tbody><tr><td>Tradable tickers used</td><td class='num'>53</td><td class='num'>51</td></tr><tr><td>Observations</td><td class='num'>264</td><td class='num'>365</td></tr><tr><td>Window</td><td class='num'>2025-03-31 → 2026-04-17</td><td class='num'>2024-10-31 → 2026-04-17</td></tr><tr><td>Portfolio annualised σ</td><td class='num'>31.84%</td><td class='num'>31.21%</td></tr><tr><td>SPY ann σ</td><td class='num'>18.91%</td><td class='num'>18.02%</td></tr><tr><td>β vs SPY</td><td class='num'>1.530</td><td class='num'>1.543</td></tr><tr><td>ρ vs SPY</td><td class='num'>0.909</td><td class='num'>0.891</td></tr><tr><td>QQQ ann σ</td><td class='num'>22.50%</td><td class='num'>22.13%</td></tr><tr><td>β vs QQQ</td><td class='num'>1.348</td><td class='num'>1.332</td></tr><tr><td>ρ vs QQQ</td><td class='num'>0.952</td><td class='num'>0.945</td></tr></tbody></table>
+</div><div class="card">
 <h3>Cash / Zero-Volatility Positions</h3>
 <table>
 <caption>12 cash / zero-vol positions</caption>
@@ -1188,7 +1191,7 @@
 <p>Portfolio variance = wᵀ Σ w where Σ is the daily covariance matrix of simple returns for tradable positions and w is the weight vector from the source CSV. Cash / money-market / delisted / short-history positions are detected and contribute 0 to variance but are still counted in the total portfolio weight, so the annualised std dev reflects the cash drag on realised portfolio volatility.</p><p>Portfolio beta: β_M = Cov(R_p, R_M) / Var(R_M), using daily simple returns on the intersection of portfolio and benchmark dates. Correlation: ρ_M = Cov(R_p, R_M) / (σ_p · σ_M).</p><p class='text-muted'>Full covariance matrix and matrix JSONs are cached on disk and are not embedded in this page — open the PDF for the full covariance view.</p>
 </div>
 </main>
-<footer>Generated 2026-04-18 08:34 &mdash; Market Research Skills</footer>
+<footer>Generated 2026-04-18 09:04 &mdash; Market Research Skills</footer>
 </div>
 </body>
 </html>
