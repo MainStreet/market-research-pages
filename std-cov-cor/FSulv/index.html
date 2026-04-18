@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FSulv — Portfolio Risk Reports</title>
+<title>Market Research Reports</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -15,6 +15,9 @@
            margin-bottom: 24px; }
   header h1 { font-size: 20px; font-weight: 600; margin: 0; }
   header .subtitle { color: #a0b4d0; font-size: 12px; margin-top: 4px; }
+  .breadcrumb { margin: 0 0 18px; font-size: 12px; color: #6b7a8d; }
+  .breadcrumb a { color: #2e5c9a; text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
   h2 { color: #1a2b4a; font-size: 15px; margin: 28px 0 10px;
        border-bottom: 2px solid #2e5c9a; padding-bottom: 4px; }
   table { border-collapse: collapse; width: 100%; margin: 12px 0 20px;
@@ -35,20 +38,29 @@
 </head>
 <body>
 <header>
-  <h1>FSulv — Portfolio Risk Reports</h1>
-  <div class='subtitle'>std-cov-cor — Market Research Skills</div>
+  <h1 id="page-title">Market Research Reports</h1>
+  <div class='subtitle'>MainStreet — GitHub Pages</div>
 </header>
 <div class="container">
 <main>
-<h2>FSulv Reports</h2>
-<p class="text-muted" id="count">Loading...</p>
-<table>
-<thead><tr><th>Report</th><th>Date</th></tr></thead>
-<tbody id="report-list">
-  <tr><td colspan="2">Loading reports...</td></tr>
-</tbody>
+<div class="breadcrumb" id="breadcrumb"></div>
+
+<h2 id="folders-heading" style="display:none">Folders</h2>
+<table id="folders-table" style="display:none">
+  <thead><tr><th>Folder</th></tr></thead>
+  <tbody id="folder-list"></tbody>
 </table>
-<p><a href="../index.html">&larr; Back to std-cov-cor</a></p>
+
+<h2 id="reports-heading" style="display:none">Reports</h2>
+<p class="text-muted" id="count"></p>
+<table id="reports-table" style="display:none">
+  <thead><tr><th>Report</th></tr></thead>
+  <tbody id="report-list"></tbody>
+</table>
+
+<p id="loading" class="text-muted">Loading contents...</p>
+<p id="empty" class="text-muted" style="display:none">No content in this folder yet.</p>
+<p id="error" class="text-muted" style="display:none">Could not load folder contents.</p>
 </main>
 <footer>Market Research Skills — GitHub Pages</footer>
 </div>
@@ -56,27 +68,83 @@
 <script>
   const OWNER = 'MainStreet';
   const REPO  = 'market-research-pages';
-  const PATH  = 'std-cov-cor/FSulv';
 
-  fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`)
-    .then(r => r.json())
-    .then(files => {
-      const reports = files
-        .filter(f => f.name !== 'index.html' && f.name.endsWith('.html'))
-        .sort((a, b) => b.name.localeCompare(a.name)); // newest first
+  function getRepoPath() {
+    let p = window.location.pathname.replace(/index\.html$/, '').replace(/\/$/, '').replace(/^\//, '');
+    if (p === REPO) return '';
+    if (p.startsWith(REPO + '/')) p = p.slice(REPO.length + 1);
+    return p;
+  }
 
-      document.getElementById('count').textContent =
-        reports.length + ' report' + (reports.length !== 1 ? 's' : '') + ' available';
+  const PATH = getRepoPath();
+  const segments = PATH ? PATH.split('/') : [];
+  const displayName = segments.length ? segments[segments.length - 1] : 'Market Research Reports';
 
-      const tbody = document.getElementById('report-list');
-      tbody.innerHTML = reports.map(f => {
-        const label = f.name.replace('Portfolio_Risk_', '').replace('.html', '').replace(/-/g, ' ');
-        return `<tr><td><a href="${f.name}">${label}</a></td><td>${f.name.match(/\d{4}-\d{2}-\d{2}/) ? f.name.match(/(\d{4})-(\d{2})-(\d{2})/).slice(1).join('-') : ''}</td></tr>`;
-      }).join('');
+  document.title = displayName + (PATH ? ' — Market Research' : '');
+  document.getElementById('page-title').textContent = displayName;
+
+  // Breadcrumb
+  const crumbs = [];
+  if (segments.length === 0) {
+    crumbs.push('<span>Home</span>');
+  } else {
+    const upToRoot = '../'.repeat(segments.length);
+    crumbs.push(`<a href="${upToRoot}">Home</a>`);
+    segments.forEach((seg, i) => {
+      if (i === segments.length - 1) {
+        crumbs.push(`<span>${seg}</span>`);
+      } else {
+        const up = '../'.repeat(segments.length - i - 1);
+        crumbs.push(`<a href="${up}">${seg}</a>`);
+      }
+    });
+  }
+  document.getElementById('breadcrumb').innerHTML = crumbs.join(' / ');
+
+  // Fetch contents
+  const apiUrl = PATH
+    ? `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`
+    : `https://api.github.com/repos/${OWNER}/${REPO}/contents`;
+
+  fetch(apiUrl)
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(items => {
+      document.getElementById('loading').style.display = 'none';
+
+      const folders = items
+        .filter(f => f.type === 'dir' && !f.name.startsWith('.'))
+        .sort((a, b) => a.name.localeCompare(b.name));
+
+      const reports = items
+        .filter(f => f.type === 'file' && f.name !== 'index.html' && f.name.endsWith('.html'))
+        .sort((a, b) => b.name.localeCompare(a.name));
+
+      if (folders.length) {
+        document.getElementById('folders-heading').style.display = '';
+        document.getElementById('folders-table').style.display = '';
+        document.getElementById('folder-list').innerHTML = folders.map(f =>
+          `<tr><td><a href="${f.name}/">${f.name}/</a></td></tr>`
+        ).join('');
+      }
+
+      if (reports.length) {
+        document.getElementById('reports-heading').style.display = '';
+        document.getElementById('reports-table').style.display = '';
+        document.getElementById('count').textContent =
+          reports.length + ' report' + (reports.length !== 1 ? 's' : '') + ' available';
+        document.getElementById('report-list').innerHTML = reports.map(f => {
+          const label = f.name.replace(/\.html$/, '').replace(/_/g, ' ');
+          return `<tr><td><a href="${encodeURIComponent(f.name)}">${label}</a></td></tr>`;
+        }).join('');
+      }
+
+      if (!folders.length && !reports.length) {
+        document.getElementById('empty').style.display = '';
+      }
     })
     .catch(() => {
-      document.getElementById('report-list').innerHTML =
-        '<tr><td colspan="2">Could not load reports.</td></tr>';
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('error').style.display = '';
     });
 </script>
 </body>
