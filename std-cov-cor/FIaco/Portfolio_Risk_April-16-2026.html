@@ -145,6 +145,46 @@ Portfolio daily return = Σ wᵢ·rᵢ using CSV weights (cash weight contribute
 <p class="text-muted">Reference: portfolio annualised &sigma; = 31.89% on this aligned window. The top-of-report &sigma; of 31.84% uses the full aligned matrix of 264 rows — the small gap (264 vs 263 rows) is from adding SPY/QQQ to the intersection.</p>
 </div>
 <div class="card">
+<h3>Short-History Sensitivity — Tier 1 (drop) vs Tier 2 (trim)</h3>
+<p class="text-muted">Tier 2 is the main-report number: all tradable tickers kept, observation window trimmed to the shortest common history.
+Tier 1 drops any tradable ticker with cached history below 90% of the 365-day lookback
+(329 trading days minimum); dropped tickers are treated as cash (contribute 0 to variance, weight still counted in total).</p>
+
+<table>
+<thead><tr>
+<th>Metric</th>
+<th class="text-right">Tier 2 (current)</th>
+<th class="text-right">Tier 1 (drop &lt; 90%)</th>
+</tr></thead>
+<tbody>
+<tr><td>Tradable tickers used</td><td class="num">53</td><td class="num">51</td></tr>
+<tr><td>Tickers dropped as short-history</td><td class="num">0</td><td class="num">2</td></tr>
+<tr><td>Aligned observations</td><td class="num">264</td><td class="num">364</td></tr>
+<tr><td>Observation window</td><td class="num">2025-03-31 → 2026-04-17</td><td class="num">2024-11-01 → 2026-04-17</td></tr>
+<tr><td>Portfolio annualised &sigma;</td><td class="num">31.84%</td><td class="num">31.13%</td></tr>
+<tr><td>SPY annualised &sigma;</td><td class="num">18.77%</td><td class="num">17.84%</td></tr>
+<tr><td>QQQ annualised &sigma;</td><td class="num">22.31%</td><td class="num">21.91%</td></tr>
+<tr><td>Portfolio &beta; vs SPY</td><td class="num">1.547</td><td class="num">1.553</td></tr>
+<tr><td>Portfolio &beta; vs QQQ</td><td class="num">1.363</td><td class="num">1.343</td></tr>
+<tr><td>Portfolio &rho; vs SPY</td><td class="num">0.911</td><td class="num">0.890</td></tr>
+<tr><td>Portfolio &rho; vs QQQ</td><td class="num">0.954</td><td class="num">0.945</td></tr>
+</tbody>
+</table>
+
+<h4 style="margin-top:16px;color:#2e5c9a;font-size:13px;">Tickers dropped under Tier 1 filter</h4>
+<table>
+<thead><tr>
+<th>Symbol</th>
+<th class="text-right">Days of cached history</th>
+<th class="text-right">CSV Weight</th>
+</tr></thead>
+<tbody>
+<tr><td>SNDK</td><td class='num'>294</td><td class='num'>1.51%</td></tr>
+<tr><td>CRWV</td><td class='num'>264</td><td class='num'>0.34%</td></tr>
+</tbody>
+</table>
+</div>
+<div class="card">
 <h3>Cash / Zero-Volatility Positions</h3>
 <table>
 <caption>10 cash / zero-vol positions</caption>
