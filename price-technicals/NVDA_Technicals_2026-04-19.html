@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Market Research Reports</title>
+<title>NVDA — Price Technicals</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -51,22 +51,57 @@
   footer { margin-top: 32px; padding-top: 12px;
            border-top: 1px solid #dde3ec; color: #6b7a8d;
            font-size: 11px; text-align: center; }
+
+  /* report_and_publish additions */
+  .at-a-glance ol { margin-left: 20px; }
+  .at-a-glance li { margin: 4px 0; }
+  .theme-card { background: #fff; border-radius: 6px; padding: 18px 20px;
+                margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .theme-card h3 { margin-top: 0; }
+  .theme-card .detail { margin: 8px 0 12px; }
+  .theme-card ul { margin-left: 20px; }
+  .source-table { font-size: 11px; margin: 8px 0 4px; }
+  .source-table td, .source-table th { padding: 4px 8px; }
+  .tier-label { font-size: 13px; color: #2e5c9a; font-weight: 600;
+                margin: 16px 0 6px; }
+  .exec-summary p { margin: 6px 0; }
+  .report-footer { font-size: 10px; color: #6b7a8d; margin-top: 30px;
+                   border-top: 1px solid #dde3ec; padding-top: 10px; }
+
 </style>
 </head>
 <body>
 <header>
-  <h1>Market Research Reports</h1>
-  <div class='subtitle'>MainStreet — GitHub Pages</div>
+  <h1>NVDA — Price Technicals</h1>
+  <div class='subtitle'>Latest close $721.33 on 2026-04-17</div>
 </header>
 <div class="container">
 <main>
-<h2>Available Report Categories</h2>
-<p class="text-muted">HTML reports published by Market Research Skills</p>
+<div class='card exec-summary'>
+<p><b>NVDA</b> closed at <b>$721.33</b> on 2026-04-17. Moving averages: 50, 200-day. Cross status: <b>50MA > 200MA  (Bullish)</b>.</p>
+</div>
+<div class='image'><img src='NVDA_Technicals_chart_2026-04-19.png' style='max-width:100%' />
+<div class='text-muted'>NVDA — price, moving averages, returns, statistics</div>
+</div>
+<h3>Returns by Period</h3>
 <table>
-<thead><tr><th>Skill</th><th>Reports</th><th>Latest</th></tr></thead>
-<tbody>
-<tr><td><a href="etf-holdings/index.html">etf-holdings</a></td><td class="num">2</td><td>2026-04-19 19:13</td></tr><tr><td><a href="fmp-data/index.html">fmp-data</a></td><td class="num">1</td><td>2026-04-19 19:06</td></tr><tr><td><a href="fmp-global/index.html">fmp-global</a></td><td class="num">1</td><td>2026-04-19 19:04</td></tr><tr><td><a href="price-technicals/index.html">price-technicals</a></td><td class="num">1</td><td>2026-04-19 19:17</td></tr><tr><td><a href="substack-articles/index.html">substack-articles</a></td><td class="num">2</td><td>2026-04-15 08:43</td></tr><tr><td><a href="ticker-news-tldr/index.html">ticker-news-tldr</a></td><td class="num">3</td><td>2026-04-19 10:55</td></tr><tr><td><a href="tldr-general/index.html">tldr-general</a></td><td class="num">1</td><td>2026-04-19 10:29</td></tr><tr><td><a href="web-articles/index.html">web-articles</a></td><td class="num">2</td><td>2026-04-19 09:58</td></tr><tr><td><a href="youtube-transcripts/index.html">youtube-transcripts</a></td><td class="num">1</td><td>2026-04-19 10:18</td></tr>
-</tbody></table>
+<tr><th>Period</th><th>Return</th></tr>
+<tr><td>WTD</td><td>+1.30%</td></tr>
+<tr><td>MTD</td><td>+22.56%</td></tr>
+<tr><td>QTD</td><td>+22.56%</td></tr>
+<tr><td>YTD</td><td>+152.94%</td></tr>
+<tr><td>1M</td><td>+39.82%</td></tr>
+<tr><td>3M</td><td>+123.38%</td></tr>
+<tr><td>6M</td><td>+251.03%</td></tr>
+<tr><td>1Y</td><td>+606.36%</td></tr>
+</table>
+<h3>Cross Detection</h3>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>type</td><td>above</td></tr>
+<tr><td>recent_event</td><td>False</td></tr>
+</table>
+<div class='report-footer'>Skill: price-technicals • Schema v1 • ticker: NVDA • latest_date: 2026-04-17</div>
 </main>
 <footer>Generated 2026-04-19 19:17 &mdash; Market Research Skills</footer>
 </div>
