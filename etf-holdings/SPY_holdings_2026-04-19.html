@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPY — ETF Holdings</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+         "Helvetica Neue", Arial, sans-serif;
+         background: #f4f6f9; color: #1a2b4a; line-height: 1.5;
+         font-size: 13px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; }
+  header { background: #1a2b4a; color: #fff; padding: 20px 24px;
+            margin-bottom: 24px; }
+  header h1 { font-size: 20px; font-weight: 600; margin: 0; }
+  header .subtitle { color: #a0b4d0; font-size: 12px; margin-top: 4px; }
+  h2 { color: #1a2b4a; font-size: 15px; margin: 28px 0 10px;
+       border-bottom: 2px solid #2e5c9a; padding-bottom: 4px; }
+  h3 { color: #2e5c9a; font-size: 14px; margin: 20px 0 8px; }
+
+  /* Tables */
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px;
+           font-size: 12px; }
+  th { background: #2e5c9a; color: #fff; padding: 7px 10px;
+       text-align: left; font-size: 11px; text-transform: uppercase;
+       letter-spacing: 0.5px; }
+  td { padding: 6px 10px; border-bottom: 1px solid #dde3ec; }
+  tr:nth-child(even) { background: #f0f3f8; }
+  tr:hover { background: #e4eaf4; }
+  caption { text-align: left; font-weight: 600; color: #1a2b4a;
+            margin-bottom: 6px; font-size: 13px; }
+
+  /* Cards / sections */
+  .card { background: #fff; border-radius: 6px; padding: 18px 20px;
+           margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .card h3 { margin-top: 0; }
+
+  /* Utility */
+  .text-muted { color: #6b7a8d; font-size: 11px; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+  a { color: #2e5c9a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tag { display: inline-block; background: #e8edf5; color: #2e5c9a;
+          padding: 2px 8px; border-radius: 3px; font-size: 11px;
+          margin: 2px 2px; }
+
+  /* Footer */
+  footer { margin-top: 32px; padding-top: 12px;
+           border-top: 1px solid #dde3ec; color: #6b7a8d;
+           font-size: 11px; text-align: center; }
+
+  /* report_and_publish additions */
+  .at-a-glance ol { margin-left: 20px; }
+  .at-a-glance li { margin: 4px 0; }
+  .theme-card { background: #fff; border-radius: 6px; padding: 18px 20px;
+                margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .theme-card h3 { margin-top: 0; }
+  .theme-card .detail { margin: 8px 0 12px; }
+  .theme-card ul { margin-left: 20px; }
+  .source-table { font-size: 11px; margin: 8px 0 4px; }
+  .source-table td, .source-table th { padding: 4px 8px; }
+  .tier-label { font-size: 13px; color: #2e5c9a; font-weight: 600;
+                margin: 16px 0 6px; }
+  .exec-summary p { margin: 6px 0; }
+  .report-footer { font-size: 10px; color: #6b7a8d; margin-top: 30px;
+                   border-top: 1px solid #dde3ec; padding-top: 10px; }
+
+</style>
+</head>
+<body>
+<header>
+  <h1>SPY — ETF Holdings</h1>
+  <div class='subtitle'>SPY • SPDR S&amp;P 500 ETF Trust • State Street • fetched 2026-04-19T10:00:00</div>
+</header>
+<div class="container">
+<main>
+<div class='card exec-summary'>
+<p><b>SPY — 12 holdings</b> across 11 sector categories. Data sources: yfinance, stockanalysis.com.</p>
+</div>
+<h3>Fund Overview</h3>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>Name</td><td>SPDR S&amp;P 500 ETF Trust</td></tr>
+<tr><td>Family</td><td>State Street</td></tr>
+<tr><td>AUM</td><td>$651.00B</td></tr>
+<tr><td>Expense Ratio</td><td>9.45%</td></tr>
+<tr><td>Category</td><td>Large Blend</td></tr>
+<tr><td>Yield</td><td>1.24%</td></tr>
+<tr><td>NAV</td><td>591.42</td></tr>
+</table>
+<h3>Sector Weights</h3>
+<table>
+<tr><th>Sector</th><th>Weight</th></tr>
+<tr><td>Technology</td><td>32.40%</td></tr>
+<tr><td>Financials</td><td>13.20%</td></tr>
+<tr><td>Healthcare</td><td>11.80%</td></tr>
+<tr><td>Consumer Discretionary</td><td>10.50%</td></tr>
+<tr><td>Communication Services</td><td>9.10%</td></tr>
+<tr><td>Industrials</td><td>8.30%</td></tr>
+<tr><td>Consumer Staples</td><td>5.80%</td></tr>
+<tr><td>Energy</td><td>3.60%</td></tr>
+<tr><td>Utilities</td><td>2.40%</td></tr>
+<tr><td>Real Estate</td><td>1.60%</td></tr>
+<tr><td>Materials</td><td>1.30%</td></tr>
+</table>
+<h3>Holdings (12)</h3>
+<table>
+<tr><th>#</th><th>Symbol</th><th>Name</th><th>Weight</th><th>Sector</th></tr>
+<tr><td>1</td><td>NVDA</td><td>NVIDIA Corp</td><td>7.82%</td><td>Technology</td></tr>
+<tr><td>2</td><td>AAPL</td><td>Apple Inc</td><td>6.45%</td><td>Technology</td></tr>
+<tr><td>3</td><td>MSFT</td><td>Microsoft Corp</td><td>6.12%</td><td>Technology</td></tr>
+<tr><td>4</td><td>AMZN</td><td>Amazon.com Inc</td><td>4.03%</td><td>Consumer Discretionary</td></tr>
+<tr><td>5</td><td>META</td><td>Meta Platforms Inc</td><td>2.68%</td><td>Communication Services</td></tr>
+<tr><td>6</td><td>GOOGL</td><td>Alphabet Inc Class A</td><td>2.31%</td><td>Communication Services</td></tr>
+<tr><td>7</td><td>GOOG</td><td>Alphabet Inc Class C</td><td>1.95%</td><td>Communication Services</td></tr>
+<tr><td>8</td><td>AVGO</td><td>Broadcom Inc</td><td>1.87%</td><td>Technology</td></tr>
+<tr><td>9</td><td>TSLA</td><td>Tesla Inc</td><td>1.65%</td><td>Consumer Discretionary</td></tr>
+<tr><td>10</td><td>BRK.B</td><td>Berkshire Hathaway Inc</td><td>1.48%</td><td>Financials</td></tr>
+<tr><td>11</td><td>JPM</td><td>JPMorgan Chase &amp; Co</td><td>1.41%</td><td>Financials</td></tr>
+<tr><td>12</td><td>LLY</td><td>Eli Lilly &amp; Co</td><td>1.12%</td><td>Healthcare</td></tr>
+</table>
+<div class='report-footer'>Skill: etf-holdings • Schema v1 • ticker: SPY • holdings_count: 12 • fetched_at: 2026-04-19T10:00:00</div>
+</main>
+<footer>Generated 2026-04-19 19:13 &mdash; Market Research Skills</footer>
+</div>
+</body>
+</html>
