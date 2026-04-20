@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FMP Watchlist Metrics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+         "Helvetica Neue", Arial, sans-serif;
+         background: #f4f6f9; color: #1a2b4a; line-height: 1.5;
+         font-size: 13px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; }
+  header { background: #1a2b4a; color: #fff; padding: 20px 24px;
+            margin-bottom: 24px; }
+  header h1 { font-size: 20px; font-weight: 600; margin: 0; }
+  header .subtitle { color: #a0b4d0; font-size: 12px; margin-top: 4px; }
+  h2 { color: #1a2b4a; font-size: 15px; margin: 28px 0 10px;
+       border-bottom: 2px solid #2e5c9a; padding-bottom: 4px; }
+  h3 { color: #2e5c9a; font-size: 14px; margin: 20px 0 8px; }
+
+  /* Tables */
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px;
+           font-size: 12px; }
+  th { background: #2e5c9a; color: #fff; padding: 7px 10px;
+       text-align: left; font-size: 11px; text-transform: uppercase;
+       letter-spacing: 0.5px; }
+  td { padding: 6px 10px; border-bottom: 1px solid #dde3ec; }
+  tr:nth-child(even) { background: #f0f3f8; }
+  tr:hover { background: #e4eaf4; }
+  caption { text-align: left; font-weight: 600; color: #1a2b4a;
+            margin-bottom: 6px; font-size: 13px; }
+
+  /* Cards / sections */
+  .card { background: #fff; border-radius: 6px; padding: 18px 20px;
+           margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .card h3 { margin-top: 0; }
+
+  /* Utility */
+  .text-muted { color: #6b7a8d; font-size: 11px; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+  a { color: #2e5c9a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tag { display: inline-block; background: #e8edf5; color: #2e5c9a;
+          padding: 2px 8px; border-radius: 3px; font-size: 11px;
+          margin: 2px 2px; }
+
+  /* Footer */
+  footer { margin-top: 32px; padding-top: 12px;
+           border-top: 1px solid #dde3ec; color: #6b7a8d;
+           font-size: 11px; text-align: center; }
+
+  /* report_and_publish additions */
+  .at-a-glance ol { margin-left: 20px; }
+  .at-a-glance li { margin: 4px 0; }
+  .theme-card { background: #fff; border-radius: 6px; padding: 18px 20px;
+                margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .theme-card h3 { margin-top: 0; }
+  .theme-card .detail { margin: 8px 0 12px; }
+  .theme-card ul { margin-left: 20px; }
+  .source-table { font-size: 11px; margin: 8px 0 4px; }
+  .source-table td, .source-table th { padding: 4px 8px; }
+  .tier-label { font-size: 13px; color: #2e5c9a; font-weight: 600;
+                margin: 16px 0 6px; }
+  .exec-summary p { margin: 6px 0; }
+  .report-footer { font-size: 10px; color: #6b7a8d; margin-top: 30px;
+                   border-top: 1px solid #dde3ec; padding-top: 10px; }
+
+</style>
+</head>
+<body>
+<header>
+  <h1>FMP Watchlist Metrics</h1>
+  <div class='subtitle'>2 tickers • fetched 2026-04-19 09:45:00+00:00 • built 2026-04-19</div>
+</header>
+<div class="container">
+<main>
+<div class='card exec-summary'>
+<p><b>FMP watchlist metrics report</b>. Tickers (2): AVGO · NVDA. Data fetched 2026-04-19 09:45:00+00:00.</p>
+</div>
+<h3>Valuation</h3>
+<table>
+<tr><th>Metric</th><th>AVGO</th><th>NVDA</th></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Trailing P/E&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;TTM earnings multiple&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;PEG (TTM)&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;&lt; 1.0 = undervalued vs. growth&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Fwd PEG&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Forward growth-adjusted multiple&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;EV / EBITDA&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Enterprise value vs. operating earnings&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;EV / FCF&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Cleaner lens; strips non-cash charges&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Price / Sales&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Revenue multiple&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Price / FCF&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Cash generation vs. market price&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+</table>
+<h3>Growth</h3>
+<table>
+<tr><th>Metric</th><th>AVGO</th><th>NVDA</th></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Revenue YoY&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Most recent fiscal year&lt;/font&gt;&quot;}</td><td>28.0%</td><td>94.0%</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;EPS YoY&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Earnings per share growth&lt;/font&gt;&quot;}</td><td>41.0%</td><td>112.0%</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Gross Profit YoY&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Outpacing revenue = margin expansion&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Fwd Revenue&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Consensus analyst estimate&lt;/font&gt;&quot;}</td><td>$65.00B</td><td>$220.00B</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Fwd EPS&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Consensus analyst estimate&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+</table>
+<h3>Financial Health</h3>
+<table>
+<tr><th>Metric</th><th>AVGO</th><th>NVDA</th></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Debt / Equity&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;&lt; 1.0 preferred; context-dependent&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Interest Coverage&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;&gt; 3x = comfortable debt servicing&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Current Ratio&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;&gt; 1.5 = healthy short-term liquidity&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;FCF / Share&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;TTM free cash flow per diluted share&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;FCF Yield&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Higher = more cash return potential&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+</table>
+<h3>Profitability</h3>
+<table>
+<tr><th>Metric</th><th>AVGO</th><th>NVDA</th></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Gross Margin&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Revenue minus COGS&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Operating Margin&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;After opex; before interest &amp; tax&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Net Margin&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Bottom-line profitability&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;ROE&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Return on shareholders&#x27; equity&lt;/font&gt;&quot;}</td><td>42.0%</td><td>89.0%</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;ROIC&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Return on invested capital&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+</table>
+<h3>Efficiency &amp; Spend</h3>
+<table>
+<tr><th>Metric</th><th>AVGO</th><th>NVDA</th></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;R&amp;D % Revenue&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Innovation investment intensity&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;SG&amp;A % Revenue&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Declining % = operating leverage&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;SBC % Revenue&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Dilution risk; watch for normalization&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+</table>
+<h3>Analyst Consensus</h3>
+<table>
+<tr><th>Metric</th><th>AVGO</th><th>NVDA</th></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Avg Price Target&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Consensus analyst target&lt;/font&gt;&quot;}</td><td>$1950.00</td><td>$225.00</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;High / Low Target&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Range of analyst targets&lt;/font&gt;&quot;}</td><td>$2200.0 / $1650.0</td><td>$260.0 / $175.0</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Median Target&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Median analyst target&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;EPS Surprise (Last Q)&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Actual vs. consensus estimate&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+</table>
+<h3>Shares &amp; Float</h3>
+<table>
+<tr><th>Metric</th><th>AVGO</th><th>NVDA</th></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Free Float %&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;% of shares available to trade&lt;/font&gt;&quot;}</td><td>0.9%</td><td>1.0%</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Float Shares&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Publicly tradable shares (millions)&lt;/font&gt;&quot;}</td><td>4650M</td><td>24500M</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Outstanding Shares&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Total shares outstanding (millions)&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+</table>
+<h3>Dcf &amp; Rating</h3>
+<table>
+<tr><th>Metric</th><th>AVGO</th><th>NVDA</th></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;DCF Value&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;FMP intrinsic value estimate&lt;/font&gt;&quot;}</td><td>$1920.00</td><td>$210.00</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Current Price (DCF)&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Price used in DCF calculation&lt;/font&gt;&quot;}</td><td>$1842.30</td><td>$182.45</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;DCF Upside / Down&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;+ = potentially undervalued vs DCF&lt;/font&gt;&quot;}</td><td>+4.2%</td><td>+15.1%</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;FMP Rating&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;A=Strong Buy → F=Strong Sell&lt;/font&gt;&quot;}</td><td>A</td><td>A+</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Rating Score&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Composite score out of 5&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+</table>
+<h3>Insider Activity</h3>
+<table>
+<tr><th>Metric</th><th>AVGO</th><th>NVDA</th></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Last Insider&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Most recent Form 4 filer &amp; transaction type&lt;/font&gt;&quot;}</td><td>Hock Tan | Buy</td><td>Jensen Huang | Sale</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Shares Transacted&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Shares bought or sold in last filing&lt;/font&gt;&quot;}</td><td>5,000</td><td>120,000</td></tr>
+</table>
+<h3>Revenue Breakdown</h3>
+<table>
+<tr><th>Metric</th><th>AVGO</th><th>NVDA</th></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Top Segment&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Largest product segment &amp; % of total&lt;/font&gt;&quot;}</td><td>AI Networking (54%)</td><td>Data Center (87%)</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;US Revenue %&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;% of revenue from United States&lt;/font&gt;&quot;}</td><td>46%</td><td>57%</td></tr>
+</table>
+<h3>Executive Comp</h3>
+<table>
+<tr><th>Metric</th><th>AVGO</th><th>NVDA</th></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Top Executive&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;CEO or highest-paid executive&lt;/font&gt;&quot;}</td><td>Hock Tan</td><td>Jensen Huang</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Total Compensation&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Most recent annual total comp&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+</table>
+<h3>90-Day Price Action</h3>
+<table>
+<tr><th>Metric</th><th>AVGO</th><th>NVDA</th></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;90-Day High&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Highest closing price, past 90 days&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;90-Day Low&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Lowest closing price, past 90 days&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;90-Day Return&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Price change: oldest to newest close&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Daily StdDev (Returns)&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Std dev of all daily % returns (day-over-day price change)&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Annualized Volatility&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Daily StdDev × √252 — standard annualized vol&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Upside Deviation&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Std dev of positive-return days only&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Downside Deviation&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;Std dev of negative-return days only&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Upside Semi-Dev&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;√(semi-variance above full mean ÷ n total)&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>{&#x27;rl&#x27;: &quot;&lt;b&gt;Downside Semi-Dev&lt;/b&gt;&lt;br/&gt;&lt;font size=&#x27;7&#x27; color=&#x27;#888888&#x27;&gt;√(semi-variance below full mean ÷ n total)&lt;/font&gt;&quot;}</td><td>N/A</td><td>N/A</td></tr>
+</table>
+<div class='report-footer'>Skill: fmp-data • Schema v1 • tickers: 2 • fetched_at: 2026-04-19 09:45:00+00:00</div>
+</main>
+<footer>Generated 2026-04-19 19:06 &mdash; Market Research Skills</footer>
+</div>
+</body>
+</html>
