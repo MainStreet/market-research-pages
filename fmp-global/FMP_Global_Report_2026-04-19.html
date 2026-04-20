@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FMP Global Market Snapshot</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+         "Helvetica Neue", Arial, sans-serif;
+         background: #f4f6f9; color: #1a2b4a; line-height: 1.5;
+         font-size: 13px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; }
+  header { background: #1a2b4a; color: #fff; padding: 20px 24px;
+            margin-bottom: 24px; }
+  header h1 { font-size: 20px; font-weight: 600; margin: 0; }
+  header .subtitle { color: #a0b4d0; font-size: 12px; margin-top: 4px; }
+  h2 { color: #1a2b4a; font-size: 15px; margin: 28px 0 10px;
+       border-bottom: 2px solid #2e5c9a; padding-bottom: 4px; }
+  h3 { color: #2e5c9a; font-size: 14px; margin: 20px 0 8px; }
+
+  /* Tables */
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px;
+           font-size: 12px; }
+  th { background: #2e5c9a; color: #fff; padding: 7px 10px;
+       text-align: left; font-size: 11px; text-transform: uppercase;
+       letter-spacing: 0.5px; }
+  td { padding: 6px 10px; border-bottom: 1px solid #dde3ec; }
+  tr:nth-child(even) { background: #f0f3f8; }
+  tr:hover { background: #e4eaf4; }
+  caption { text-align: left; font-weight: 600; color: #1a2b4a;
+            margin-bottom: 6px; font-size: 13px; }
+
+  /* Cards / sections */
+  .card { background: #fff; border-radius: 6px; padding: 18px 20px;
+           margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .card h3 { margin-top: 0; }
+
+  /* Utility */
+  .text-muted { color: #6b7a8d; font-size: 11px; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+  a { color: #2e5c9a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tag { display: inline-block; background: #e8edf5; color: #2e5c9a;
+          padding: 2px 8px; border-radius: 3px; font-size: 11px;
+          margin: 2px 2px; }
+
+  /* Footer */
+  footer { margin-top: 32px; padding-top: 12px;
+           border-top: 1px solid #dde3ec; color: #6b7a8d;
+           font-size: 11px; text-align: center; }
+
+  /* report_and_publish additions */
+  .at-a-glance ol { margin-left: 20px; }
+  .at-a-glance li { margin: 4px 0; }
+  .theme-card { background: #fff; border-radius: 6px; padding: 18px 20px;
+                margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .theme-card h3 { margin-top: 0; }
+  .theme-card .detail { margin: 8px 0 12px; }
+  .theme-card ul { margin-left: 20px; }
+  .source-table { font-size: 11px; margin: 8px 0 4px; }
+  .source-table td, .source-table th { padding: 4px 8px; }
+  .tier-label { font-size: 13px; color: #2e5c9a; font-weight: 600;
+                margin: 16px 0 6px; }
+  .exec-summary p { margin: 6px 0; }
+  .report-footer { font-size: 10px; color: #6b7a8d; margin-top: 30px;
+                   border-top: 1px solid #dde3ec; padding-top: 10px; }
+
+</style>
+</head>
+<body>
+<header>
+  <h1>FMP Global Market Snapshot</h1>
+  <div class='subtitle'>Market-wide FMP data • fetched 2026-04-19T09:45:00Z • built 2026-04-19</div>
+</header>
+<div class="container">
+<main>
+<div class='card exec-summary'>
+<p><b>Global FMP market snapshot</b>. Data fetched 2026-04-19T09:45:00Z. General news: 4 &bull; Forex news: 2 &bull; Crypto news: 2 &bull; Analyst actions: 3 &bull; Indexes: 4 &bull; Commodities: 4 &bull; Sectors: 6 &bull; Industries: 5</p>
+</div>
+<h3>General Market News</h3>
+<table>
+<tr><th>Date</th><th>Headline</th><th>Excerpt</th></tr>
+<tr><td>2026-04-19</td><td><a href='https://example.com/news1' target='_blank'>US equities close at record highs as Iran war drawdown erased</a> <span class='text-muted'>— Reuters</span></td><td>S&amp;P 500 closed within 1% of all-time highs as the NASDAQ extended its winning streak to 13 sessions. Growth trade leadership restored.</td></tr>
+<tr><td>2026-04-18</td><td><a href='https://example.com/news2' target='_blank'>IEA warns Europe could run out of jet fuel in six weeks</a> <span class='text-muted'>— Bloomberg</span></td><td>Middle East refineries produce more jet fuel than any other region; Europe sources bulk of supply from Hormuz flows.</td></tr>
+<tr><td>2026-04-18</td><td><a href='https://example.com/news3' target='_blank'>Google-Pentagon Gemini deal expands defense AI TAM</a> <span class='text-muted'>— The Information</span></td><td>Alphabet has entered deal talks to deploy Gemini in classified Pentagon systems, filling the void Anthropic left.</td></tr>
+<tr><td>2026-04-17</td><td><a href='https://example.com/news4' target='_blank'>NVIDIA $1T order book signals no cracks in AI capex</a> <span class='text-muted'>— Bloomberg</span></td><td>NVIDIA order book has doubled to $1T from $500B; Vera Rubin architecture on track for H2 2026.</td></tr>
+</table>
+<h3>Analyst Upgrades &amp; Downgrades</h3>
+<table>
+<tr><th>Date</th><th>Symbol</th><th>Analyst</th><th>Action</th><th>From → To</th></tr>
+<tr><td>2026-04-19</td><td>NVDA</td><td>Wedbush</td><td>Upgrade</td><td>Outperform → Strong Buy</td></tr>
+<tr><td>2026-04-18</td><td>NFLX</td><td>Morgan Stanley</td><td>Downgrade</td><td>Overweight → Equal-Weight</td></tr>
+<tr><td>2026-04-17</td><td>GOOGL</td><td>JPMorgan</td><td>Upgrade</td><td>Neutral → Overweight</td></tr>
+</table>
+<h3>Forex News</h3>
+<table>
+<tr><th>Date</th><th>Headline</th><th>Excerpt</th></tr>
+<tr><td>2026-04-19</td><td><a href='https://example.com/fx1' target='_blank'>USD slides as Iran ceasefire holds; EUR/USD tests 1.12</a> <span class='text-muted'>— FX Street</span></td><td>Dollar index fell on risk-on flows.</td></tr>
+<tr><td>2026-04-18</td><td><a href='https://example.com/fx2' target='_blank'>JPY strengthens on BoJ hawkish signals</a> <span class='text-muted'>— Reuters</span></td><td>USD/JPY fell to 148 on BoJ commentary.</td></tr>
+</table>
+<h3>Crypto News</h3>
+<table>
+<tr><th>Date</th><th>Headline</th><th>Excerpt</th></tr>
+<tr><td>2026-04-19</td><td><a href='https://example.com/cr1' target='_blank'>BTC tops $110K as risk-on extends to crypto</a> <span class='text-muted'>— CoinDesk</span></td><td>Bitcoin hit a fresh all-time high as equities rallied.</td></tr>
+<tr><td>2026-04-18</td><td><a href='https://example.com/cr2' target='_blank'>ETH/BTC ratio declines despite BTC strength</a> <span class='text-muted'>— The Block</span></td><td>Ether continues to lag bitcoin in the cycle.</td></tr>
+</table>
+<h3>Market Indexes</h3>
+<table>
+<tr><th>Symbol</th><th>Name</th><th>Price</th><th>Change %</th></tr>
+<tr><td>^GSPC</td><td>S&amp;P 500</td><td>7,012.45</td><td>+0.85%</td></tr>
+<tr><td>^IXIC</td><td>NASDAQ Composite</td><td>22,841.67</td><td>+1.52%</td></tr>
+<tr><td>^DJI</td><td>Dow Jones Industrial Average</td><td>45,123.89</td><td>+0.34%</td></tr>
+<tr><td>^RUT</td><td>Russell 2000</td><td>2,412.34</td><td>+2.11%</td></tr>
+</table>
+<h3>Commodities</h3>
+<table>
+<tr><th>Symbol</th><th>Name</th><th>Price</th><th>Change %</th></tr>
+<tr><td>CLUSD</td><td>Crude Oil WTI</td><td>87.45</td><td>-3.12%</td></tr>
+<tr><td>BZUSD</td><td>Brent Crude</td><td>89.67</td><td>-2.87%</td></tr>
+<tr><td>GCUSD</td><td>Gold</td><td>2,654.30</td><td>+0.45%</td></tr>
+<tr><td>SIUSD</td><td>Silver</td><td>32.89</td><td>+1.23%</td></tr>
+</table>
+<h3>Available Sectors</h3>
+<table>
+<tr><th>Sector</th></tr>
+<tr><td>Technology</td></tr>
+<tr><td>Healthcare</td></tr>
+<tr><td>Financial Services</td></tr>
+<tr><td>Consumer Discretionary</td></tr>
+<tr><td>Energy</td></tr>
+<tr><td>Industrials</td></tr>
+</table>
+<h3>Available Industries</h3>
+<table>
+<tr><th>Industry</th></tr>
+<tr><td>Semiconductors</td></tr>
+<tr><td>Software—Infrastructure</td></tr>
+<tr><td>Internet Content &amp; Information</td></tr>
+<tr><td>Banks—Diversified</td></tr>
+<tr><td>Oil &amp; Gas Integrated</td></tr>
+</table>
+<div class='report-footer'>Skill: fmp-global • Schema v1 • fetched_at: 2026-04-19T09:45:00Z</div>
+</main>
+<footer>Generated 2026-04-19 19:04 &mdash; Market Research Skills</footer>
+</div>
+</body>
+</html>
