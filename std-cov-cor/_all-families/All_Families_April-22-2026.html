@@ -56,7 +56,7 @@
 <body>
 <header>
   <h1>All Families Snapshot — April-22-2026</h1>
-  <div class='subtitle'>6 families analysed · 1 skipped · sorted by annualised σ ascending</div>
+  <div class='subtitle'>5 families analysed · 1 skipped · sorted by annualised σ ascending</div>
 </header>
 <div class="container">
 <main>
@@ -146,20 +146,6 @@
 <td>0.945</td>
 <td><a href="../FIaco/Portfolio_Risk_April-22-2026.html">per-family</a></td>
 </tr>
-<tr>
-<td>adhoc</td>
-<td>2</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>365</td>
-<td>39.16%</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td><a href="../adhoc/Portfolio_Risk_April-22-2026.html">per-family</a></td>
-</tr>
 </tbody></table>
 <div class="card">
 <h3>Families skipped</h3>
@@ -177,16 +163,15 @@
 </div>
 <div class="card">
 <h3>AI Observations</h3>
-<ul style='padding-left: 20px'><li>FIaco is the highest-volatility portfolio at 31.74% annualized std, driven by both elevated beta to SPY (1.576) and structural idiosyncratic risk; its lower SPY correlation (0.891) versus peers suggests 62 positions and 2 dropped holdings contain concentrated sector bets or illiquid names not fully explained by market beta.</li>
-<li>FGaal shows the strongest SPY beta (1.598) among fully-invested families despite only 28.98% volatility, paired with exceptionally high SPY and QQQ correlations (0.989 and 0.988 respectively), indicating its 38-position portfolio is almost purely beta-driven with minimal diversifiable idiosyncratic risk.</li>
-<li>FSulv is the lowest-volatility family at 22.13% with the weakest SPY beta (1.206), suggesting either meaningful cash drag (4 cash positions out of 26 total) or deliberate underweight to systematic equity exposure; its 0.978 SPY correlation confirms beta-alignment without idiosyncratic noise.</li>
-<li>FIaco and FJona both carry QQQ betas (1.362 and 1.093) substantially higher than their SPY betas (1.576 and 1.299), but FIaco&#x27;s SPY-correlation gap (0.891 vs 0.945 for QQQ) suggests a portfolio skewed toward concentrated growth exposure with poor broad-market diversification, while FJona remains well-balanced.</li>
-<li>Adhoc portfolio is an outlier with 39.16% volatility on only 2 tradable positions and no benchmark beta/correlation data, signaling either extreme concentration, recent illiquidity, or short-history spike in volatility requiring immediate investigation.</li>
-<li>Risk spread across named families (FSulv to FIaco) spans 9.6 percentage points of annualized volatility; approximately 60–70% of this spread is explained by beta differences (SPY betas range 1.206 to 1.598), with the remainder attributable to idiosyncratic factors and cash positioning.</li>
-<li>FAnna occupies the middle ground with 26.15% volatility and 1.385 SPY beta, but at only 15 positions (13 tradable) it faces higher single-name risk; its high QQQ correlation (0.984) despite smaller portfolio suggests concentrated tech/growth tilt rather than broad diversification.</li></ul>
+<ul style='padding-left: 20px'><li>FIaco exhibits the highest volatility at 31.74% annualized with 62 positions, yet its SPY correlation (0.891) is notably lowest among all families, indicating substantial idiosyncratic risk despite beta_SPY of 1.576—suggesting concentrated bets or sector tilts decoupled from broad market movements.</li>
+<li>FGaal shows the second-highest volatility (28.98%) with the strongest systematic linkage: beta_SPY of 1.598 and correlation of 0.989, meaning 98.9% of its risk is explained by SPY movements, making it the most &#x27;pure beta&#x27; portfolio despite only 33 tradable positions across 38 holdings.</li>
+<li>FSulv is the lowest-volatility portfolio at 22.13% with balanced tech exposure: beta_QQQ of 0.993 nearly matches beta_SPY of 1.206, and exceptionally high correlations to both benchmarks (0.978 SPY, 0.989 QQQ) indicate very tight tracking with minimal idiosyncratic noise across 22 tradable positions.</li>
+<li>FAnna and FJona bracket the mid-risk cohort (24.54%–26.15% volatility) with similar SPY correlations (~0.95), but FAnna&#x27;s higher beta_SPY (1.385 vs 1.299) and larger concentrated portfolio (13 tradable vs 20) suggests greater leverage to broad market moves rather than diversification benefit.</li>
+<li>FIaco&#x27;s 2 dropped positions and 11 cash holdings (18% of total) alongside its 31.74% volatility and weak SPY correlation (0.891) warrant review—the combination suggests either defensive cash drag masking volatile core holdings or unresolved positions creating calculation noise.</li>
+<li>Beta-driven clustering dominates: all five families cluster tightly on QQQ correlation (0.945–0.988), with FIaco the outlier on SPY correlation, implying the portfolios are predominantly long-growth/tech-tilted with minimal cross-family diversification benefits at this measurement date.</li></ul>
 </div>
 </main>
-<footer>Generated 2026-04-22 15:11 &mdash; Market Research Skills</footer>
+<footer>Generated 2026-04-22 15:18 &mdash; Market Research Skills</footer>
 </div>
 </body>
 </html>
