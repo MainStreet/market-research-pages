@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Families Time-Series</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+         "Helvetica Neue", Arial, sans-serif;
+         background: #f4f6f9; color: #1a2b4a; line-height: 1.5;
+         font-size: 13px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; }
+  header { background: #1a2b4a; color: #fff; padding: 20px 24px;
+            margin-bottom: 24px; }
+  header h1 { font-size: 20px; font-weight: 600; margin: 0; }
+  header .subtitle { color: #a0b4d0; font-size: 12px; margin-top: 4px; }
+  h2 { color: #1a2b4a; font-size: 15px; margin: 28px 0 10px;
+       border-bottom: 2px solid #2e5c9a; padding-bottom: 4px; }
+  h3 { color: #2e5c9a; font-size: 14px; margin: 20px 0 8px; }
+
+  /* Tables */
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px;
+           font-size: 12px; }
+  th { background: #2e5c9a; color: #fff; padding: 7px 10px;
+       text-align: left; font-size: 11px; text-transform: uppercase;
+       letter-spacing: 0.5px; }
+  td { padding: 6px 10px; border-bottom: 1px solid #dde3ec; }
+  tr:nth-child(even) { background: #f0f3f8; }
+  tr:hover { background: #e4eaf4; }
+  caption { text-align: left; font-weight: 600; color: #1a2b4a;
+            margin-bottom: 6px; font-size: 13px; }
+
+  /* Cards / sections */
+  .card { background: #fff; border-radius: 6px; padding: 18px 20px;
+           margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .card h3 { margin-top: 0; }
+
+  /* Utility */
+  .text-muted { color: #6b7a8d; font-size: 11px; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+  a { color: #2e5c9a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tag { display: inline-block; background: #e8edf5; color: #2e5c9a;
+          padding: 2px 8px; border-radius: 3px; font-size: 11px;
+          margin: 2px 2px; }
+
+  /* Footer */
+  footer { margin-top: 32px; padding-top: 12px;
+           border-top: 1px solid #dde3ec; color: #6b7a8d;
+           font-size: 11px; text-align: center; }
+</style>
+</head>
+<body>
+<header>
+  <h1>All Families Time-Series</h1>
+  <div class='subtitle'>Apr-15-2026 → Apr-25-2026 · 3 dates · 6 families</div>
+</header>
+<div class="container">
+<main>
+<div class="card">
+<h3>Annualised σ (%)</h3>
+<table>
+<thead><tr>
+<th>Date</th>
+<th>FAnna</th>
+<th>FGaal</th>
+<th>FIaco</th>
+<th>FJona</th>
+<th>FJono</th>
+<th>FSulv</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Apr-15-2026</td>
+<td>26.09%</td>
+<td>26.09%</td>
+<td>31.11%</td>
+<td>22.72%</td>
+<td>28.65%</td>
+<td>14.76%</td>
+</tr>
+<tr>
+<td>Apr-16-2026</td>
+<td>26.14%</td>
+<td>26.26%</td>
+<td>31.21%</td>
+<td>24.47%</td>
+<td>—</td>
+<td>14.75%</td>
+</tr>
+<tr>
+<td>Apr-20-2026</td>
+<td>26.03%</td>
+<td>28.71%</td>
+<td>31.53%</td>
+<td>24.43%</td>
+<td>—</td>
+<td>22.05%</td>
+</tr>
+</tbody></table>
+</div>
+<div class="card">
+<h3>β vs SPY</h3>
+<table>
+<thead><tr>
+<th>Date</th>
+<th>FAnna</th>
+<th>FGaal</th>
+<th>FIaco</th>
+<th>FJona</th>
+<th>FJono</th>
+<th>FSulv</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Apr-15-2026</td>
+<td>1.379</td>
+<td>1.431</td>
+<td>1.538</td>
+<td>1.200</td>
+<td>1.502</td>
+<td>0.779</td>
+</tr>
+<tr>
+<td>Apr-16-2026</td>
+<td>1.381</td>
+<td>1.441</td>
+<td>1.543</td>
+<td>1.292</td>
+<td>—</td>
+<td>0.779</td>
+</tr>
+<tr>
+<td>Apr-20-2026</td>
+<td>1.380</td>
+<td>1.584</td>
+<td>1.568</td>
+<td>1.294</td>
+<td>—</td>
+<td>1.202</td>
+</tr>
+</tbody></table>
+</div>
+<div class="card">
+<h3>β vs QQQ</h3>
+<table>
+<thead><tr>
+<th>Date</th>
+<th>FAnna</th>
+<th>FGaal</th>
+<th>FIaco</th>
+<th>FJona</th>
+<th>FJono</th>
+<th>FSulv</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Apr-15-2026</td>
+<td>1.160</td>
+<td>1.166</td>
+<td>1.328</td>
+<td>1.004</td>
+<td>1.270</td>
+<td>0.655</td>
+</tr>
+<tr>
+<td>Apr-16-2026</td>
+<td>1.162</td>
+<td>1.174</td>
+<td>1.332</td>
+<td>1.085</td>
+<td>—</td>
+<td>0.655</td>
+</tr>
+<tr>
+<td>Apr-20-2026</td>
+<td>1.163</td>
+<td>1.288</td>
+<td>1.355</td>
+<td>1.088</td>
+<td>—</td>
+<td>0.989</td>
+</tr>
+</tbody></table>
+</div>
+<div class="card">
+<h3>ρ vs SPY</h3>
+<table>
+<thead><tr>
+<th>Date</th>
+<th>FAnna</th>
+<th>FGaal</th>
+<th>FIaco</th>
+<th>FJona</th>
+<th>FJono</th>
+<th>FSulv</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Apr-15-2026</td>
+<td>0.952</td>
+<td>0.989</td>
+<td>0.890</td>
+<td>0.952</td>
+<td>0.944</td>
+<td>0.952</td>
+</tr>
+<tr>
+<td>Apr-16-2026</td>
+<td>0.952</td>
+<td>0.989</td>
+<td>0.891</td>
+<td>0.951</td>
+<td>—</td>
+<td>0.952</td>
+</tr>
+<tr>
+<td>Apr-20-2026</td>
+<td>0.952</td>
+<td>0.990</td>
+<td>0.893</td>
+<td>0.951</td>
+<td>—</td>
+<td>0.979</td>
+</tr>
+</tbody></table>
+</div>
+<div class="card">
+<h3>Short-history dropped</h3>
+<table>
+<thead><tr>
+<th>Date</th>
+<th>FAnna</th>
+<th>FGaal</th>
+<th>FIaco</th>
+<th>FJona</th>
+<th>FJono</th>
+<th>FSulv</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Apr-15-2026</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Apr-16-2026</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Apr-20-2026</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>—</td>
+<td>0</td>
+</tr>
+</tbody></table>
+</div>
+<div class="card">
+<h3>AI Observations</h3>
+<ul style='padding-left: 20px'><li>FAnna maintains stable annualised volatility around 26.1% across April 15–20, with beta_spy hovering near 1.38 and beta_qqq at ~1.16, indicating consistent risk profile with negligible week-over-week shifts.</li>
+<li>FGaal exhibits material risk escalation from April 16 to April 20: annualised sigma rises from 26.26% to 28.71% (+2.45pp) and beta_spy jumps from 1.441 to 1.584 (+0.143), a significant directional shift toward SPY sensitivity.</li>
+<li>FIaco shows steady volatility increase over the window, rising from 31.11% (April 15) to 31.53% (April 20), with beta_spy climbing from 1.538 to 1.568 and beta_qqq expanding to 1.355, indicating persistent elevated risk.</li>
+<li>FSulv undergoes dramatic risk re-calibration between April 16 and April 20: annualised sigma surges from 14.75% to 22.05% (+7.30pp), beta_spy increases 0.423 points (0.779 to 1.202), and beta_qqq rises 0.334 points (0.655 to 0.989), suggesting major portfolio restructuring.</li>
+<li>FJona&#x27;s risk profile moderates slightly from April 15 to April 20, with annualised volatility stable at ~24.4% and beta_spy increasing marginally from 1.200 to 1.294, while position count grows from 18 to 22.</li>
+<li>FJono data dropout on April 16 and April 20 prevents trend analysis; last observation April 15 shows ann_std_pct of 28.65% and beta_spy of 1.502.</li>
+<li>Cross-family divergence widens significantly: FSulv&#x27;s volatility nearly doubles while FAnna remains anchored, creating 6.0pp spread in annualised sigma between FSulv (22.05%) and FAnna (26.03%) by April 20, reversing the compact 14–26% band observed April 15.</li></ul>
+</div>
+</main>
+<footer>Generated 2026-04-21 19:04 &mdash; Market Research Skills</footer>
+</div>
+</body>
+</html>
