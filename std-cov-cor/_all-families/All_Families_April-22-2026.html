@@ -163,15 +163,15 @@
 </div>
 <div class="card">
 <h3>AI Observations</h3>
-<ul style='padding-left: 20px'><li>FIaco exhibits the highest volatility at 31.74% annualized with 62 positions, yet its SPY correlation (0.891) is notably lowest among all families, indicating substantial idiosyncratic risk despite beta_SPY of 1.576—suggesting concentrated bets or sector tilts decoupled from broad market movements.</li>
-<li>FGaal shows the second-highest volatility (28.98%) with the strongest systematic linkage: beta_SPY of 1.598 and correlation of 0.989, meaning 98.9% of its risk is explained by SPY movements, making it the most &#x27;pure beta&#x27; portfolio despite only 33 tradable positions across 38 holdings.</li>
-<li>FSulv is the lowest-volatility portfolio at 22.13% with balanced tech exposure: beta_QQQ of 0.993 nearly matches beta_SPY of 1.206, and exceptionally high correlations to both benchmarks (0.978 SPY, 0.989 QQQ) indicate very tight tracking with minimal idiosyncratic noise across 22 tradable positions.</li>
-<li>FAnna and FJona bracket the mid-risk cohort (24.54%–26.15% volatility) with similar SPY correlations (~0.95), but FAnna&#x27;s higher beta_SPY (1.385 vs 1.299) and larger concentrated portfolio (13 tradable vs 20) suggests greater leverage to broad market moves rather than diversification benefit.</li>
-<li>FIaco&#x27;s 2 dropped positions and 11 cash holdings (18% of total) alongside its 31.74% volatility and weak SPY correlation (0.891) warrant review—the combination suggests either defensive cash drag masking volatile core holdings or unresolved positions creating calculation noise.</li>
-<li>Beta-driven clustering dominates: all five families cluster tightly on QQQ correlation (0.945–0.988), with FIaco the outlier on SPY correlation, implying the portfolios are predominantly long-growth/tech-tilted with minimal cross-family diversification benefits at this measurement date.</li></ul>
+<ul style='padding-left: 20px'><li>FIaco exhibits the highest volatility at 31.74% annualized std dev with 62 positions, yet its SPY correlation (0.891) is notably lowest among peers—indicating substantial idiosyncratic risk dominates its systematic exposure, with 2 dropped positions suggesting portfolio churn; this contrasts sharply with FGaal&#x27;s 28.98% volatility driven predominantly by high beta_spy of 1.598 and SPY correlation of 0.989.</li>
+<li>FGaal and FIaco both carry elevated beta_spy (~1.60) but FGaal&#x27;s tighter SPY correlation (0.989 vs 0.891) means its excess volatility is almost entirely systematic, whereas FIaco&#x27;s 31.74% std dev is inflated by ~5.3% of idiosyncratic spread—suggesting FIaco&#x27;s 62-position, 11-cash-slot structure introduces diversification drag rather than benefit.</li>
+<li>FSulv is the lowest-risk portfolio at 22.13% volatility with a balanced beta_spy of 1.206 and exceptionally high correlations to both SPY (0.978) and QQQ (0.989); its 26 tradable positions and zero drops indicate stable structural alignment, making it the most benchmark-proximate family.</li>
+<li>QQQ beta clustering is tighter (0.993–1.368 range) versus SPY beta spread (1.206–1.598), with FJona and FAnna showing near-parity between SPY and QQQ exposure; FIaco&#x27;s divergence (SPY 1.576 vs QQQ 1.362) hints at higher small/mid-cap or energy sector tilt inconsistent with tech concentration.</li>
+<li>FAnna&#x27;s 26.15% volatility on only 13 tradable positions (15 total, 2 cash) ranks third-highest absolute risk, yet achieves SPY beta of 1.385 and 0.951 correlation—implying concentrated bets rather than diversification; this 87% tradable-ratio places structural risk on par with larger portfolios like FSulv (85% ratio) despite half the position count.</li>
+<li>Cash holdings scale with portfolio complexity: FIaco holds 11 cash slots (17.7% of 62 positions) with 2 drops; FGaal holds 5 cash slots (13.2% of 38 positions) with 1 drop; both elevated relative to FSulv&#x27;s 4 slots (15.4% of 26 positions, zero drops)—suggesting larger portfolios either maintain higher liquidity buffers or experience higher turnover friction.</li></ul>
 </div>
 </main>
-<footer>Generated 2026-04-22 15:18 &mdash; Market Research Skills</footer>
+<footer>Generated 2026-04-22 15:30 &mdash; Market Research Skills</footer>
 </div>
 </body>
 </html>
