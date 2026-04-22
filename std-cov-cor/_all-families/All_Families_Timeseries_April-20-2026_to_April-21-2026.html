@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Families Time-Series</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+         "Helvetica Neue", Arial, sans-serif;
+         background: #f4f6f9; color: #1a2b4a; line-height: 1.5;
+         font-size: 13px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; }
+  header { background: #1a2b4a; color: #fff; padding: 20px 24px;
+            margin-bottom: 24px; }
+  header h1 { font-size: 20px; font-weight: 600; margin: 0; }
+  header .subtitle { color: #a0b4d0; font-size: 12px; margin-top: 4px; }
+  h2 { color: #1a2b4a; font-size: 15px; margin: 28px 0 10px;
+       border-bottom: 2px solid #2e5c9a; padding-bottom: 4px; }
+  h3 { color: #2e5c9a; font-size: 14px; margin: 20px 0 8px; }
+
+  /* Tables */
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px;
+           font-size: 12px; }
+  th { background: #2e5c9a; color: #fff; padding: 7px 10px;
+       text-align: left; font-size: 11px; text-transform: uppercase;
+       letter-spacing: 0.5px; }
+  td { padding: 6px 10px; border-bottom: 1px solid #dde3ec; }
+  tr:nth-child(even) { background: #f0f3f8; }
+  tr:hover { background: #e4eaf4; }
+  caption { text-align: left; font-weight: 600; color: #1a2b4a;
+            margin-bottom: 6px; font-size: 13px; }
+
+  /* Cards / sections */
+  .card { background: #fff; border-radius: 6px; padding: 18px 20px;
+           margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .card h3 { margin-top: 0; }
+
+  /* Utility */
+  .text-muted { color: #6b7a8d; font-size: 11px; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+  a { color: #2e5c9a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tag { display: inline-block; background: #e8edf5; color: #2e5c9a;
+          padding: 2px 8px; border-radius: 3px; font-size: 11px;
+          margin: 2px 2px; }
+
+  /* Footer */
+  footer { margin-top: 32px; padding-top: 12px;
+           border-top: 1px solid #dde3ec; color: #6b7a8d;
+           font-size: 11px; text-align: center; }
+</style>
+</head>
+<body>
+<header>
+  <h1>All Families Time-Series</h1>
+  <div class='subtitle'>Apr-20-2026 → Apr-21-2026 · 2 dates · 5 families</div>
+</header>
+<div class="container">
+<main>
+<div class="card">
+<h3>Annualised σ (%)</h3>
+<table>
+<thead><tr>
+<th>Date</th>
+<th>FAnna</th>
+<th>FGaal</th>
+<th>FIaco</th>
+<th>FJona</th>
+<th>FSulv</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Apr-20-2026</td>
+<td>26.03%</td>
+<td>28.71%</td>
+<td>31.53%</td>
+<td>24.43%</td>
+<td>22.05%</td>
+</tr>
+<tr>
+<td>Apr-21-2026</td>
+<td>26.02%</td>
+<td>28.62%</td>
+<td>31.52%</td>
+<td>24.42%</td>
+<td>22.02%</td>
+</tr>
+</tbody></table>
+</div>
+<div class="card">
+<h3>β vs SPY</h3>
+<table>
+<thead><tr>
+<th>Date</th>
+<th>FAnna</th>
+<th>FGaal</th>
+<th>FIaco</th>
+<th>FJona</th>
+<th>FSulv</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Apr-20-2026</td>
+<td>1.380</td>
+<td>1.584</td>
+<td>1.568</td>
+<td>1.294</td>
+<td>1.202</td>
+</tr>
+<tr>
+<td>Apr-21-2026</td>
+<td>1.380</td>
+<td>1.578</td>
+<td>1.568</td>
+<td>1.294</td>
+<td>1.201</td>
+</tr>
+</tbody></table>
+</div>
+<div class="card">
+<h3>β vs QQQ</h3>
+<table>
+<thead><tr>
+<th>Date</th>
+<th>FAnna</th>
+<th>FGaal</th>
+<th>FIaco</th>
+<th>FJona</th>
+<th>FSulv</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Apr-20-2026</td>
+<td>1.163</td>
+<td>1.288</td>
+<td>1.355</td>
+<td>1.088</td>
+<td>0.989</td>
+</tr>
+<tr>
+<td>Apr-21-2026</td>
+<td>1.163</td>
+<td>1.284</td>
+<td>1.354</td>
+<td>1.088</td>
+<td>0.988</td>
+</tr>
+</tbody></table>
+</div>
+<div class="card">
+<h3>ρ vs SPY</h3>
+<table>
+<thead><tr>
+<th>Date</th>
+<th>FAnna</th>
+<th>FGaal</th>
+<th>FIaco</th>
+<th>FJona</th>
+<th>FSulv</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Apr-20-2026</td>
+<td>0.952</td>
+<td>0.990</td>
+<td>0.893</td>
+<td>0.951</td>
+<td>0.979</td>
+</tr>
+<tr>
+<td>Apr-21-2026</td>
+<td>0.951</td>
+<td>0.990</td>
+<td>0.892</td>
+<td>0.951</td>
+<td>0.979</td>
+</tr>
+</tbody></table>
+</div>
+<div class="card">
+<h3>Short-history dropped</h3>
+<table>
+<thead><tr>
+<th>Date</th>
+<th>FAnna</th>
+<th>FGaal</th>
+<th>FIaco</th>
+<th>FJona</th>
+<th>FSulv</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Apr-20-2026</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Apr-21-2026</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+</div>
+<div class="card">
+<h3>AI Observations</h3>
+<ul style='padding-left: 20px'><li>FIaco exhibits the highest annualized volatility at 31.53% on 2026-04-20, declining marginally to 31.52% on 2026-04-21, while maintaining elevated beta_spy of 1.568–1.569 and beta_qqq of 1.354–1.355 across both dates.</li>
+<li>FGaal shows a modest volatility contraction from 28.71% (2026-04-20) to 28.62% (2026-04-21), accompanied by a slight beta_spy decline from 1.584 to 1.578, indicating incremental risk reduction.</li>
+<li>FSulv remains the lowest-risk family with annualized sigma of 22.05% and 22.02% across the two dates, with stable beta_spy ~1.20 and notably lower beta_qqq (0.989–0.988) relative to peers.</li>
+<li>All five families display sub-0.05 week-over-week shifts in both beta_spy and beta_qqq, indicating negligible systematic risk reorientation over the 1-day window.</li>
+<li>FJona and FAnna maintain stable risk profiles with ann_std_pct near 24.42% and 26.03% respectively, both demonstrating consistent high SPY and QQQ correlations (0.95+ and 0.98+ respectively) with minimal volatility drift.</li></ul>
+</div>
+</main>
+<footer>Generated 2026-04-21 19:27 &mdash; Market Research Skills</footer>
+</div>
+</body>
+</html>
