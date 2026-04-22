@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio Risk — adhoc — April-22-2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+         "Helvetica Neue", Arial, sans-serif;
+         background: #f4f6f9; color: #1a2b4a; line-height: 1.5;
+         font-size: 13px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; }
+  header { background: #1a2b4a; color: #fff; padding: 20px 24px;
+            margin-bottom: 24px; }
+  header h1 { font-size: 20px; font-weight: 600; margin: 0; }
+  header .subtitle { color: #a0b4d0; font-size: 12px; margin-top: 4px; }
+  h2 { color: #1a2b4a; font-size: 15px; margin: 28px 0 10px;
+       border-bottom: 2px solid #2e5c9a; padding-bottom: 4px; }
+  h3 { color: #2e5c9a; font-size: 14px; margin: 20px 0 8px; }
+
+  /* Tables */
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px;
+           font-size: 12px; }
+  th { background: #2e5c9a; color: #fff; padding: 7px 10px;
+       text-align: left; font-size: 11px; text-transform: uppercase;
+       letter-spacing: 0.5px; }
+  td { padding: 6px 10px; border-bottom: 1px solid #dde3ec; }
+  tr:nth-child(even) { background: #f0f3f8; }
+  tr:hover { background: #e4eaf4; }
+  caption { text-align: left; font-weight: 600; color: #1a2b4a;
+            margin-bottom: 6px; font-size: 13px; }
+
+  /* Cards / sections */
+  .card { background: #fff; border-radius: 6px; padding: 18px 20px;
+           margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .card h3 { margin-top: 0; }
+
+  /* Utility */
+  .text-muted { color: #6b7a8d; font-size: 11px; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+  a { color: #2e5c9a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tag { display: inline-block; background: #e8edf5; color: #2e5c9a;
+          padding: 2px 8px; border-radius: 3px; font-size: 11px;
+          margin: 2px 2px; }
+
+  /* Footer */
+  footer { margin-top: 32px; padding-top: 12px;
+           border-top: 1px solid #dde3ec; color: #6b7a8d;
+           font-size: 11px; text-align: center; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Portfolio Risk — adhoc — April-22-2026</h1>
+  <div class='subtitle'>Lookback 365 trading days  |  2 tradable, 0 cash  |  Annualised σ = 39.16%</div>
+</header>
+<div class="container">
+<main>
+<div class="card">
+<h3>Portfolio Summary</h3>
+<table>
+<thead><tr>
+<th>Metric</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td>adhoc / AdHoc-April-22-2026.csv</td>
+</tr>
+<tr>
+<td>As of</td>
+<td>April-22-2026</td>
+</tr>
+<tr>
+<td>Lookback (trading days)</td>
+<td>365</td>
+</tr>
+<tr>
+<td>Total positions</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Tradable / Cash</td>
+<td>2 / 0</td>
+</tr>
+<tr>
+<td>Weights (total / tradable / cash)</td>
+<td>1.0000 / 1.0000 / 0.0000</td>
+</tr>
+<tr>
+<td>Observation period</td>
+<td>2024-11-04 → 2026-04-21  (365 days)</td>
+</tr>
+<tr>
+<td>Portfolio daily variance</td>
+<td>0.0006084411</td>
+</tr>
+<tr>
+<td>Portfolio daily std dev</td>
+<td>0.024667</td>
+</tr>
+<tr>
+<td>Portfolio annualised variance</td>
+<td>0.153327</td>
+</tr>
+<tr>
+<td>Portfolio annualised std dev</td>
+<td>0.391570  (39.16%)</td>
+</tr>
+</tbody></table>
+</div><div class="card">
+<h3>Per-Position Statistics</h3>
+<table>
+<thead><tr>
+<th>Symbol</th>
+<th>Weight</th>
+<th>Value</th>
+<th>Daily Std</th>
+<th>Ann. Std</th>
+<th>Ann. Var Contrib</th>
+<th>% of Port. Var</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>NVDA</td>
+<td>0.500000</td>
+<td>$1.00</td>
+<td>0.028676</td>
+<td>45.52%</td>
+<td>0.084391</td>
+<td>55.04%</td>
+</tr>
+<tr>
+<td>SOXX</td>
+<td>0.500000</td>
+<td>$1.00</td>
+<td>0.024020</td>
+<td>38.13%</td>
+<td>0.068936</td>
+<td>44.96%</td>
+</tr>
+</tbody></table>
+</div><div class="card">
+<h3>Correlation Matrix — Top 20 by Weight</h3>
+<table>
+<caption>Correlation — Top 20 holdings by weight</caption>
+<thead><tr>
+<th>&amp;nbsp;</th>
+<th>NVDA</th>
+<th>SOXX</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><b>NVDA</b></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.75</span></td>
+</tr>
+<tr>
+<td><b>SOXX</b></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.75</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+</tr>
+</tbody></table>
+</div><div class="card">
+<h3>Methodology</h3>
+<p>Portfolio variance = wᵀ Σ w where Σ is the daily covariance matrix of simple returns for tradable positions and w is the weight vector from the source CSV. Cash / money-market / delisted / short-history positions are detected and contribute 0 to variance but are still counted in the total portfolio weight, so the annualised std dev reflects the cash drag on realised portfolio volatility.</p><p>Portfolio beta: β_M = Cov(R_p, R_M) / Var(R_M), using daily simple returns on the intersection of portfolio and benchmark dates. Correlation: ρ_M = Cov(R_p, R_M) / (σ_p · σ_M).</p><p class='text-muted'>Full covariance matrix and matrix JSONs are cached on disk and are not embedded in this page — open the PDF for the full covariance view.</p>
+</div>
+</main>
+<footer>Generated 2026-04-22 10:17 &mdash; Market Research Skills</footer>
+</div>
+</body>
+</html>
