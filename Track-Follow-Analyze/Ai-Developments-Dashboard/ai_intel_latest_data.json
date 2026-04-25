@@ -1,0 +1,68 @@
+{
+  "report_period": {
+    "from": "2026-04-09",
+    "to": "2026-04-11"
+  },
+  "generated": "2026-04-11T12:00:00-04:00",
+  "version": "3.1",
+  "summary": {
+    "total_items": 12,
+    "new_items": 8,
+    "recent_context_items": 4,
+    "score_5": 0,
+    "score_4": 2,
+    "score_3": 5,
+    "score_2": 1,
+    "score_1": 0,
+    "avg_score": 3.0,
+    "sources_fetched": 18,
+    "sources_total": 22,
+    "frontiers_moving_up": 2
+  },
+  "convergence_themes": [
+    "The Great GPU Landgrab",
+    "AI Meets the Real World",
+    "The Governance Reckoning"
+  ],
+  "new_items": [
+    {"id": 1, "title": "Anthropic-Google-Broadcom 3.5GW Compute Deal", "score": 4, "category": "Infrastructure", "date": "Apr 9"},
+    {"id": 2, "title": "Anthropic Loses Appeals Court Bid on Pentagon Blacklisting", "score": 4, "category": "Policy", "date": "Apr 9"},
+    {"id": 3, "title": "CoreWeave-Meta $21B Expanded Deal", "score": 3, "category": "Infrastructure", "date": "Apr 9"},
+    {"id": 4, "title": "CoreWeave-Anthropic $6.8B Agreement", "score": 3, "category": "Infrastructure", "date": "Apr 10"},
+    {"id": 5, "title": "GPT-5.5 Spud Pretraining Complete", "score": 3, "category": "Models", "date": "Apr 10"},
+    {"id": 6, "title": "19 State AI Bills Passed Into Law", "score": 3, "category": "Policy", "date": "Apr 10"},
+    {"id": 7, "title": "Eli Lilly LillyPod AI Supercomputer Goes Live", "score": 3, "category": "Infrastructure", "date": "Apr 10"},
+    {"id": 8, "title": "Eclipse Ventures $1.3B Physical AI Fund", "score": 2, "category": "Funding", "date": "Apr 8"}
+  ],
+  "recent_context_items": [
+    {"id": 9, "title": "Claude Mythos Withheld / Project Glasswing", "score": 5, "category": "Policy", "date": "Apr 7"},
+    {"id": 10, "title": "CFRA Upgrades META to Strong Buy", "score": 2, "category": "Adoption", "date": "Apr 10"},
+    {"id": 11, "title": "NVIDIA 8-Day Winning Streak ($188.53)", "score": 1, "category": "Markets", "date": "Apr 10"},
+    {"id": 12, "title": "GLM-5.1 Open Source Beats Closed Frontier", "score": 4, "category": "Models", "date": "Apr 7"}
+  ],
+  "frontier_state": {
+    "reasoning": 82,
+    "multimodality": 70,
+    "agents": 65,
+    "robotics": 41,
+    "biology": 52,
+    "code_generation": 78
+  },
+  "sector_performance": {
+    "date": "2026-04-10",
+    "exchange": "NASDAQ",
+    "sectors": [
+      {"sector": "Energy", "change": 1.09},
+      {"sector": "Utilities", "change": 1.06},
+      {"sector": "Consumer Cyclical", "change": 0.45},
+      {"sector": "Technology", "change": 0.35},
+      {"sector": "Real Estate", "change": 0.01},
+      {"sector": "Basic Materials", "change": -0.51},
+      {"sector": "Industrials", "change": -0.65},
+      {"sector": "Communication Services", "change": -0.81},
+      {"sector": "Financial Services", "change": -0.93},
+      {"sector": "Healthcare", "change": -1.81},
+      {"sector": "Consumer Defensive", "change": -2.21}
+    ]
+  }
+}

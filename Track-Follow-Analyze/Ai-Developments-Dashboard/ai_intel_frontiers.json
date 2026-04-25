@@ -1,0 +1,59 @@
+{
+  "last_updated": "2026-04-11",
+  "frontiers": {
+    "reasoning": {
+      "name": "Reasoning & Logic",
+      "stage": "Maturing",
+      "progress": 82,
+      "description": "Models solving complex math, code, and logic problems through step-by-step thinking",
+      "this_period": "Stable. GPT-5.5 Spud pretraining complete but not yet released or benchmarked. No new reasoning model deployments this period.",
+      "movement": "stable",
+      "key_players": ["OpenAI (o3/o4)", "DeepSeek (R2)", "Anthropic (Claude extended thinking)", "Google (Gemini 3.1)"]
+    },
+    "multimodality": {
+      "name": "Multimodal AI",
+      "stage": "Rapid Growth",
+      "progress": 70,
+      "description": "Models that natively process text, images, video, audio, and code together",
+      "this_period": "Stable. No new multimodal model releases this period.",
+      "movement": "stable",
+      "key_players": ["Google (Gemini)", "OpenAI (GPT-5.4)", "Meta (Muse Spark)", "NVIDIA (Nemotron)"]
+    },
+    "agents": {
+      "name": "Agentic AI",
+      "stage": "Early Production",
+      "progress": 65,
+      "description": "AI systems that autonomously plan, use tools, and complete complex multi-step tasks",
+      "this_period": "Stable. No major agentic AI announcements this period.",
+      "movement": "stable",
+      "key_players": ["Anthropic (MCP)", "OpenAI (AGENTS.md)", "Block (Goose)", "Salesforce", "Microsoft"]
+    },
+    "robotics": {
+      "name": "Robotics & Physical AI",
+      "stage": "Emerging",
+      "progress": 41,
+      "description": "Robots that perceive, reason, and act in physical environments alongside humans",
+      "this_period": "Eclipse $1.3B fund validates VC commitment to physical AI. National Robotics Week showcased video-action models with 10x sample efficiency gains.",
+      "movement": "up",
+      "key_players": ["NVIDIA (Cosmos, GR00T)", "Tesla (Optimus)", "Figure AI", "Boston Dynamics", "Eclipse Ventures portfolio"]
+    },
+    "biology": {
+      "name": "Biology & Drug Discovery",
+      "stage": "Growing",
+      "progress": 52,
+      "description": "AI accelerating drug discovery, protein folding, genomics, and medical diagnostics",
+      "this_period": "LillyPod supercomputer goes live with 1,016 Blackwell GPUs and 9,000+ petaflops. Pharma's largest dedicated AI compute cluster. Targeting halving of 10-year drug development timelines.",
+      "movement": "up",
+      "key_players": ["Google DeepMind (AlphaFold)", "Isomorphic Labs", "NVIDIA (Clara)", "Eli Lilly (LillyPod)", "Recursion"]
+    },
+    "code_generation": {
+      "name": "Code Generation",
+      "stage": "Maturing",
+      "progress": 78,
+      "description": "AI writing, debugging, and maintaining production-quality software autonomously",
+      "this_period": "Stable. GPT-5.5 pretraining complete but not benchmarked yet. GLM-5.1 SWE-Bench Pro lead from prior period still stands.",
+      "movement": "stable",
+      "key_players": ["Anthropic (Claude Code)", "Cursor", "GitHub Copilot", "Devin", "Zhipu AI (GLM)"]
+    }
+  }
+}

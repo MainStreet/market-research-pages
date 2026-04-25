@@ -1,0 +1,119 @@
+{
+  "last_updated": "2026-04-11",
+  "terms": {
+    "MCP": {
+      "term": "Model Context Protocol",
+      "definition": "An open standard created by Anthropic that lets AI models connect to external tools, databases, and services through a universal interface — like a USB-C port for AI. Instead of each AI needing custom integrations, MCP provides one protocol that works everywhere.",
+      "added_week": "2026-04-10",
+      "category": "Infrastructure"
+    },
+    "KV Cache": {
+      "term": "Key-Value Cache",
+      "definition": "A memory optimization technique in transformer models that stores previously computed attention values so the model doesn't have to recalculate them for every new token. Reducing KV cache size (like Google's TurboQuant does) means models can process longer texts with less memory.",
+      "added_week": "2026-04-10",
+      "category": "Technical"
+    },
+    "MoE": {
+      "term": "Mixture of Experts",
+      "definition": "An architecture where a large model is divided into specialized sub-networks (experts), and only a few experts activate for each input. This means a 744B parameter model like GLM-5.1 can run much faster than a dense model of the same size because only a fraction of parameters are used per query.",
+      "added_week": "2026-04-10",
+      "category": "Architecture"
+    },
+    "Agentic AI": {
+      "term": "Agentic AI",
+      "definition": "AI systems that can autonomously plan, make decisions, use tools, and complete multi-step tasks without human intervention at each step. Unlike chatbots that respond to single prompts, agents can break down complex goals, execute sequences of actions, and adapt based on results.",
+      "added_week": "2026-04-10",
+      "category": "Paradigm"
+    },
+    "Reasoning Model": {
+      "term": "Reasoning Model",
+      "definition": "AI models specifically trained to think step-by-step before answering, using techniques like chain-of-thought. Models like DeepSeek R2 and OpenAI o3 can solve complex math, coding, and logic problems by breaking them into intermediate reasoning steps — similar to how humans show their work.",
+      "added_week": "2026-04-10",
+      "category": "Models"
+    },
+    "Context Window": {
+      "term": "Context Window",
+      "definition": "The maximum amount of text an AI model can process at once, measured in tokens (roughly 0.75 words per token). Llama 4 Maverick's 10M token context window means it can read and reason over ~7.5 million words at once — equivalent to about 25 full novels simultaneously.",
+      "added_week": "2026-04-10",
+      "category": "Technical"
+    },
+    "Open Weights": {
+      "term": "Open Weights / Open Source Models",
+      "definition": "AI models where the trained parameters (weights) are publicly released, allowing anyone to download, run, modify, and build upon them. Models like Gemma 4 and Llama 4 are open-weight, while GPT-5.4 and Claude are closed/proprietary — you can only access them through APIs.",
+      "added_week": "2026-04-10",
+      "category": "Industry"
+    },
+    "SWE-Bench": {
+      "term": "SWE-Bench",
+      "definition": "A benchmark that tests AI models on real-world software engineering tasks — fixing actual GitHub issues from popular open-source projects. SWE-Bench Pro is the harder variant. When GLM-5.1 beats Claude and GPT on SWE-Bench Pro, it means it's better at solving real coding problems, not just answering questions about code.",
+      "added_week": "2026-04-10",
+      "category": "Benchmarks"
+    },
+    "Neocloud": {
+      "term": "Neocloud",
+      "definition": "A new category of cloud computing companies (like CoreWeave) that specialize exclusively in GPU-based AI infrastructure, as opposed to traditional cloud providers (AWS, Azure, GCP) that offer general-purpose computing. Neoclouds are purpose-built for AI training and inference workloads.",
+      "added_week": "2026-04-10",
+      "category": "Infrastructure"
+    },
+    "Inference": {
+      "term": "Inference",
+      "definition": "The process of running a trained AI model to get predictions or outputs — as opposed to training, which is the process of teaching the model. When you ask ChatGPT a question, that's inference. The shift from training to inference as the primary cost driver is reshaping AI infrastructure economics.",
+      "added_week": "2026-04-10",
+      "category": "Technical"
+    },
+    "World Models": {
+      "term": "World Models",
+      "definition": "AI systems that build internal simulations of how physical environments work — understanding gravity, object permanence, cause and effect. Critical for robotics and autonomous vehicles because an agent with a world model can predict consequences of actions before taking them, rather than learning purely from trial and error.",
+      "added_week": "2026-04-10",
+      "category": "Research"
+    },
+    "Regulatory Sandbox": {
+      "term": "Regulatory Sandbox",
+      "definition": "A framework set up by regulators that allows companies to test innovative AI products in a controlled environment with relaxed regulations. The White House AI Framework recommends these to let companies experiment with AI applications without full regulatory burden during development.",
+      "added_week": "2026-04-10",
+      "category": "Policy"
+    },
+    "Vision-Language-Action Models": {
+      "term": "Vision-Language-Action (VLA) Models",
+      "definition": "AI models that combine seeing (computer vision), understanding language (NLP), and performing physical actions (robotics control) into one system. These enable robots to understand verbal instructions, perceive their environment, and execute physical tasks — the foundation of practical humanoid robots.",
+      "added_week": "2026-04-10",
+      "category": "Robotics"
+    },
+    "Reasoning Distillation": {
+      "term": "Reasoning Distillation",
+      "definition": "The process of transferring the reasoning capabilities of large, expensive models (like o3) into smaller, cheaper models that can run on edge devices like phones or laptops. This is how frontier-level intelligence becomes accessible without requiring massive cloud compute.",
+      "added_week": "2026-04-10",
+      "category": "Research"
+    },
+    "TPU": {
+      "term": "Tensor Processing Unit (TPU)",
+      "definition": "Google's custom AI chip designed specifically for machine learning workloads. Unlike general-purpose GPUs, TPUs are optimized for the matrix operations that power neural networks. Anthropic's 3.5GW deal gives it massive TPU capacity through Google and Broadcom.",
+      "added_week": "2026-04-11",
+      "category": "Infrastructure"
+    },
+    "Supply Chain Risk Designation": {
+      "term": "Supply Chain Risk Designation",
+      "definition": "A DOD classification historically reserved for foreign adversaries (like Huawei) that bars a company from federal defense contracts. Anthropic became the first American company to receive this designation in March 2026 after refusing to grant the Pentagon unfettered access to its AI models for autonomous weapons and mass surveillance applications.",
+      "added_week": "2026-04-11",
+      "category": "Policy"
+    },
+    "Video-Action Model": {
+      "term": "Video-Action Model (VAM)",
+      "definition": "A robotics AI architecture that uses pretrained video generation models as a backbone to understand physical dynamics, then maps that understanding to robot actions. Unlike VLAs that learn physics from scratch, VAMs leverage internet-scale video data for significantly better sample efficiency.",
+      "added_week": "2026-04-11",
+      "category": "Robotics"
+    },
+    "Vera Rubin": {
+      "term": "Vera Rubin",
+      "definition": "NVIDIA's next-generation GPU platform succeeding Blackwell, named after the astronomer. Both the CoreWeave-Meta ($21B) and CoreWeave-Anthropic ($6.8B) deals specify Vera Rubin systems, indicating pre-committed demand for hardware that has not yet shipped at scale.",
+      "added_week": "2026-04-11",
+      "category": "Infrastructure"
+    },
+    "RAISE Act": {
+      "term": "RAISE Act (NY S 8828)",
+      "definition": "New York's Responsible AI Safety and Evaluation Act, signed March 27, 2026, effective January 1, 2027. Requires frontier model developers with $500M+ annual revenue to publish safety plans and report AI incidents within 72 hours. First U.S. state law to impose revenue-threshold-based obligations on frontier AI labs.",
+      "added_week": "2026-04-11",
+      "category": "Policy"
+    }
+  }
+}

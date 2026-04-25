@@ -1,0 +1,441 @@
+{
+  "metadata": {
+    "title": "AI Historical Timeline — YTD 2026",
+    "description": "Verified AI events for cross-referencing weekly dashboard content. Use to validate that events mentioned in articles actually occurred in the stated timeframe.",
+    "last_updated": "2026-04-11",
+    "version": "1.0",
+    "scope": "2026-01-01 through 2026-04-10"
+  },
+  "events": [
+    {
+      "date": "2026-01-01",
+      "title": "State AI Laws Take Effect",
+      "category": "Policy",
+      "significance": 4,
+      "detail": "California Transparency in Frontier AI Act (TFAIA) and Texas Responsible AI Governance Act (RAIGA) go into effect. 600+ AI bills introduced across state legislatures in 2026 sessions.",
+      "verified": true
+    },
+    {
+      "date": "2026-01-05",
+      "title": "MIT Tech Review: 'What's Next for AI in 2026'",
+      "category": "Industry",
+      "significance": 1,
+      "detail": "Major prediction roundup. Themes: pragmatism over hype, agent deployment, regulation battle.",
+      "verified": true
+    },
+    {
+      "date": "2026-01-15",
+      "title": "DeepSeek V4 / R2 Launch Timing Stays Hidden",
+      "category": "Models",
+      "significance": 2,
+      "detail": "Reports confirm DeepSeek R2 remains unreleased due to Huawei Ascend chip training failures. No confirmed public launch date. Beta testing only.",
+      "verified": true
+    },
+    {
+      "date": "2026-01-20",
+      "title": "AAAI-26 Conference",
+      "category": "Research",
+      "significance": 2,
+      "detail": "Annual AAAI conference held Jan 20–27 at Singapore EXPO. Major papers on reasoning, multimodal AI, and agent architectures.",
+      "verified": true
+    },
+    {
+      "date": "2026-01-22",
+      "title": "Meta CTO Bosworth Announces Superintelligence Labs Progress at Davos",
+      "category": "Industry",
+      "significance": 2,
+      "detail": "Meta CTO Andrew Bosworth at World Economic Forum confirms Meta Superintelligence Labs delivered first high-profile AI models internally.",
+      "verified": true
+    },
+    {
+      "date": "2026-01-25",
+      "title": "AI Scientist v2 Open-Sourced by Sakana AI",
+      "category": "Research",
+      "significance": 3,
+      "detail": "Sakana AI open-sources AI Scientist v2 (arXiv: 2504.08066). First AI system to author a peer-reviewed publication (ICLR 2025 workshop).",
+      "verified": true
+    },
+    {
+      "date": "2026-02-05",
+      "title": "Anthropic Releases Claude Opus 4.6",
+      "category": "Models",
+      "significance": 4,
+      "detail": "Major model upgrade. 1M token context window in beta. Significant improvements in reasoning and code generation.",
+      "verified": true
+    },
+    {
+      "date": "2026-02-05",
+      "title": "OpenAI Releases GPT-5.3 Codex",
+      "category": "Models",
+      "significance": 3,
+      "detail": "Specialized coding model release focused on software engineering tasks.",
+      "verified": true
+    },
+    {
+      "date": "2026-02-17",
+      "title": "Anthropic Releases Claude Sonnet 4.6",
+      "category": "Models",
+      "significance": 3,
+      "detail": "Fast, capable model with 1M token context beta. Positioned as daily-driver model.",
+      "verified": true
+    },
+    {
+      "date": "2026-02-17",
+      "title": "xAI Releases Grok 4.20",
+      "category": "Models",
+      "significance": 3,
+      "detail": "Features unique four-agent architecture. Released same day as Claude Sonnet 4.6.",
+      "verified": true
+    },
+    {
+      "date": "2026-02-19",
+      "title": "Google Releases Gemini 3.1 Pro",
+      "category": "Models",
+      "significance": 4,
+      "detail": "Dominates 13 of 16 major benchmarks at launch. 2M token context window, native multimodal.",
+      "verified": true
+    },
+    {
+      "date": "2026-02-25",
+      "title": "February Model Release Velocity Record",
+      "category": "Industry",
+      "significance": 2,
+      "detail": "12 significant model updates in a single month: Gemini 3.1 Pro, Claude Opus 4.6, Claude Sonnet 4.6, GPT-5.3 Codex, Grok 4.20, Qwen 3.5, Mercury 2, ByteDance Seed 2.0, MiniMax M2.5, GLM-5, LongCat-Flash-Lite.",
+      "verified": true
+    },
+    {
+      "date": "2026-03-03",
+      "title": "xAI Releases Grok 4.20 Beta 2",
+      "category": "Models",
+      "significance": 2,
+      "detail": "Iterative improvement on February Grok 4.20 release.",
+      "verified": true
+    },
+    {
+      "date": "2026-03-03",
+      "title": "Mistral Releases Small 4",
+      "category": "Models",
+      "significance": 2,
+      "detail": "Compact, efficient model from Mistral AI.",
+      "verified": true
+    },
+    {
+      "date": "2026-03-05",
+      "title": "OpenAI Releases GPT-5.4 (Standard, Thinking, Pro)",
+      "category": "Models",
+      "significance": 4,
+      "detail": "Three variants. GPT-5.4 Thinking scores 83.0% on GDPVal benchmark (at/above human expert level). Major reasoning upgrade.",
+      "verified": true
+    },
+    {
+      "date": "2026-03-10",
+      "title": "NVIDIA GTC 2026 Opens",
+      "category": "Infrastructure",
+      "significance": 4,
+      "detail": "March 10–14 at SAP Center, San Jose. Jensen Huang keynote March 16. Dominated by production deployment and enterprise agentic frameworks. Vera Rubin GPU unveiled. $1T purchase order projection through 2027.",
+      "verified": true
+    },
+    {
+      "date": "2026-03-16",
+      "title": "Jensen Huang GTC Keynote: Vera Rubin, DLSS 5, Groq 3 LPU",
+      "category": "Infrastructure",
+      "significance": 4,
+      "detail": "Unveiled Groq 3 LPU (from $20B acquisition), Vera Rubin rack-scale systems, DLSS 5. Announced Uber autonomous fleet in 28 cities. Disney Olaf robot demo.",
+      "verified": true
+    },
+    {
+      "date": "2026-03-17",
+      "title": "OpenAI Releases GPT-5.4 Mini and Nano",
+      "category": "Models",
+      "significance": 2,
+      "detail": "Smaller variants of GPT-5.4 for cost-efficient and edge deployment.",
+      "verified": true
+    },
+    {
+      "date": "2026-03-20",
+      "title": "White House Releases National AI Policy Framework",
+      "category": "Policy",
+      "significance": 4,
+      "detail": "Legislative recommendations for Congress. Proposes broad federal preemption of state AI laws that impose 'undue burdens.' Follows Dec 2025 executive order.",
+      "verified": true
+    },
+    {
+      "date": "2026-03-24",
+      "title": "OpenAI Shuts Down Sora",
+      "category": "Industry",
+      "significance": 4,
+      "detail": "Sora video generation tool discontinued. Inference cost ~$15M/day vs. $2.1M total lifetime revenue. Downloads fell 66% from Nov 2025 peak. Compute reallocated to world simulation for robotics. Disney $1B deal dead.",
+      "verified": true
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Anthropic MCP Crosses 97 Million Installs",
+      "category": "Infrastructure",
+      "significance": 3,
+      "detail": "Model Context Protocol reaches critical mass. Every major AI provider now ships MCP-compatible tooling. Becoming the 'HTTP of AI tools.'",
+      "verified": true
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Noah Labs FDA Breakthrough Device Designation",
+      "category": "Research",
+      "significance": 2,
+      "detail": "Voxan voice-based heart failure detection system receives FDA Breakthrough Device Designation. AI diagnostics expanding beyond imaging.",
+      "verified": true
+    },
+    {
+      "date": "2026-03-27",
+      "title": "Zhipu AI Releases GLM-5.1 API",
+      "category": "Models",
+      "significance": 2,
+      "detail": "Chinese AI lab releases API access to GLM-5.1 (744B MoE model).",
+      "verified": true
+    },
+    {
+      "date": "2026-03-30",
+      "title": "California Governor Signs Executive Order N-5-26",
+      "category": "Policy",
+      "significance": 3,
+      "detail": "Newsom signs EO directing state agencies to develop AI vendor certification and procurement standards. State sets national template.",
+      "verified": true
+    },
+    {
+      "date": "2026-03-31",
+      "title": "Q1 2026 AI Venture Funding: $242B–$300B",
+      "category": "Funding",
+      "significance": 4,
+      "detail": "Crunchbase reports $300B total Q1 funding, ~80% ($242B) to AI. More than double previous quarterly record. OpenAI raised $110B (largest private round ever, $840B valuation).",
+      "verified": true
+    },
+    {
+      "date": "2026-03-31",
+      "title": "GPU Rental Prices Surge ~40%",
+      "category": "Infrastructure",
+      "significance": 2,
+      "detail": "NVIDIA hardware rental prices surge approximately 40% driven by demand from AI training and inference workloads.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-01",
+      "title": "Crunchbase Q1 2026 Funding Report Published",
+      "category": "Funding",
+      "significance": 2,
+      "detail": "Formal publication of Q1 2026 venture funding data confirming record AI investment.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-02",
+      "title": "Google Releases Gemma 4",
+      "category": "Models",
+      "significance": 3,
+      "detail": "Frontier-level open model under Apache 2.0 license. Advanced reasoning and agentic workflows. Free for commercial use.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-03",
+      "title": "Microsoft Announces $10B AI Investment in Japan",
+      "category": "Funding",
+      "significance": 2,
+      "detail": "AI infrastructure race goes global. Part of broader Microsoft AI expansion strategy.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-03",
+      "title": "Andrej Karpathy Publishes LLM Wiki",
+      "category": "Tools",
+      "significance": 3,
+      "detail": "Open-source tool: dump raw research into folder, LLM builds interlinked wiki autonomously. Karpathy's wiki grew to 100 articles, 400K words. Threatens Confluence/Notion market.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-05",
+      "title": "Meta Releases Llama 4 Maverick",
+      "category": "Models",
+      "significance": 3,
+      "detail": "400B parameter MoE model with 1M context window (10M reported in some sources). Largest context of any open model.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-05",
+      "title": "AI Energy Efficiency Breakthrough Published",
+      "category": "Research",
+      "significance": 3,
+      "detail": "Researchers unveil approach that could slash AI energy use by up to 100x while improving accuracy. Published in ScienceDaily.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-07",
+      "title": "Anthropic Withholds Claude Mythos — Project Glasswing Announced",
+      "category": "Policy",
+      "significance": 5,
+      "detail": "First time a frontier lab voluntarily withholds a completed model due to cybersecurity risks. Limited-partner program (Project Glasswing) announced for vetted access.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-07",
+      "title": "Zhipu AI Releases GLM-5.1 Open-Source Weights (MIT License)",
+      "category": "Models",
+      "significance": 4,
+      "detail": "744B MoE model released under MIT license. Beats Claude Opus 4.6 and GPT-5.4 on SWE-Bench Pro. Open-source from China outperforms closed Western models on real-world coding.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-08",
+      "title": "Meta Launches Muse Spark",
+      "category": "Models",
+      "significance": 4,
+      "detail": "First model from Meta Superintelligence Labs (formerly FAIR). Built to monetize across Meta's 3.9B user base. As capable as older Llama 4 midsize for 'order of magnitude less compute.'",
+      "verified": true
+    },
+    {
+      "date": "2026-04-08",
+      "title": "Anthropic Revenue Run Rate Reported at $30B",
+      "category": "Funding",
+      "significance": 2,
+      "detail": "Up from $9B end of 2025 — 3.3x growth. (Note: some sources report ~$19B ARR; figures vary by source.)",
+      "verified": true
+    },
+    {
+      "date": "2026-04-09",
+      "title": "Project Glasswing: 40+ Companies Given Mythos Preview Access",
+      "category": "Policy",
+      "significance": 3,
+      "detail": "Tech and cybersecurity companies receive tiered access to Claude Mythos under Project Glasswing.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-10",
+      "title": "NVIDIA 8-Day Winning Streak",
+      "category": "Markets",
+      "significance": 1,
+      "detail": "NVIDIA hits $188.53 on 8-day winning streak after soft March CPI report. Macro + AI double tailwind.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-10",
+      "title": "CoreWeave Momentum Surges on $6.8B Meta Contract",
+      "category": "Infrastructure",
+      "significance": 2,
+      "detail": "CoreWeave momentum score surges 32 → 74 on $6.8B Meta infrastructure contract. Neocloud model validated at scale.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-10",
+      "title": "CFRA Upgrades META to Strong Buy",
+      "category": "Markets",
+      "significance": 1,
+      "detail": "AI monetization thesis gains analyst conviction. Piper Sandler: 'Mag 7 became the Lag 7' — rotation signal.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-09",
+      "title": "CoreWeave-Meta $21B Expanded AI Infrastructure Deal",
+      "category": "Infrastructure",
+      "significance": 3,
+      "detail": "CoreWeave and Meta expanded their AI infrastructure agreement to $21B (on top of prior $14.2B), running through 2032. Total Meta contracts now $35B. Uses NVIDIA Vera Rubin systems.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-09",
+      "title": "Anthropic-Google-Broadcom 3.5GW TPU Compute Deal",
+      "category": "Infrastructure",
+      "significance": 4,
+      "detail": "Anthropic signed deal for 3.5GW of Google TPU capacity via Broadcom, on top of 1GW already coming online. Mizuho estimates $21B Broadcom AI revenue from Anthropic in 2026, $42B in 2027. Anthropic has 1,000+ enterprise customers spending $1M+/year.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-09",
+      "title": "Anthropic Loses Appeals Court Bid on Pentagon Blacklisting",
+      "category": "Policy",
+      "significance": 4,
+      "detail": "Federal appeals court denied Anthropic's request to temporarily block DOD 'supply chain risk' designation. First American company to receive this classification. Oral arguments set for May 19.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-10",
+      "title": "CoreWeave-Anthropic $6.8B Multi-Year Agreement",
+      "category": "Infrastructure",
+      "significance": 3,
+      "detail": "CoreWeave secured $6.8B deal with Anthropic to power Claude models using NVIDIA Vera Rubin GPUs. Stock surged 12%. Revenue backlog exceeds $66B. Two landmark deals in 48 hours.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-10",
+      "title": "GPT-5.5 Spud Pretraining Complete (Widely Reported)",
+      "category": "Models",
+      "significance": 3,
+      "detail": "OpenAI's next frontier model completed pretraining ~Mar 24. Could ship as GPT-5.5 or GPT-6. Polymarket: 78% probability of release by Apr 30. Brockman: 'two years of research inside this model.'",
+      "verified": true
+    },
+    {
+      "date": "2026-04-10",
+      "title": "19 State AI Bills Passed Into Law",
+      "category": "Policy",
+      "significance": 3,
+      "detail": "19 new AI laws passed in two weeks. NY RAISE Act (S 8828) requires frontier model developers ($500M+ revenue) to publish safety plans and report incidents within 72 hours. Effective Jan 1, 2027. Another 27 bills passed both chambers.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-10",
+      "title": "Eli Lilly LillyPod AI Supercomputer Goes Live",
+      "category": "Research",
+      "significance": 3,
+      "detail": "Pharma's most powerful supercomputer: 1,016 NVIDIA Blackwell GPUs, 9,000+ petaflops. Simulates billions of molecular hypotheses. Goal: cut 10-year drug development timeline in half.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-08",
+      "title": "Eclipse Ventures $1.3B Physical AI Fund",
+      "category": "Funding",
+      "significance": 2,
+      "detail": "Largest fund raise in Eclipse's 11-year history. $720M early-stage + $591M growth. Focus: robotics, defense, manufacturing. Total AUM ~$10B.",
+      "verified": true
+    },
+    {
+      "date": "2026-04-26",
+      "title": "Sora Web/App Discontinuation (Upcoming)",
+      "category": "Industry",
+      "significance": 2,
+      "detail": "Scheduled date for Sora web and app experiences to be fully discontinued. API continues until September 24.",
+      "verified": true
+    }
+  ],
+  "not_yet_released": [
+    {
+      "title": "DeepSeek R2",
+      "status": "NOT RELEASED",
+      "detail": "Training delays on Huawei Ascend chips. Not a single successful training run achieved on Ascend hardware. Pivoted back to Nvidia. Beta testing only. No confirmed public launch date as of April 10, 2026.",
+      "common_misreport": "Often incorrectly reported as released or as a 2025 event. R1 was released Jan 2025; R2 remains unreleased."
+    },
+    {
+      "title": "Llama 4 Behemoth",
+      "status": "NOT RELEASED",
+      "detail": "Announced but not yet released as of April 10, 2026."
+    },
+    {
+      "title": "GPT-5.5 / GPT-6 (Spud)",
+      "status": "PRETRAINING COMPLETE",
+      "detail": "Pretraining completed ~Mar 24, 2026. Currently in post-training (RLHF, safety tuning). Could ship as GPT-5.5 or GPT-6 depending on benchmark results. Polymarket: 78% probability of release by Apr 30. Greg Brockman: 'two years of research inside this model.'"
+    },
+    {
+      "title": "Colorado AI Act (SB 24-205)",
+      "status": "UPCOMING",
+      "detail": "Takes effect June 30, 2026. Requires reasonable care to protect consumers from algorithmic discrimination."
+    },
+    {
+      "title": "Apple Reimagined Siri",
+      "status": "UPCOMING",
+      "detail": "Targeted for release alongside iOS 26.4, reportedly March 2026 window but may slip."
+    }
+  ],
+  "category_legend": {
+    "Models": "#3b82f6",
+    "Policy": "#ef4444",
+    "Funding": "#22c55e",
+    "Infrastructure": "#f59e0b",
+    "Research": "#8b5cf6",
+    "Industry": "#6366f1",
+    "Tools": "#06b6d4",
+    "Markets": "#64748b"
+  }
+}

@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Developments Dashboard — April 9–11, 2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background-color: #f5f6fa;
+            color: #1f2937;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .header .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .kpi-card {
+            background: #f9fafb;
+            border-left: 4px solid #2563eb;
+            padding: 16px;
+            border-radius: 6px;
+        }
+
+        .kpi-card .label {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .kpi-card .value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #111827;
+        }
+
+        .timeline {
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            padding: 20px 0;
+            gap: 2px;
+        }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            background: #2563eb;
+            border-radius: 50%;
+            margin-bottom: 12px;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 2px #2563eb;
+        }
+
+        .timeline-label {
+            font-size: 13px;
+            color: #6b7280;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-event {
+            font-size: 12px;
+            color: #1f2937;
+            font-weight: 500;
+            line-height: 1.4;
+            padding: 0 8px;
+        }
+
+        /* Sector Chart */
+        .chart-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .chart-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            color: #111827;
+        }
+
+        #sectorChart {
+            max-width: 100%;
+            height: 400px;
+        }
+
+        /* Scoring Distribution Chart */
+        .chart-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .chart-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .chart-card h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            color: #111827;
+        }
+
+        /* Ranked Feed */
+        .feed-section {
+            margin-bottom: 32px;
+        }
+
+        .feed-category-header {
+            background: white;
+            border-radius: 12px 12px 0 0;
+            padding: 24px 32px;
+            margin-bottom: 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .feed-category-header h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .feed-category-header .note {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .item-card {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 24px 32px;
+            transition: background-color 0.2s ease;
+        }
+
+        .item-card:last-child {
+            border-bottom: none;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .item-card:first-of-type {
+            border-radius: 0;
+        }
+
+        .feed-section:first-child .item-card:first-of-type {
+            border-radius: 12px 12px 0 0;
+        }
+
+        .item-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .score-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .score-5 { background-color: #dc2626; }
+        .score-4 { background-color: #d97706; }
+        .score-3 { background-color: #2563eb; }
+        .score-2 { background-color: #6b7280; }
+        .score-1 { background-color: #9ca3af; }
+
+        .item-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111827;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .tag-date {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .tag-category {
+            background: #f0fdf4;
+            color: #15803d;
+        }
+
+        .tag-signal {
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 11px;
+        }
+
+        .tag-signal.infrastructure { background: #dbeafe; color: #1e40af; }
+        .tag-signal.disruption { background: #fee2e2; color: #991b1b; }
+        .tag-signal.tam { background: #dcfce7; color: #166534; }
+        .tag-signal.regulatory { background: #fed7aa; color: #b45309; }
+
+        .tag-frontier {
+            background: #f3e8ff;
+            color: #6b21a8;
+            font-size: 11px;
+        }
+
+        .item-content {
+            margin-left: 44px;
+        }
+
+        .item-section {
+            margin-bottom: 16px;
+        }
+
+        .item-section-label {
+            font-weight: 700;
+            color: #374151;
+            margin-bottom: 6px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .item-section-content {
+            color: #4b5563;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .sources {
+            margin-top: 16px;
+        }
+
+        .sources-label {
+            font-weight: 700;
+            color: #374151;
+            margin-bottom: 8px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .source-link {
+            display: inline-block;
+            margin-right: 12px;
+            margin-bottom: 8px;
+        }
+
+        .source-link a {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .source-link a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        /* Frontier Tracker */
+        .frontier-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .frontier-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            color: #111827;
+        }
+
+        .frontier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .frontier-item {
+            background: #f9fafb;
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .frontier-name {
+            font-weight: 700;
+            color: #111827;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .frontier-stage {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+        .frontier-progress {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .frontier-bar {
+            flex: 1;
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .frontier-fill {
+            height: 100%;
+            background: #2563eb;
+            border-radius: 3px;
+        }
+
+        .frontier-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            color: #111827;
+            min-width: 45px;
+            text-align: right;
+        }
+
+        .frontier-arrow {
+            font-size: 12px;
+            color: #059669;
+        }
+
+        .frontier-arrow.stable {
+            color: #6b7280;
+        }
+
+        /* Convergence Themes */
+        .themes-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .themes-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            color: #111827;
+        }
+
+        .theme-item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .theme-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .theme-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .theme-supporting {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .theme-insight {
+            font-size: 15px;
+            color: #1f2937;
+            font-style: italic;
+            padding: 12px 16px;
+            background: #f3f4f6;
+            border-left: 3px solid #2563eb;
+            border-radius: 4px;
+        }
+
+        /* Scoring Legend */
+        .legend-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .legend-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            color: #111827;
+        }
+
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .legend-item {
+            padding: 16px;
+            background: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .legend-score {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .legend-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            font-weight: 700;
+            color: white;
+            font-size: 14px;
+        }
+
+        .legend-name {
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .legend-description {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.5;
+            margin-top: 4px;
+        }
+
+        /* Glossary */
+        .glossary-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .glossary-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .glossary-search {
+            margin-bottom: 24px;
+        }
+
+        .glossary-search input {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .glossary-term {
+            padding: 16px;
+            background: #f9fafb;
+            border-radius: 8px;
+            border-left: 3px solid #d1d5db;
+        }
+
+        .glossary-term.hidden {
+            display: none;
+        }
+
+        .glossary-term-name {
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 4px;
+        }
+
+        .glossary-term-definition {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 32px 20px;
+            color: #9ca3af;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 12px;
+            }
+
+            .header, .chart-section, .frontier-section,
+            .themes-section, .legend-section, .glossary-section,
+            .timeline-section {
+                padding: 24px 16px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .item-title {
+                min-width: unset;
+            }
+
+            .item-content {
+                margin-left: 0;
+            }
+
+            .timeline {
+                justify-content: flex-start;
+            }
+
+            .legend-grid, .frontier-grid, .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-row {
+                grid-template-columns: 1fr;
+            }
+
+            .kpi-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .item-card, .chart-section, .frontier-section {
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        /* YTD Timeline */
+        .ytd-timeline-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        .ytd-timeline-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #111827; }
+        .ytd-timeline-subtitle { font-size: 14px; color: #6b7280; margin-bottom: 24px; }
+        .ytd-timeline-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+        .ytd-filter-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid #d1d5db; background: white; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .ytd-filter-btn.active { background: #1f2937; color: white; border-color: #1f2937; }
+        .ytd-filter-btn:hover:not(.active) { background: #f3f4f6; }
+        .ytd-chart-container { position: relative; height: 380px; overflow-x: auto; overflow-y: hidden; }
+        .ytd-chart-inner { position: relative; min-width: 1200px; height: 100%; }
+        .ytd-month-labels { display: flex; position: absolute; top: 0; left: 0; right: 0; height: 28px; }
+        .ytd-month-label { flex: 1; text-align: center; font-size: 13px; font-weight: 700; color: #374151; border-bottom: 2px solid #e5e7eb; padding-bottom: 6px; }
+        .ytd-month-label.current { color: #2563eb; border-bottom-color: #2563eb; }
+        .ytd-lanes { position: absolute; top: 36px; left: 0; right: 0; bottom: 0; }
+        .ytd-event-dot { position: absolute; border-radius: 50%; cursor: pointer; transition: all 0.2s; z-index: 2; border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+        .ytd-event-dot:hover { transform: scale(1.5); z-index: 10; }
+        .ytd-event-dot.sig-5 { width: 20px; height: 20px; }
+        .ytd-event-dot.sig-4 { width: 17px; height: 17px; }
+        .ytd-event-dot.sig-3 { width: 14px; height: 14px; }
+        .ytd-event-dot.sig-2 { width: 11px; height: 11px; }
+        .ytd-event-dot.sig-1 { width: 9px; height: 9px; }
+        .ytd-tooltip { display: none; position: fixed; background: #1f2937; color: white; padding: 12px 16px; border-radius: 8px; font-size: 13px; max-width: 320px; z-index: 1000; pointer-events: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); line-height: 1.5; }
+        .ytd-tooltip .tooltip-date { font-size: 11px; color: #9ca3af; margin-bottom: 4px; }
+        .ytd-tooltip .tooltip-title { font-weight: 700; margin-bottom: 4px; }
+        .ytd-tooltip .tooltip-detail { font-size: 12px; color: #d1d5db; }
+        .ytd-tooltip .tooltip-sig { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+        .ytd-legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; padding-top: 16px; border-top: 1px solid #e5e7eb; }
+        .ytd-legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #6b7280; }
+        .ytd-legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+        /* Milestone Reference */
+        .milestone-section { background: white; border-radius: 12px; padding: 40px; margin-bottom: 32px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); }
+        .milestone-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #111827; }
+        .milestone-subtitle { font-size: 14px; color: #6b7280; margin-bottom: 24px; }
+        .milestone-month-group { margin-bottom: 24px; }
+        .milestone-month-header { font-size: 15px; font-weight: 700; color: #374151; padding: 8px 0; border-bottom: 2px solid #e5e7eb; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .milestone-month-header:hover { color: #2563eb; }
+        .milestone-month-header .toggle-icon { font-size: 12px; transition: transform 0.2s; }
+        .milestone-month-header.collapsed .toggle-icon { transform: rotate(-90deg); }
+        .milestone-list { display: grid; gap: 8px; }
+        .milestone-list.collapsed { display: none; }
+        .milestone-item { display: grid; grid-template-columns: 70px 10px 1fr auto; gap: 12px; align-items: center; padding: 8px 12px; border-radius: 6px; background: #f9fafb; font-size: 14px; }
+        .milestone-item:hover { background: #f3f4f6; }
+        .milestone-date { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6b7280; font-weight: 600; }
+        .milestone-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .milestone-title { color: #1f2937; font-weight: 500; }
+        .milestone-sig-badge { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 4px; font-weight: 700; font-size: 11px; color: white; }
+        .not-released-section { margin-top: 24px; padding: 16px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444; }
+        .not-released-title { font-weight: 700; color: #991b1b; margin-bottom: 8px; }
+        .not-released-item { font-size: 13px; color: #7f1d1d; margin-bottom: 6px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>AI DEVELOPMENTS DASHBOARD</h1>
+            <div class="subtitle">April 9&ndash;11, 2026 | v3.1</div>
+            <div class="kpi-row">
+                <div class="kpi-card">
+                    <div class="label">Sources</div>
+                    <div class="value">18/22</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="label">Items Tracked</div>
+                    <div class="value">12</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="label">Breakdown</div>
+                    <div class="value">8 new + 4 context</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="label">Paradigm Shifts</div>
+                    <div class="value">0</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="label">Avg Score</div>
+                    <div class="value">3.0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="timeline-section">
+            <h2>Event Timeline (April 9&ndash;11)</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-label">Apr 8</div>
+                    <div class="timeline-event">Eclipse $1.3B</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-label">Apr 9</div>
+                    <div class="timeline-event">Anthropic 3.5GW</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-label">Apr 9</div>
+                    <div class="timeline-event">DOD Blacklist</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-label">Apr 9</div>
+                    <div class="timeline-event">CW-Meta $21B</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-label">Apr 10</div>
+                    <div class="timeline-event">CW-Anthropic $6.8B</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-label">Apr 10</div>
+                    <div class="timeline-event">GPT-5.5 Pretrain</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-label">Apr 10</div>
+                    <div class="timeline-event">19 State AI Bills</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-label">Apr 10</div>
+                    <div class="timeline-event">LillyPod Live</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row: Scoring Distribution + Sector Performance -->
+        <div class="chart-row">
+            <div class="chart-card">
+                <h2>Scoring Distribution</h2>
+                <div style="position: relative; height: 320px; display: flex; align-items: center; justify-content: center;">
+                    <canvas id="scoringChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h2>Sector Performance (% Daily Change &mdash; Apr 10)</h2>
+                <div style="position: relative; height: 320px;">
+                    <canvas id="sectorChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ranked Feed: Score 4 -->
+        <div class="feed-section">
+            <div class="feed-category-header">
+                <h2>SIGNIFICANT BREAKTHROUGHS (Score 4)</h2>
+                <div class="note">2 items &mdash; developments that meaningfully change the frontier</div>
+            </div>
+            <div id="score4-items"></div>
+        </div>
+
+        <!-- Ranked Feed: Score 3 -->
+        <div class="feed-section">
+            <div class="feed-category-header">
+                <h2>MEANINGFUL DEVELOPMENTS (Score 3)</h2>
+                <div class="note">5 items &mdash; solid advances that clearly move the needle</div>
+            </div>
+            <div id="score3-items"></div>
+        </div>
+
+        <!-- Ranked Feed: Score 2 -->
+        <div class="feed-section">
+            <div class="feed-category-header">
+                <h2>INCREMENTAL PROGRESS (Score 2)</h2>
+                <div class="note">1 item &mdash; useful development worth tracking</div>
+            </div>
+            <div id="score2-items"></div>
+        </div>
+
+        <!-- Recent Context -->
+        <div class="feed-section">
+            <div class="feed-category-header">
+                <h2>RECENT CONTEXT (from prior report)</h2>
+                <div class="note">Key developments from the prior report that provide context for this period's events</div>
+            </div>
+            <div id="context-items"></div>
+        </div>
+
+        <!-- Frontier Tracker -->
+        <div class="frontier-section">
+            <h2>Frontier Tracker</h2>
+            <div style="position: relative; height: 300px; margin-bottom: 24px;">
+                <canvas id="frontierChart"></canvas>
+            </div>
+            <div class="frontier-grid">
+                <div class="frontier-item">
+                    <div class="frontier-name">Reasoning &amp; Logic</div>
+                    <div class="frontier-stage">Maturing</div>
+                    <div class="frontier-progress">
+                        <div class="frontier-bar"><div class="frontier-fill" style="width: 82%;"></div></div>
+                        <div class="frontier-value">82%</div>
+                        <div class="frontier-arrow stable">&rarr;</div>
+                    </div>
+                </div>
+                <div class="frontier-item">
+                    <div class="frontier-name">Code Generation</div>
+                    <div class="frontier-stage">Maturing</div>
+                    <div class="frontier-progress">
+                        <div class="frontier-bar"><div class="frontier-fill" style="width: 78%;"></div></div>
+                        <div class="frontier-value">78%</div>
+                        <div class="frontier-arrow stable">&rarr;</div>
+                    </div>
+                </div>
+                <div class="frontier-item">
+                    <div class="frontier-name">Multimodal AI</div>
+                    <div class="frontier-stage">Rapid Growth</div>
+                    <div class="frontier-progress">
+                        <div class="frontier-bar"><div class="frontier-fill" style="width: 70%;"></div></div>
+                        <div class="frontier-value">70%</div>
+                        <div class="frontier-arrow stable">&rarr;</div>
+                    </div>
+                </div>
+                <div class="frontier-item">
+                    <div class="frontier-name">Agentic AI</div>
+                    <div class="frontier-stage">Early Production</div>
+                    <div class="frontier-progress">
+                        <div class="frontier-bar"><div class="frontier-fill" style="width: 65%;"></div></div>
+                        <div class="frontier-value">65%</div>
+                        <div class="frontier-arrow stable">&rarr;</div>
+                    </div>
+                </div>
+                <div class="frontier-item">
+                    <div class="frontier-name">Biology &amp; Drug Discovery</div>
+                    <div class="frontier-stage">Growing</div>
+                    <div class="frontier-progress">
+                        <div class="frontier-bar"><div class="frontier-fill" style="width: 52%;"></div></div>
+                        <div class="frontier-value">52%</div>
+                        <div class="frontier-arrow">&uarr;</div>
+                    </div>
+                </div>
+                <div class="frontier-item">
+                    <div class="frontier-name">Robotics &amp; Physical AI</div>
+                    <div class="frontier-stage">Emerging</div>
+                    <div class="frontier-progress">
+                        <div class="frontier-bar"><div class="frontier-fill" style="width: 41%;"></div></div>
+                        <div class="frontier-value">41%</div>
+                        <div class="frontier-arrow">&uarr;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- YTD Timeline -->
+        <div class="ytd-timeline-section">
+            <h2>2026 AI Timeline — Year to Date</h2>
+            <div class="ytd-timeline-subtitle">Verified events from January–April 2026. Hover for details. Filter by category. Dot size = significance.</div>
+            <div class="ytd-timeline-filters" id="ytd-filters"></div>
+            <div class="ytd-chart-container">
+                <div class="ytd-chart-inner" id="ytd-chart"></div>
+            </div>
+            <div class="ytd-legend" id="ytd-legend"></div>
+            <div class="ytd-tooltip" id="ytd-tooltip"></div>
+        </div>
+
+        <!-- Milestone Reference -->
+        <div class="milestone-section">
+            <h2>2026 Milestone Reference</h2>
+            <div class="milestone-subtitle">Verified AI events by month. Click month headers to expand/collapse.</div>
+            <div id="milestone-list"></div>
+            <div class="not-released-section">
+                <div class="not-released-title">NOT YET RELEASED (as of April 11, 2026)</div>
+                <div class="not-released-item"><strong>DeepSeek R2</strong> — Training delays on Huawei Ascend chips. Pivoted back to NVIDIA. Beta testing only. No confirmed public launch date.</div>
+                <div class="not-released-item"><strong>Llama 4 Behemoth</strong> — Announced but not yet released.</div>
+                <div class="not-released-item"><strong>GPT-5.5 / GPT-6 (Spud)</strong> — Pretraining complete ~Mar 24. In post-training phase. Expected release Apr 14–May 5.</div>
+                <div class="not-released-item"><strong>Colorado AI Act (SB 24-205)</strong> — Takes effect June 30, 2026.</div>
+            </div>
+        </div>
+
+        <!-- Convergence Themes -->
+        <div class="themes-section">
+            <h2>Convergence Themes</h2>
+            <div class="theme-item">
+                <div class="theme-title">Theme 1: "The Great GPU Landgrab"</div>
+                <div class="theme-supporting"><strong>Supporting:</strong> CoreWeave signed $27.8B in 48 hours. Anthropic locked in 3.5GW of Google TPU capacity via Broadcom. Mizuho estimates $21B in Broadcom AI revenue from Anthropic in 2026 alone.</div>
+                <div class="theme-insight">"Physical compute access is the competitive moat. The companies that win the next two years are the ones signing infrastructure deals today, not the ones with the best benchmarks."</div>
+            </div>
+            <div class="theme-item">
+                <div class="theme-title">Theme 2: "AI Meets the Real World"</div>
+                <div class="theme-supporting"><strong>Supporting:</strong> Eli Lilly's LillyPod supercomputer goes live for drug discovery. Eclipse Ventures raises $1.3B for physical AI (robotics, defense, manufacturing). Video-action models emerging in robotics.</div>
+                <div class="theme-insight">"AI is moving beyond screens and APIs. The next wave of value creation happens when models control physical systems &mdash; from drug molecules to factory robots."</div>
+            </div>
+            <div class="theme-item">
+                <div class="theme-title">Theme 3: "The Governance Reckoning"</div>
+                <div class="theme-supporting"><strong>Supporting:</strong> 19 state AI bills passed into law in two weeks. Anthropic blacklisted by DOD under supply chain risk designation. NY RAISE Act creates frontier model oversight for developers with $500M+ revenue.</div>
+                <div class="theme-insight">"Government is no longer 'catching up' to AI &mdash; it's actively reshaping the playing field. The regulatory environment is fragmenting faster than any single company can navigate."</div>
+            </div>
+        </div>
+
+        <!-- Scoring Legend -->
+        <div class="legend-section">
+            <h2>Scoring Pyramid</h2>
+            <div class="legend-grid">
+                <div class="legend-item">
+                    <div class="legend-score">
+                        <div class="legend-badge score-5">5</div>
+                        <div class="legend-name">PARADIGM SHIFT</div>
+                    </div>
+                    <div class="legend-description">Rare. Reorders assumptions. <strong>This period:</strong> None</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-score">
+                        <div class="legend-badge score-4">4</div>
+                        <div class="legend-name">SIGNIFICANT BREAKTHROUGH</div>
+                    </div>
+                    <div class="legend-description">Important. Meaningfully changes frontier. <strong>This period:</strong> Anthropic 3.5GW Deal, DOD Blacklisting</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-score">
+                        <div class="legend-badge score-3">3</div>
+                        <div class="legend-name">MEANINGFUL DEVELOPMENT</div>
+                    </div>
+                    <div class="legend-description">Solid. Advances frontier clearly. <strong>This period:</strong> CoreWeave-Meta, CoreWeave-Anthropic, GPT-5.5, State AI Bills, LillyPod</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-score">
+                        <div class="legend-badge score-2">2</div>
+                        <div class="legend-name">INCREMENTAL PROGRESS</div>
+                    </div>
+                    <div class="legend-description">Useful. Moves needle. <strong>This period:</strong> Eclipse Ventures $1.3B</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-score">
+                        <div class="legend-badge score-1">1</div>
+                        <div class="legend-name">WORTH NOTING</div>
+                    </div>
+                    <div class="legend-description">Context. Awareness. <strong>This period:</strong> None</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glossary -->
+        <div class="glossary-section">
+            <h2>Glossary (New Terms)</h2>
+            <div class="glossary-search">
+                <input type="text" id="glossary-search" placeholder="Search glossary..." />
+            </div>
+            <div class="glossary-grid" id="glossary-grid"></div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>AI Developments Dashboard v3.1</strong> | Generated Friday, April 11, 2026 | Reporting period: April 9&ndash;11, 2026</p>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // DATA
+        // ==========================================
+
+        const SECTOR_DATA = [
+            {sector: "Energy", change: 1.09},
+            {sector: "Utilities", change: 1.06},
+            {sector: "Consumer Cyclical", change: 0.45},
+            {sector: "Technology", change: 0.35},
+            {sector: "Real Estate", change: 0.01},
+            {sector: "Basic Materials", change: -0.51},
+            {sector: "Industrials", change: -0.65},
+            {sector: "Comm Services", change: -0.81},
+            {sector: "Financials", change: -0.93},
+            {sector: "Healthcare", change: -1.81},
+            {sector: "Consumer Def", change: -2.21}
+        ];
+
+        const GLOSSARY_TERMS = [
+            {term: "TPU", def: "Tensor Processing Unit. Google's custom AI chip optimized for machine learning workloads, competing with NVIDIA GPUs."},
+            {term: "Supply Chain Risk Designation", def: "DOD classification that bars a company from defense contracts. Historically reserved for foreign adversaries like Huawei."},
+            {term: "Video-Action Model (VAM)", def: "Robotics architecture that uses pretrained video models to enable physical world interaction and manipulation."},
+            {term: "Vera Rubin", def: "NVIDIA's next-generation GPU platform succeeding the Blackwell architecture. Used in latest CoreWeave infrastructure deals."},
+            {term: "RAISE Act", def: "New York law requiring frontier model developers with $500M+ annual revenue to publish safety plans and undergo oversight."}
+        ];
+
+        const CATEGORY_COLORS = {
+            Models: '#3b82f6', Policy: '#ef4444', Funding: '#22c55e',
+            Infrastructure: '#f59e0b', Research: '#8b5cf6', Industry: '#6366f1',
+            Tools: '#06b6d4', Markets: '#64748b'
+        };
+        const SIG_COLORS = {5:'#dc2626',4:'#d97706',3:'#2563eb',2:'#6b7280',1:'#9ca3af'};
+
+        const YTD_EVENTS = [
+            {date:'2026-01-01',title:'State AI Laws Take Effect',cat:'Policy',sig:4,detail:'California Transparency in Frontier AI Act (TFAIA) and Texas Responsible AI Governance Act (RAIGA) go into effect. 600+ AI bills introduced across state legislatures in 2026 sessions.'},
+            {date:'2026-01-05',title:'MIT Tech Review: \'What\\\'s Next for AI in 2026\'',cat:'Industry',sig:1,detail:'Major prediction roundup. Themes: pragmatism over hype, agent deployment, regulation battle.'},
+            {date:'2026-01-15',title:'DeepSeek V4 / R2 Launch Timing Stays Hidden',cat:'Models',sig:2,detail:'Reports confirm DeepSeek R2 remains unreleased due to Huawei Ascend chip training failures. No confirmed public launch date. Beta testing only.'},
+            {date:'2026-01-20',title:'AAAI-26 Conference',cat:'Research',sig:2,detail:'Annual AAAI conference held Jan 20\u201327 at Singapore EXPO. Major papers on reasoning, multimodal AI, and agent architectures.'},
+            {date:'2026-01-22',title:'Meta CTO Bosworth Announces Superintelligence Labs Progress at Davos',cat:'Industry',sig:2,detail:'Meta CTO Andrew Bosworth at World Economic Forum confirms Meta Superintelligence Labs delivered first high-profile AI models internally.'},
+            {date:'2026-01-25',title:'AI Scientist v2 Open-Sourced by Sakana AI',cat:'Research',sig:3,detail:'Sakana AI open-sources AI Scientist v2. First AI system to author a peer-reviewed publication (ICLR 2025 workshop).'},
+            {date:'2026-02-05',title:'Anthropic Releases Claude Opus 4.6',cat:'Models',sig:4,detail:'Major model upgrade. 1M token context window in beta. Significant improvements in reasoning and code generation.'},
+            {date:'2026-02-05',title:'OpenAI Releases GPT-5.3 Codex',cat:'Models',sig:3,detail:'Specialized coding model release focused on software engineering tasks.'},
+            {date:'2026-02-17',title:'Anthropic Releases Claude Sonnet 4.6',cat:'Models',sig:3,detail:'Fast, capable model with 1M token context beta. Positioned as daily-driver model.'},
+            {date:'2026-02-17',title:'xAI Releases Grok 4.20',cat:'Models',sig:3,detail:'Features unique four-agent architecture. Released same day as Claude Sonnet 4.6.'},
+            {date:'2026-02-19',title:'Google Releases Gemini 3.1 Pro',cat:'Models',sig:4,detail:'Dominates 13 of 16 major benchmarks at launch. 2M token context window, native multimodal.'},
+            {date:'2026-02-25',title:'February Model Release Velocity Record',cat:'Industry',sig:2,detail:'12 significant model updates in a single month.'},
+            {date:'2026-03-03',title:'xAI Releases Grok 4.20 Beta 2',cat:'Models',sig:2,detail:'Iterative improvement on February Grok 4.20 release.'},
+            {date:'2026-03-03',title:'Mistral Releases Small 4',cat:'Models',sig:2,detail:'Compact, efficient model from Mistral AI.'},
+            {date:'2026-03-05',title:'OpenAI Releases GPT-5.4 (Standard, Thinking, Pro)',cat:'Models',sig:4,detail:'Three variants. GPT-5.4 Thinking scores 83.0% on GDPVal benchmark (at/above human expert level). Major reasoning upgrade.'},
+            {date:'2026-03-10',title:'NVIDIA GTC 2026 Opens',cat:'Infrastructure',sig:4,detail:'March 10\u201314 at SAP Center, San Jose. Dominated by production deployment and enterprise agentic frameworks. Vera Rubin GPU unveiled.'},
+            {date:'2026-03-16',title:'Jensen Huang GTC Keynote: Vera Rubin, DLSS 5, Groq 3 LPU',cat:'Infrastructure',sig:4,detail:'Unveiled Groq 3 LPU (from $20B acquisition), Vera Rubin rack-scale systems, DLSS 5. Announced Uber autonomous fleet in 28 cities.'},
+            {date:'2026-03-17',title:'OpenAI Releases GPT-5.4 Mini and Nano',cat:'Models',sig:2,detail:'Smaller variants of GPT-5.4 for cost-efficient and edge deployment.'},
+            {date:'2026-03-20',title:'White House Releases National AI Policy Framework',cat:'Policy',sig:4,detail:'Legislative recommendations for Congress. Proposes broad federal preemption of state AI laws that impose \'undue burdens.\''},
+            {date:'2026-03-24',title:'OpenAI Shuts Down Sora',cat:'Industry',sig:4,detail:'Sora video generation tool discontinued. Inference cost ~$15M/day vs. $2.1M total lifetime revenue. Downloads fell 66% from Nov 2025 peak.'},
+            {date:'2026-03-25',title:'Anthropic MCP Crosses 97 Million Installs',cat:'Infrastructure',sig:3,detail:'Model Context Protocol reaches critical mass. Every major AI provider now ships MCP-compatible tooling. Becoming the \'HTTP of AI tools.\''},
+            {date:'2026-03-25',title:'Noah Labs FDA Breakthrough Device Designation',cat:'Research',sig:2,detail:'Voxan voice-based heart failure detection system receives FDA Breakthrough Device Designation.'},
+            {date:'2026-03-27',title:'Zhipu AI Releases GLM-5.1 API',cat:'Models',sig:2,detail:'Chinese AI lab releases API access to GLM-5.1 (744B MoE model).'},
+            {date:'2026-03-30',title:'California Governor Signs Executive Order N-5-26',cat:'Policy',sig:3,detail:'Newsom signs EO directing state agencies to develop AI vendor certification and procurement standards.'},
+            {date:'2026-03-31',title:'Q1 2026 AI Venture Funding: $242B\u2013$300B',cat:'Funding',sig:4,detail:'Crunchbase reports $300B total Q1 funding, ~80% ($242B) to AI. More than double previous quarterly record. OpenAI raised $110B.'},
+            {date:'2026-03-31',title:'GPU Rental Prices Surge ~40%',cat:'Infrastructure',sig:2,detail:'NVIDIA hardware rental prices surge approximately 40% driven by demand from AI training and inference workloads.'},
+            {date:'2026-04-01',title:'Crunchbase Q1 2026 Funding Report Published',cat:'Funding',sig:2,detail:'Formal publication of Q1 2026 venture funding data confirming record AI investment.'},
+            {date:'2026-04-02',title:'Google Releases Gemma 4',cat:'Models',sig:3,detail:'Frontier-level open model under Apache 2.0 license. Advanced reasoning and agentic workflows. Free for commercial use.'},
+            {date:'2026-04-03',title:'Microsoft Announces $10B AI Investment in Japan',cat:'Funding',sig:2,detail:'AI infrastructure race goes global. Part of broader Microsoft AI expansion strategy.'},
+            {date:'2026-04-03',title:'Andrej Karpathy Publishes LLM Wiki',cat:'Tools',sig:3,detail:'Open-source tool: dump raw research into folder, LLM builds interlinked wiki autonomously. Threatens Confluence/Notion market.'},
+            {date:'2026-04-05',title:'Meta Releases Llama 4 Maverick',cat:'Models',sig:3,detail:'400B parameter MoE model with 1M context window. Largest context of any open model.'},
+            {date:'2026-04-05',title:'AI Energy Efficiency Breakthrough Published',cat:'Research',sig:3,detail:'Researchers unveil approach that could slash AI energy use by up to 100x while improving accuracy.'},
+            {date:'2026-04-07',title:'Anthropic Withholds Claude Mythos \u2014 Project Glasswing Announced',cat:'Policy',sig:5,detail:'First time a frontier lab voluntarily withholds a completed model due to cybersecurity risks. Limited-partner program (Project Glasswing) announced for vetted access.'},
+            {date:'2026-04-07',title:'Zhipu AI Releases GLM-5.1 Open-Source Weights (MIT License)',cat:'Models',sig:4,detail:'744B MoE model released under MIT license. Beats Claude Opus 4.6 and GPT-5.4 on SWE-Bench Pro.'},
+            {date:'2026-04-08',title:'Meta Launches Muse Spark',cat:'Models',sig:4,detail:'First model from Meta Superintelligence Labs. Built to monetize across Meta\'s 3.9B user base. As capable as older Llama 4 midsize for \'order of magnitude less compute.\''},
+            {date:'2026-04-08',title:'Anthropic Revenue Run Rate Reported at $30B',cat:'Funding',sig:2,detail:'Up from $9B end of 2025 \u2014 3.3x growth.'},
+            {date:'2026-04-08',title:'Eclipse Ventures $1.3B Physical AI Fund',cat:'Funding',sig:2,detail:'Largest fund raise in Eclipse\'s 11-year history. $720M early-stage + $591M growth. Focus: robotics, defense, manufacturing.'},
+            {date:'2026-04-09',title:'Project Glasswing: 40+ Companies Given Mythos Preview Access',cat:'Policy',sig:3,detail:'Tech and cybersecurity companies receive tiered access to Claude Mythos under Project Glasswing.'},
+            {date:'2026-04-09',title:'CoreWeave-Meta $21B Expanded AI Infrastructure Deal',cat:'Infrastructure',sig:3,detail:'CoreWeave and Meta expanded their AI infrastructure agreement to $21B, running through 2032. Total Meta contracts now $35B.'},
+            {date:'2026-04-09',title:'Anthropic-Google-Broadcom 3.5GW TPU Compute Deal',cat:'Infrastructure',sig:4,detail:'Anthropic signed deal for 3.5GW of Google TPU capacity via Broadcom. Mizuho estimates $21B Broadcom AI revenue from Anthropic in 2026.'},
+            {date:'2026-04-09',title:'Anthropic Loses Appeals Court Bid on Pentagon Blacklisting',cat:'Policy',sig:4,detail:'Federal appeals court denied Anthropic\'s request to temporarily block DOD \'supply chain risk\' designation. Oral arguments set for May 19.'},
+            {date:'2026-04-10',title:'NVIDIA 8-Day Winning Streak',cat:'Markets',sig:1,detail:'NVIDIA hits $188.53 on 8-day winning streak after soft March CPI report.'},
+            {date:'2026-04-10',title:'CoreWeave Momentum Surges on $6.8B Meta Contract',cat:'Infrastructure',sig:2,detail:'CoreWeave momentum score surges 32 \u2192 74 on $6.8B Meta infrastructure contract.'},
+            {date:'2026-04-10',title:'CFRA Upgrades META to Strong Buy',cat:'Markets',sig:1,detail:'AI monetization thesis gains analyst conviction. Piper Sandler: \'Mag 7 became the Lag 7\' \u2014 rotation signal.'},
+            {date:'2026-04-10',title:'CoreWeave-Anthropic $6.8B Multi-Year Agreement',cat:'Infrastructure',sig:3,detail:'CoreWeave secured $6.8B deal with Anthropic to power Claude models using NVIDIA Vera Rubin GPUs. Revenue backlog exceeds $66B.'},
+            {date:'2026-04-10',title:'GPT-5.5 Spud Pretraining Complete (Widely Reported)',cat:'Models',sig:3,detail:'OpenAI\'s next frontier model completed pretraining ~Mar 24. Could ship as GPT-5.5 or GPT-6. Polymarket: 78% probability of release by Apr 30.'},
+            {date:'2026-04-10',title:'19 State AI Bills Passed Into Law',cat:'Policy',sig:3,detail:'19 new AI laws passed in two weeks. NY RAISE Act requires frontier model developers ($500M+ revenue) to publish safety plans.'},
+            {date:'2026-04-10',title:'Eli Lilly LillyPod AI Supercomputer Goes Live',cat:'Research',sig:3,detail:'Pharma\'s most powerful supercomputer: 1,016 NVIDIA Blackwell GPUs, 9,000+ petaflops. Goal: cut 10-year drug development timeline in half.'},
+            {date:'2026-04-26',title:'Sora Web/App Discontinuation (Upcoming)',cat:'Industry',sig:2,detail:'Scheduled date for Sora web and app experiences to be fully discontinued. API continues until September 24.'}
+        ];
+
+        const SCORE4_ITEMS = [
+            {score:4, title:"Anthropic-Google-Broadcom 3.5GW Compute Deal", date:"Apr 9", category:"Infrastructure", signal:"Infrastructure",
+             summary:"Anthropic signed a deal for 3.5 gigawatts of Google TPU capacity via Broadcom, on top of the 1GW already coming online. Mizuho estimates Broadcom will pick up $21B in AI revenue from Anthropic in 2026 alone, growing to $42B in 2027. Anthropic now counts over 1,000 enterprise customers spending $1M+ per year.",
+             why:"3.5 gigawatts is the power consumption of a mid-sized city. This deal redefines the scale of AI infrastructure commitments and cements Anthropic as a top-tier compute consumer alongside the hyperscalers."},
+            {score:4, title:"Anthropic Loses Appeals Court Bid on Pentagon Blacklisting", date:"Apr 9", category:"Policy", signal:"Regulatory Risk",
+             summary:"Federal appeals court denied Anthropic's request to block DOD 'supply chain risk' designation. First American company to receive this classification — historically reserved for foreign adversaries like Huawei. Oral arguments scheduled for May 19.",
+             why:"Creates unprecedented tension between AI safety commitments and federal contract eligibility. Could force every frontier lab to choose between safety-first positioning and government revenue."}
+        ];
+
+        const SCORE3_ITEMS = [
+            {score:3, title:"CoreWeave-Meta $21B Expanded Deal", date:"Apr 9", category:"Infrastructure", signal:"Infrastructure",
+             summary:"CoreWeave and Meta expanded their AI infrastructure agreement to $21B, on top of a prior $14.2B commitment. Total Meta contracts with CoreWeave now $35B. Uses NVIDIA Vera Rubin systems.",
+             why:"Validates CoreWeave as the dominant neocloud infrastructure provider. $35B in total commitments from a single customer is unprecedented in the data center industry."},
+            {score:3, title:"CoreWeave-Anthropic $6.8B Agreement", date:"Apr 10", category:"Infrastructure", signal:"Infrastructure",
+             summary:"CoreWeave secured a $6.8B multi-year deal with Anthropic using NVIDIA Vera Rubin GPUs. Stock surged 12%. Revenue backlog exceeds $66B. Combined with Meta, CoreWeave signed $27.8B in deals in just 48 hours.",
+             why:"$27.8B in 48 hours signals that the GPU infrastructure arms race is accelerating, not plateauing. CoreWeave's backlog now rivals traditional cloud providers built over decades."},
+            {score:3, title:"GPT-5.5 'Spud' Pretraining Complete", date:"Apr 10", category:"Models", signal:"TAM Expansion",
+             summary:"OpenAI's next frontier model completed pretraining. Could ship as GPT-5.5 or GPT-6. Polymarket gives 78% odds of release by April 30. Brockman described it as embodying 'two years of research.'",
+             why:"If released soon, this would be OpenAI's most significant model update since GPT-5. The compressed release cadence (5.4 shipped March) suggests the frontier is moving faster than ever."},
+            {score:3, title:"19 State AI Bills Passed Into Law", date:"Apr 10", category:"Policy", signal:"Regulatory Risk",
+             summary:"19 new AI laws enacted in just two weeks across US states. The NY RAISE Act requires frontier model developers with $500M+ revenue to publish safety plans. Another 27 bills have passed both legislative chambers and await signatures.",
+             why:"The regulatory landscape is fragmenting at state level while federal preemption remains unresolved. Companies must now navigate a patchwork of compliance requirements that vary by jurisdiction."},
+            {score:3, title:"Eli Lilly LillyPod AI Supercomputer Goes Live", date:"Apr 10", category:"Infrastructure", signal:"TAM Expansion",
+             summary:"Pharma's most powerful supercomputer: 1,016 NVIDIA Blackwell GPUs delivering 9,000+ petaflops of compute. Goal: cut the traditional 10-year drug development timeline in half.",
+             why:"First major pharma company to build a dedicated AI supercomputer at this scale. If LillyPod delivers on its promise, it validates the thesis that AI can compress decade-long R&D cycles in healthcare."}
+        ];
+
+        const SCORE2_ITEMS = [
+            {score:2, title:"Eclipse Ventures $1.3B Physical AI Fund", date:"Apr 8", category:"Funding", signal:"TAM Expansion",
+             summary:"Largest fund raise in Eclipse Ventures' history. Split between $720M early-stage and $591M growth fund. Focus areas: robotics, defense tech, and manufacturing AI.",
+             why:"Signals growing VC conviction that the next wave of AI value creation is in physical-world applications, not just software and language models."}
+        ];
+
+        const CONTEXT_ITEMS = [
+            {score:5, title:"Claude Mythos Withheld / Project Glasswing", date:"Apr 7", category:"Policy", signal:"Regulatory Risk",
+             summary:"Anthropic confirmed its most powerful model (Claude Mythos) but withheld it from public release due to cybersecurity risks. Only available to select partners under Project Glasswing. First time a frontier lab voluntarily withheld a completed model.",
+             why:"Sets a precedent that could reshape the AI release playbook. Other labs face pressure to adopt similar evaluation frameworks before shipping frontier models."},
+            {score:4, title:"GLM-5.1 Open Source Beats Closed Frontier", date:"Apr 7", category:"Models", signal:"Disruption",
+             summary:"Zhipu AI released GLM-5.1, a 744B MoE model under MIT license that beat both Claude Opus 4.6 and GPT-5.4 on SWE-Bench Pro — the hardest benchmark for real-world software engineering.",
+             why:"An open-source model from China outperforming the best closed Western models validates that open-weight models can match proprietary ones even on the hardest benchmarks."},
+            {score:2, title:"CFRA Upgrades META to Strong Buy", date:"Apr 10", category:"Adoption", signal:"TAM Expansion",
+             summary:"CFRA upgraded Meta to Strong Buy, citing AI monetization potential across its 3.9 billion user base following Muse Spark launch.",
+             why:"Wall Street is increasing conviction that big tech AI investments will translate to revenue."},
+            {score:1, title:"NVIDIA 8-Day Winning Streak $188.53", date:"Apr 10", category:"Funding", signal:"Infrastructure",
+             summary:"NVIDIA shares hit $188.53 on an 8-day winning streak, driven by soft March CPI data and continued AI infrastructure demand.",
+             why:"Macro tailwind (falling inflation expectations) combined with AI structural demand creates a dual catalyst for GPU makers."}
+        ];
+
+        // ==========================================
+        // RENDERING
+        // ==========================================
+
+        function renderGlossary() {
+            const grid = document.getElementById('glossary-grid');
+            grid.innerHTML = GLOSSARY_TERMS.map(t => `
+                <div class="glossary-term">
+                    <div class="glossary-term-name">${t.term}</div>
+                    <div class="glossary-term-definition">${t.def}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderItemsSection(items, containerId) {
+            const container = document.getElementById(containerId);
+            if (!items || items.length === 0) return;
+
+            container.innerHTML = items.map(item => `
+                <div class="item-card">
+                    <div class="item-header">
+                        <div class="score-badge score-${item.score}">${item.score}</div>
+                        <div class="item-title">${item.title}</div>
+                        <span class="tag tag-date">${item.date}</span>
+                        <span class="tag tag-category">${item.category}</span>
+                        <span class="tag tag-signal">${item.signal}</span>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-section">
+                            <div class="item-section-label">SUMMARY</div>
+                            <div class="item-section-content">${item.summary}</div>
+                        </div>
+                        <div class="item-section">
+                            <div class="item-section-label">WHY IT MATTERS</div>
+                            <div class="item-section-content">${item.why}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ==========================================
+        // INITIALIZATION
+        // ==========================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderGlossary();
+            renderItemsSection(SCORE4_ITEMS, 'score4-items');
+            renderItemsSection(SCORE3_ITEMS, 'score3-items');
+            renderItemsSection(SCORE2_ITEMS, 'score2-items');
+            renderItemsSection(CONTEXT_ITEMS, 'context-items');
+
+            // Scoring Distribution Donut Chart
+            const scoringCtx = document.getElementById('scoringChart').getContext('2d');
+            new Chart(scoringCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Score 5', 'Score 4', 'Score 3', 'Score 2', 'Score 1'],
+                    datasets: [{
+                        data: [0, 2, 5, 1, 0],
+                        backgroundColor: ['#dc2626', '#d97706', '#2563eb', '#6b7280', '#9ca3af'],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '55%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 16,
+                                usePointStyle: true,
+                                pointStyle: 'rectRounded',
+                                font: { size: 12, weight: '600' },
+                                color: '#374151',
+                                filter: function(item, data) {
+                                    return data.datasets[0].data[item.index] > 0;
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + context.parsed + ' items';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Sector Performance Chart
+            const sectorCtx = document.getElementById('sectorChart').getContext('2d');
+            new Chart(sectorCtx, {
+                type: 'bar',
+                data: {
+                    labels: SECTOR_DATA.map(d => d.sector),
+                    datasets: [{
+                        label: 'Daily % Change',
+                        data: SECTOR_DATA.map(d => d.change),
+                        backgroundColor: SECTOR_DATA.map(d => d.change >= 0 ? '#059669' : '#dc2626'),
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: '#e5e7eb' },
+                            ticks: { color: '#6b7280' }
+                        },
+                        y: {
+                            grid: { display: false },
+                            ticks: { color: '#6b7280', font: { size: 11 } }
+                        }
+                    }
+                }
+            });
+
+            // Frontier Tracker Horizontal Bar Chart
+            const frontierCtx = document.getElementById('frontierChart').getContext('2d');
+            const frontierData = [
+                {name: 'Reasoning & Logic', value: 82, stage: 'Maturing'},
+                {name: 'Code Generation', value: 78, stage: 'Maturing'},
+                {name: 'Multimodal AI', value: 70, stage: 'Rapid Growth'},
+                {name: 'Agentic AI', value: 65, stage: 'Early Production'},
+                {name: 'Biology & Drug Discovery', value: 52, stage: 'Growing'},
+                {name: 'Robotics & Physical AI', value: 41, stage: 'Emerging'}
+            ];
+
+            new Chart(frontierCtx, {
+                type: 'bar',
+                data: {
+                    labels: frontierData.map(d => d.name),
+                    datasets: [{
+                        label: 'Progress %',
+                        data: frontierData.map(d => d.value),
+                        backgroundColor: [
+                            '#2563eb', '#3b82f6', '#60a5fa', '#818cf8', '#a78bfa', '#c084fc'
+                        ],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: function(context) {
+                                    return 'Stage: ' + frontierData[context.dataIndex].stage;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            min: 0,
+                            max: 100,
+                            grid: { color: '#e5e7eb' },
+                            ticks: {
+                                color: '#6b7280',
+                                callback: function(val) { return val + '%'; }
+                            }
+                        },
+                        y: {
+                            grid: { display: false },
+                            ticks: { color: '#374151', font: { size: 12, weight: '600' } }
+                        }
+                    }
+                }
+            });
+
+            // Glossary search
+            const searchInput = document.getElementById('glossary-search');
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                document.querySelectorAll('.glossary-term').forEach(term => {
+                    const text = term.textContent.toLowerCase();
+                    term.classList.toggle('hidden', !text.includes(query));
+                });
+            });
+
+            // Render YTD Timeline and Milestones
+            renderYTDTimeline();
+            renderMilestones();
+        });
+
+        function renderYTDTimeline() {
+            const chart = document.getElementById('ytd-chart');
+            const filtersContainer = document.getElementById('ytd-filters');
+            const legendContainer = document.getElementById('ytd-legend');
+            const tooltip = document.getElementById('ytd-tooltip');
+            const months = [
+                {label:'January',start:'2026-01-01',end:'2026-01-31'},
+                {label:'February',start:'2026-02-01',end:'2026-02-28'},
+                {label:'March',start:'2026-03-01',end:'2026-03-31'},
+                {label:'April',start:'2026-04-01',end:'2026-04-30',current:true}
+            ];
+            let monthLabelsHTML = '<div class="ytd-month-labels">';
+            months.forEach(m => { monthLabelsHTML += '<div class="ytd-month-label' + (m.current ? ' current' : '') + '">' + m.label + '</div>'; });
+            monthLabelsHTML += '</div>';
+            let lanesHTML = '<div class="ytd-lanes">';
+            months.forEach((m, i) => {
+                const left = (i / months.length * 100);
+                if (i > 0) lanesHTML += '<div style="position:absolute;left:' + left + '%;top:0;bottom:0;width:1px;background:#e5e7eb;z-index:1;"></div>';
+            });
+            const categories = [...new Set(YTD_EVENTS.map(e => e.cat))].sort();
+            function getEventX(dateStr) {
+                const d = new Date(dateStr);
+                const yearStart = new Date('2026-01-01');
+                const yearSpan = new Date('2026-04-30') - yearStart;
+                return ((d - yearStart) / yearSpan) * 100;
+            }
+            function renderDots(filter) {
+                const lanes = chart.querySelector('.ytd-lanes');
+                lanes.querySelectorAll('.ytd-event-dot').forEach(el => el.remove());
+                const filtered = filter === 'All' ? YTD_EVENTS : YTD_EVENTS.filter(e => e.cat === filter);
+                const positions = [];
+                filtered.forEach((evt) => {
+                    const x = getEventX(evt.date);
+                    const color = CATEGORY_COLORS[evt.cat] || '#6b7280';
+                    let lane = 0;
+                    const dotWidth = 2.5;
+                    for (let l = 0; l < 12; l++) {
+                        const conflict = positions.some(p => p.lane === l && Math.abs(p.x - x) < dotWidth);
+                        if (!conflict) { lane = l; break; }
+                    }
+                    positions.push({x, lane});
+                    const y = 10 + lane * 26;
+                    const dot = document.createElement('div');
+                    dot.className = 'ytd-event-dot sig-' + evt.sig;
+                    dot.style.left = 'calc(' + x + '% - 7px)';
+                    dot.style.top = y + 'px';
+                    dot.style.background = color;
+                    dot.addEventListener('mouseenter', function(e) {
+                        const sigLabels = {5:'Paradigm Shift',4:'Significant',3:'Meaningful',2:'Incremental',1:'Worth Noting'};
+                        tooltip.innerHTML =
+                            '<div class="tooltip-date">' + evt.date + ' &middot; ' + evt.cat + '</div>' +
+                            '<div class="tooltip-title">' + evt.title + '</div>' +
+                            '<div class="tooltip-detail">' + evt.detail + '</div>' +
+                            '<div class="tooltip-sig" style="background:' + SIG_COLORS[evt.sig] + '">' + evt.sig + ' &mdash; ' + sigLabels[evt.sig] + '</div>';
+                        tooltip.style.display = 'block';
+                        const rect = dot.getBoundingClientRect();
+                        tooltip.style.left = Math.min(rect.left, window.innerWidth - 340) + 'px';
+                        tooltip.style.top = (rect.bottom + 8) + 'px';
+                    });
+                    dot.addEventListener('mouseleave', function() { tooltip.style.display = 'none'; });
+                    lanes.appendChild(dot);
+                });
+            }
+            lanesHTML += '</div>';
+            chart.innerHTML = monthLabelsHTML + lanesHTML;
+            renderDots('All');
+            const allCats = ['All'].concat(categories);
+            filtersContainer.innerHTML = allCats.map(function(c) { return '<button class="ytd-filter-btn' + (c==='All' ? ' active' : '') + '" data-cat="' + c + '">' + c + '</button>'; }).join('');
+            filtersContainer.addEventListener('click', function(e) {
+                if (!e.target.classList.contains('ytd-filter-btn')) return;
+                filtersContainer.querySelectorAll('.ytd-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+                e.target.classList.add('active');
+                renderDots(e.target.dataset.cat);
+            });
+            legendContainer.innerHTML = Object.entries(CATEGORY_COLORS).map(function(entry) {
+                return '<div class="ytd-legend-item"><div class="ytd-legend-dot" style="background:' + entry[1] + '"></div>' + entry[0] + '</div>';
+            }).join('');
+        }
+
+        function renderMilestones() {
+            const container = document.getElementById('milestone-list');
+            const monthGroups = {};
+            const monthOrder = ['January','February','March','April'];
+            YTD_EVENTS.forEach(function(evt) {
+                const d = new Date(evt.date);
+                const monthName = d.toLocaleString('en-US',{month:'long'});
+                if (!monthGroups[monthName]) monthGroups[monthName] = [];
+                monthGroups[monthName].push(evt);
+            });
+            let html = '';
+            monthOrder.forEach(function(month, mIdx) {
+                const events = monthGroups[month] || [];
+                const isCurrentMonth = month === 'April';
+                const collapsedClass = !isCurrentMonth && mIdx < 2 ? ' collapsed' : '';
+                html += '<div class="milestone-month-group">';
+                html += '<div class="milestone-month-header' + collapsedClass + '" onclick="toggleMonth(this)">' +
+                    '<span>' + month + ' 2026 (' + events.length + ' events)</span>' +
+                    '<span class="toggle-icon">\u25BC</span>' +
+                    '</div>';
+                html += '<div class="milestone-list' + collapsedClass + '">';
+                events.forEach(function(evt) {
+                    const d = new Date(evt.date);
+                    const dateStr = String(d.getMonth()+1).padStart(2,'0') + '/' + String(d.getDate()).padStart(2,'0');
+                    const color = CATEGORY_COLORS[evt.cat] || '#6b7280';
+                    const sigColor = SIG_COLORS[evt.sig];
+                    html += '<div class="milestone-item">' +
+                        '<span class="milestone-date">' + dateStr + '</span>' +
+                        '<div class="milestone-dot" style="background:' + color + '"></div>' +
+                        '<span class="milestone-title">' + evt.title + '</span>' +
+                        '<span class="milestone-sig-badge" style="background:' + sigColor + '">' + evt.sig + '</span>' +
+                        '</div>';
+                });
+                html += '</div></div>';
+            });
+            container.innerHTML = html;
+        }
+
+        function toggleMonth(header) {
+            header.classList.toggle('collapsed');
+            const list = header.nextElementSibling;
+            list.classList.toggle('collapsed');
+        }
+    </script>
+</body>
+</html>
