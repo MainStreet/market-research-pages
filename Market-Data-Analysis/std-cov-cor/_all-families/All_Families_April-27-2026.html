@@ -177,15 +177,15 @@
 </div>
 <div class="card">
 <h3>AI Observations</h3>
-<ul style='padding-left: 20px'><li>FSulv is the lowest-risk portfolio (22.18% ann. std) with 27 positions and exhibits the tightest SPY coupling (beta 1.21, corr 0.977), indicating systematic risk dominates; by contrast, FMain is 51% more volatile (33.68% std) with only marginally higher SPY beta (1.67), suggesting FMain&#x27;s excess risk is primarily idiosyncratic despite 52 positions.</li>
-<li>FMain and FIaco show materially lower SPY correlation (0.882 and 0.888 respectively) compared to FSulv/FGaal (0.977–0.990), revealing 2–11% correlation gap; FMain/FIaco have dropped 2–3 positions each, indicating turnover-driven idiosyncratic exposure that reduces market-tracking efficiency.</li>
-<li>FGaal ranks second-highest in volatility (28.91% std) and SPY beta (1.60) but maintains exceptional SPY correlation (0.990), meaning its elevated risk is nearly pure systematic leverage; FAnna achieves similar SPY beta (1.39) with 2.0% lower volatility, attributable to 37 vs 15 positions (diversification effect).</li>
-<li>QQQ beta spread is stark: FMain (1.44) and FIaco (1.37) show 10–11% higher QQQ sensitivity than their SPY betas suggest, whereas FSulv&#x27;s QQQ beta (0.997) nearly equals SPY beta (1.215), implying FMain/FIaco overweight growth/tech while FSulv is more broad-market aligned.</li>
-<li>FIaco holds 11 cash positions (17.5% of holdings) across 63 total positions and has dropped 3, the highest churn rate; combined with lowest SPY correlation (0.888) among larger portfolios, this suggests incomplete deployment or sector rotation into lower-correlated allocations.</li>
-<li>Risk ranking by volatility forms a clean 50% spread: FSulv 22.18% → FJona 24.67% → FAnna 26.16% → FGaal 28.91% → FIaco 32.00% → FMain 33.68%; the three lower-volatility families (FSulv/FJona/FAnna) all exhibit SPY corr &gt;0.948, while upper-tier families drop to 0.88–0.99, indicating structural divergence in diversification strategy.</li></ul>
+<ul style='padding-left: 20px'><li>FMain exhibits the highest annualized volatility at 33.68% with beta-SPY of 1.666, driven substantially by systematic risk (corr_spy 0.882), yet is also most exposed to idiosyncratic volatility given its 52 positions with 2 dropped holdings; FIaco (31.99% vol, beta-SPY 1.594) shows similar beta magnitude but lower correlation (0.888), suggesting greater idiosyncratic spread across 63 positions with 3 drops.</li>
+<li>FSulv is the lowest-volatility portfolio (22.18% annualized) with the most conservative beta-SPY (1.215) and is almost entirely systematic-risk driven (corr_spy 0.977, corr_qqq 0.988), indicating tight market tracking across only 27 positions with no dropouts—structurally distinct from the higher-volatility families.</li>
+<li>FAnna (26.16% vol, beta-SPY 1.393) and FJona (24.67% vol, beta-SPY 1.312) form a mid-volatility tier with near-identical SPY correlations (0.950 and 0.948), but FAnna carries higher Nasdaq sensitivity (beta-QQQ 1.171 vs 1.101), suggesting growth-tilted positioning despite similar position counts (13 and 20 tradable holdings).</li>
+<li>FGaal uniquely combines high systematic risk (beta-SPY 1.604, corr_spy 0.9895—highest spy correlation) with 37 positions and only 1 dropout, producing 28.91% volatility; this near-perfect market alignment with fewer idiosyncratic diversifiers is structurally opposite to FMain and FIaco despite similar beta magnitudes.</li>
+<li>FMain and FIaco diverge substantially on diversification efficiency: FMain (33.68% vol, beta-SPY 1.666) yields lower Nasdaq correlation (0.940) than FIaco (31.99% vol, beta-SPY 1.594, corr_qqq 0.944), yet incurs 2 dropouts vs FIaco&#x27;s 3 across 5 additional positions, indicating FMain&#x27;s higher volatility is not offset by higher portfolio count.</li>
+<li>Correlation spread across SPY-correlation ranges from 0.882 (FMain, FIaco) to 0.990 (FGaal), a 10.8 percentage-point gap; paired with similar beta magnitudes (1.59–1.67), this implies FMain and FIaco carry 8–11% more idiosyncratic/factor-specific risk beyond broad-market beta, weakening diversification benefits.</li></ul>
 </div>
 </main>
-<footer>Generated 2026-04-28 11:12 &mdash; Market Research Skills</footer>
+<footer>Generated 2026-04-28 12:31 &mdash; Market Research Skills</footer>
 </div>
 </body>
 </html>
