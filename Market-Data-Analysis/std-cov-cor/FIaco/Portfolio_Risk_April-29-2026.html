@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio Risk — FIaco — April-29-2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+         "Helvetica Neue", Arial, sans-serif;
+         background: #f4f6f9; color: #1a2b4a; line-height: 1.5;
+         font-size: 13px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; }
+  header { background: #1a2b4a; color: #fff; padding: 20px 24px;
+            margin-bottom: 24px; }
+  header h1 { font-size: 20px; font-weight: 600; margin: 0; }
+  header .subtitle { color: #a0b4d0; font-size: 12px; margin-top: 4px; }
+  h2 { color: #1a2b4a; font-size: 15px; margin: 28px 0 10px;
+       border-bottom: 2px solid #2e5c9a; padding-bottom: 4px; }
+  h3 { color: #2e5c9a; font-size: 14px; margin: 20px 0 8px; }
+
+  /* Tables */
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px;
+           font-size: 12px; }
+  th { background: #2e5c9a; color: #fff; padding: 7px 10px;
+       text-align: left; font-size: 11px; text-transform: uppercase;
+       letter-spacing: 0.5px; }
+  td { padding: 6px 10px; border-bottom: 1px solid #dde3ec; }
+  tr:nth-child(even) { background: #f0f3f8; }
+  tr:hover { background: #e4eaf4; }
+  caption { text-align: left; font-weight: 600; color: #1a2b4a;
+            margin-bottom: 6px; font-size: 13px; }
+
+  /* Cards / sections */
+  .card { background: #fff; border-radius: 6px; padding: 18px 20px;
+           margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .card h3 { margin-top: 0; }
+
+  /* Utility */
+  .text-muted { color: #6b7a8d; font-size: 11px; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+  a { color: #2e5c9a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tag { display: inline-block; background: #e8edf5; color: #2e5c9a;
+          padding: 2px 8px; border-radius: 3px; font-size: 11px;
+          margin: 2px 2px; }
+
+  /* Footer */
+  footer { margin-top: 32px; padding-top: 12px;
+           border-top: 1px solid #dde3ec; color: #6b7a8d;
+           font-size: 11px; text-align: center; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Portfolio Risk — FIaco — April-29-2026</h1>
+  <div class='subtitle'>Lookback 365 trading days  |  52 tradable, 11 cash  |  Annualised σ = 31.93%</div>
+</header>
+<div class="container">
+<main>
+<div class="card">
+<h3>Portfolio Summary</h3>
+<table>
+<thead><tr>
+<th>Metric</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td>FIaco / Position-Holdings-by-Weight-April-29-2026.csv</td>
+</tr>
+<tr>
+<td>As of</td>
+<td>April-29-2026</td>
+</tr>
+<tr>
+<td>Lookback (trading days)</td>
+<td>365</td>
+</tr>
+<tr>
+<td>Total positions</td>
+<td>63</td>
+</tr>
+<tr>
+<td>Tradable / Cash</td>
+<td>52 / 11</td>
+</tr>
+<tr>
+<td>Weights (total / tradable / cash)</td>
+<td>1.0000 / 0.9333 / 0.0667</td>
+</tr>
+<tr>
+<td>Observation period</td>
+<td>2024-11-11 → 2026-04-28  (365 days)</td>
+</tr>
+<tr>
+<td>Portfolio daily variance</td>
+<td>0.0004046568</td>
+</tr>
+<tr>
+<td>Portfolio daily std dev</td>
+<td>0.020116</td>
+</tr>
+<tr>
+<td>Portfolio annualised variance</td>
+<td>0.101974</td>
+</tr>
+<tr>
+<td>Portfolio annualised std dev</td>
+<td>0.319333  (31.93%)</td>
+</tr>
+</tbody></table>
+</div><div class="card">
+<h3>Benchmarks &amp; Portfolio Beta</h3>
+<table><thead><tr><th>Metric</th><th class="text-right">SPY</th><th class="text-right">QQQ</th></tr></thead><tbody><tr><td>Annualised std dev</td><td class="num">17.83%</td><td class="num">21.98%</td></tr><tr><td>Portfolio β vs benchmark</td><td class="num">1.593</td><td class="num">1.373</td></tr><tr><td>Portfolio ρ vs benchmark</td><td class="num">0.889</td><td class="num">0.945</td></tr><tr><td>Aligned observations</td><td class="num">365</td><td class="num">365</td></tr><tr><td>Aligned window</td><td class="num">2024-11-11 → 2026-04-28</td><td class="num">2024-11-11 → 2026-04-28</td></tr></tbody></table><p class='text-muted'>Portfolio daily return = Σ wᵢ·rᵢ (tradable tickers only; cash contributes 0). β = Cov(Rₚ, R_M) / Var(R_M); ρ = Cov(Rₚ, R_M) / (σₚ·σ_M). Aligned obs may be slightly smaller than the main observation window because the benchmarks add another intersection constraint.</p>
+</div><div class="card">
+<h3>Short-History Drops</h3>
+<table>
+<caption>3 ticker(s) dropped for short history (&lt; 329 days, i.e. &lt; 90% of the 365-day lookback)</caption>
+<thead><tr>
+<th>Symbol</th>
+<th>Days of history</th>
+<th>CSV weight</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>SNDK</td>
+<td>301</td>
+<td>1.67%</td>
+</tr>
+<tr>
+<td>CRWV</td>
+<td>271</td>
+<td>0.31%</td>
+</tr>
+<tr>
+<td>DRAM</td>
+<td>17</td>
+<td>0.17%</td>
+</tr>
+</tbody></table><p class='text-muted'>Dropped tickers are reclassified as cash (contribute 0 to variance) but their weight is still counted in the portfolio total, so any cash drag on realised σ is preserved.</p>
+</div><div class="card">
+<h3>Short-History Sensitivity — Tier 1 vs Tier 2</h3>
+<p class='text-muted'>This card auto-appears because the short-history filter dropped at least one ticker with weight &gt; 0.50% (max dropped weight: 1.67%). It shows how much the filter is moving the reported numbers. Tier 2 recomputes variance on all original tradables, trimming the window to the shortest common history (legacy behaviour).</p><table><thead><tr><th>Metric</th><th class='text-right'>Tier 2 (no filter, trim window)</th><th class='text-right'>Tier 1 (filter, wide window) — current</th></tr></thead><tbody><tr><td>Tradable tickers used</td><td class='num'>55</td><td class='num'>52</td></tr><tr><td>Observations</td><td class='num'>17</td><td class='num'>365</td></tr><tr><td>Window</td><td class='num'>2026-04-06 → 2026-04-28</td><td class='num'>2024-11-11 → 2026-04-28</td></tr><tr><td>Portfolio annualised σ</td><td class='num'>26.10%</td><td class='num'>31.93%</td></tr><tr><td>SPY ann σ</td><td class='num'>12.74%</td><td class='num'>17.83%</td></tr><tr><td>β vs SPY</td><td class='num'>1.804</td><td class='num'>1.593</td></tr><tr><td>ρ vs SPY</td><td class='num'>0.880</td><td class='num'>0.889</td></tr><tr><td>QQQ ann σ</td><td class='num'>16.84%</td><td class='num'>21.98%</td></tr><tr><td>β vs QQQ</td><td class='num'>1.428</td><td class='num'>1.373</td></tr><tr><td>ρ vs QQQ</td><td class='num'>0.921</td><td class='num'>0.945</td></tr></tbody></table>
+</div><div class="card">
+<h3>Cash / Zero-Volatility Positions</h3>
+<table>
+<caption>11 cash / zero-vol positions</caption>
+<thead><tr>
+<th>Symbol</th>
+<th>Weight</th>
+<th>Value</th>
+<th>Reason</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>FDRXX</td>
+<td>0.044639</td>
+<td>$1,993,232.92</td>
+<td>skip_list</td>
+</tr>
+<tr>
+<td>FZFXX</td>
+<td>0.000476</td>
+<td>$21,260.20</td>
+<td>skip_list</td>
+</tr>
+<tr>
+<td>PWRD</td>
+<td>0.000081</td>
+<td>$3,613.40</td>
+<td>skip_list</td>
+</tr>
+<tr>
+<td>SPAXX</td>
+<td>0.000056</td>
+<td>$2,486.96</td>
+<td>skip_list</td>
+</tr>
+<tr>
+<td>QPCTQ</td>
+<td>0.000014</td>
+<td>$632.12</td>
+<td>skip_list</td>
+</tr>
+<tr>
+<td>FSPXX</td>
+<td>0.000000</td>
+<td>$0.33</td>
+<td>skip_list</td>
+</tr>
+<tr>
+<td>QPIAQ</td>
+<td>0.000000</td>
+<td>$0.02</td>
+<td>skip_list</td>
+</tr>
+<tr>
+<td>QBNYQ</td>
+<td>0.000000</td>
+<td>$0.02</td>
+<td>skip_list</td>
+</tr>
+<tr>
+<td>SNDK</td>
+<td>0.016683</td>
+<td>$744,947.00</td>
+<td>short_history</td>
+</tr>
+<tr>
+<td>CRWV</td>
+<td>0.003069</td>
+<td>$137,028.00</td>
+<td>short_history</td>
+</tr>
+<tr>
+<td>DRAM</td>
+<td>0.001712</td>
+<td>$76,460.00</td>
+<td>short_history</td>
+</tr>
+</tbody></table>
+</div><div class="card">
+<h3>Per-Position Statistics</h3>
+<table>
+<thead><tr>
+<th>Symbol</th>
+<th>Weight</th>
+<th>Value</th>
+<th>Daily Std</th>
+<th>Ann. Std</th>
+<th>Ann. Var Contrib</th>
+<th>% of Port. Var</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>NVDA</td>
+<td>0.148586</td>
+<td>$6,634,740.60</td>
+<td>0.028741</td>
+<td>45.62%</td>
+<td>0.018712</td>
+<td>18.35%</td>
+</tr>
+<tr>
+<td>GOOGL</td>
+<td>0.089647</td>
+<td>$4,002,980.46</td>
+<td>0.019719</td>
+<td>31.30%</td>
+<td>0.005748</td>
+<td>5.64%</td>
+</tr>
+<tr>
+<td>MU</td>
+<td>0.087287</td>
+<td>$3,897,606.52</td>
+<td>0.040884</td>
+<td>64.90%</td>
+<td>0.014347</td>
+<td>14.07%</td>
+</tr>
+<tr>
+<td>SPY</td>
+<td>0.061362</td>
+<td>$2,739,982.74</td>
+<td>0.011233</td>
+<td>17.83%</td>
+<td>0.003107</td>
+<td>3.05%</td>
+</tr>
+<tr>
+<td>TSM</td>
+<td>0.043704</td>
+<td>$1,951,505.23</td>
+<td>0.025588</td>
+<td>40.62%</td>
+<td>0.004774</td>
+<td>4.68%</td>
+</tr>
+<tr>
+<td>TQQQ</td>
+<td>0.043244</td>
+<td>$1,930,952.85</td>
+<td>0.041166</td>
+<td>65.35%</td>
+<td>0.008527</td>
+<td>8.36%</td>
+</tr>
+<tr>
+<td>SMH</td>
+<td>0.041694</td>
+<td>$1,861,756.81</td>
+<td>0.022922</td>
+<td>36.39%</td>
+<td>0.004686</td>
+<td>4.60%</td>
+</tr>
+<tr>
+<td>AVGO</td>
+<td>0.033603</td>
+<td>$1,500,476.39</td>
+<td>0.034394</td>
+<td>54.60%</td>
+<td>0.004395</td>
+<td>4.31%</td>
+</tr>
+<tr>
+<td>AMZN</td>
+<td>0.032258</td>
+<td>$1,440,407.04</td>
+<td>0.021052</td>
+<td>33.42%</td>
+<td>0.002323</td>
+<td>2.28%</td>
+</tr>
+<tr>
+<td>META</td>
+<td>0.031116</td>
+<td>$1,389,388.87</td>
+<td>0.023683</td>
+<td>37.60%</td>
+<td>0.002431</td>
+<td>2.38%</td>
+</tr>
+<tr>
+<td>PLTR</td>
+<td>0.027191</td>
+<td>$1,214,136.00</td>
+<td>0.040409</td>
+<td>64.15%</td>
+<td>0.003212</td>
+<td>3.15%</td>
+</tr>
+<tr>
+<td>GEV</td>
+<td>0.023413</td>
+<td>$1,045,456.00</td>
+<td>0.034898</td>
+<td>55.40%</td>
+<td>0.002897</td>
+<td>2.84%</td>
+</tr>
+<tr>
+<td>LRCX</td>
+<td>0.022447</td>
+<td>$1,002,306.04</td>
+<td>0.032282</td>
+<td>51.25%</td>
+<td>0.003008</td>
+<td>2.95%</td>
+</tr>
+<tr>
+<td>MRVL</td>
+<td>0.021438</td>
+<td>$957,258.49</td>
+<td>0.043358</td>
+<td>68.83%</td>
+<td>0.003312</td>
+<td>3.25%</td>
+</tr>
+<tr>
+<td>XLK</td>
+<td>0.021118</td>
+<td>$942,959.37</td>
+<td>0.016446</td>
+<td>26.11%</td>
+<td>0.001685</td>
+<td>1.65%</td>
+</tr>
+<tr>
+<td>QQQ</td>
+<td>0.020252</td>
+<td>$904,285.48</td>
+<td>0.013845</td>
+<td>21.98%</td>
+<td>0.001343</td>
+<td>1.32%</td>
+</tr>
+<tr>
+<td>ASML</td>
+<td>0.018574</td>
+<td>$829,368.86</td>
+<td>0.025631</td>
+<td>40.69%</td>
+<td>0.001820</td>
+<td>1.78%</td>
+</tr>
+<tr>
+<td>KLAC</td>
+<td>0.012363</td>
+<td>$552,022.50</td>
+<td>0.028881</td>
+<td>45.85%</td>
+<td>0.001433</td>
+<td>1.40%</td>
+</tr>
+<tr>
+<td>CEG</td>
+<td>0.012011</td>
+<td>$536,319.04</td>
+<td>0.037005</td>
+<td>58.74%</td>
+<td>0.001394</td>
+<td>1.37%</td>
+</tr>
+<tr>
+<td>PWR</td>
+<td>0.011990</td>
+<td>$535,389.31</td>
+<td>0.024062</td>
+<td>38.20%</td>
+<td>0.001027</td>
+<td>1.01%</td>
+</tr>
+<tr>
+<td>INTC</td>
+<td>0.011671</td>
+<td>$521,125.00</td>
+<td>0.042749</td>
+<td>67.86%</td>
+<td>0.001179</td>
+<td>1.16%</td>
+</tr>
+<tr>
+<td>VRT</td>
+<td>0.011668</td>
+<td>$521,015.79</td>
+<td>0.043127</td>
+<td>68.46%</td>
+<td>0.001969</td>
+<td>1.93%</td>
+</tr>
+<tr>
+<td>GE</td>
+<td>0.010253</td>
+<td>$457,806.75</td>
+<td>0.020436</td>
+<td>32.44%</td>
+<td>0.000629</td>
+<td>0.62%</td>
+</tr>
+<tr>
+<td>COHR</td>
+<td>0.010243</td>
+<td>$457,395.00</td>
+<td>0.046876</td>
+<td>74.41%</td>
+<td>0.001808</td>
+<td>1.77%</td>
+</tr>
+<tr>
+<td>JPM</td>
+<td>0.009311</td>
+<td>$415,754.15</td>
+<td>0.015304</td>
+<td>24.29%</td>
+<td>0.000403</td>
+<td>0.40%</td>
+</tr>
+<tr>
+<td>GS</td>
+<td>0.008010</td>
+<td>$357,685.74</td>
+<td>0.019457</td>
+<td>30.89%</td>
+<td>0.000551</td>
+<td>0.54%</td>
+</tr>
+<tr>
+<td>VOO</td>
+<td>0.007743</td>
+<td>$345,760.61</td>
+<td>0.010789</td>
+<td>17.13%</td>
+<td>0.000377</td>
+<td>0.37%</td>
+</tr>
+<tr>
+<td>BA</td>
+<td>0.007528</td>
+<td>$336,165.00</td>
+<td>0.022624</td>
+<td>35.92%</td>
+<td>0.000431</td>
+<td>0.42%</td>
+</tr>
+<tr>
+<td>ARM</td>
+<td>0.007227</td>
+<td>$322,704.00</td>
+<td>0.039276</td>
+<td>62.35%</td>
+<td>0.001017</td>
+<td>1.00%</td>
+</tr>
+<tr>
+<td>MSFT</td>
+<td>0.006533</td>
+<td>$291,695.28</td>
+<td>0.016395</td>
+<td>26.03%</td>
+<td>0.000306</td>
+<td>0.30%</td>
+</tr>
+<tr>
+<td>VOOG</td>
+<td>0.006160</td>
+<td>$275,058.77</td>
+<td>0.013759</td>
+<td>21.84%</td>
+<td>0.000407</td>
+<td>0.40%</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0.005831</td>
+<td>$260,378.51</td>
+<td>0.019881</td>
+<td>31.56%</td>
+<td>0.000367</td>
+<td>0.36%</td>
+</tr>
+<tr>
+<td>GLW</td>
+<td>0.005103</td>
+<td>$227,850.00</td>
+<td>0.028152</td>
+<td>44.69%</td>
+<td>0.000464</td>
+<td>0.46%</td>
+</tr>
+<tr>
+<td>XLF</td>
+<td>0.004868</td>
+<td>$217,377.98</td>
+<td>0.011471</td>
+<td>18.21%</td>
+<td>0.000159</td>
+<td>0.16%</td>
+</tr>
+<tr>
+<td>BAC</td>
+<td>0.003070</td>
+<td>$137,091.93</td>
+<td>0.016141</td>
+<td>25.62%</td>
+<td>0.000130</td>
+<td>0.13%</td>
+</tr>
+<tr>
+<td>DDOG</td>
+<td>0.003000</td>
+<td>$133,980.00</td>
+<td>0.033212</td>
+<td>52.72%</td>
+<td>0.000211</td>
+<td>0.21%</td>
+</tr>
+<tr>
+<td>VGT</td>
+<td>0.002080</td>
+<td>$92,883.83</td>
+<td>0.016682</td>
+<td>26.48%</td>
+<td>0.000168</td>
+<td>0.16%</td>
+</tr>
+<tr>
+<td>VUG</td>
+<td>0.002021</td>
+<td>$90,260.27</td>
+<td>0.013916</td>
+<td>22.09%</td>
+<td>0.000132</td>
+<td>0.13%</td>
+</tr>
+<tr>
+<td>CRDO</td>
+<td>0.001968</td>
+<td>$87,885.00</td>
+<td>0.062561</td>
+<td>99.31%</td>
+<td>0.000410</td>
+<td>0.40%</td>
+</tr>
+<tr>
+<td>LITE</td>
+<td>0.001922</td>
+<td>$85,832.00</td>
+<td>0.051170</td>
+<td>81.23%</td>
+<td>0.000335</td>
+<td>0.33%</td>
+</tr>
+<tr>
+<td>WDC</td>
+<td>0.001849</td>
+<td>$82,552.00</td>
+<td>0.038340</td>
+<td>60.86%</td>
+<td>0.000237</td>
+<td>0.23%</td>
+</tr>
+<tr>
+<td>VV</td>
+<td>0.000952</td>
+<td>$42,526.90</td>
+<td>0.011111</td>
+<td>17.64%</td>
+<td>0.000048</td>
+<td>0.05%</td>
+</tr>
+<tr>
+<td>SOXX</td>
+<td>0.000202</td>
+<td>$8,999.80</td>
+<td>0.024211</td>
+<td>38.43%</td>
+<td>0.000023</td>
+<td>0.02%</td>
+</tr>
+<tr>
+<td>XLI</td>
+<td>0.000152</td>
+<td>$6,797.20</td>
+<td>0.011641</td>
+<td>18.48%</td>
+<td>0.000007</td>
+<td>0.01%</td>
+</tr>
+<tr>
+<td>CIBR</td>
+<td>0.000137</td>
+<td>$6,108.30</td>
+<td>0.015550</td>
+<td>24.69%</td>
+<td>0.000007</td>
+<td>0.01%</td>
+</tr>
+<tr>
+<td>SKYY</td>
+<td>0.000098</td>
+<td>$4,396.71</td>
+<td>0.018782</td>
+<td>29.82%</td>
+<td>0.000007</td>
+<td>0.01%</td>
+</tr>
+<tr>
+<td>GEHC</td>
+<td>0.000097</td>
+<td>$4,343.12</td>
+<td>0.021651</td>
+<td>34.37%</td>
+<td>0.000005</td>
+<td>0.01%</td>
+</tr>
+<tr>
+<td>IHI</td>
+<td>0.000094</td>
+<td>$4,177.39</td>
+<td>0.011283</td>
+<td>17.91%</td>
+<td>0.000003</td>
+<td>0.00%</td>
+</tr>
+<tr>
+<td>ABBV</td>
+<td>0.000073</td>
+<td>$3,262.24</td>
+<td>0.017569</td>
+<td>27.89%</td>
+<td>0.000001</td>
+<td>0.00%</td>
+</tr>
+<tr>
+<td>NEE</td>
+<td>0.000059</td>
+<td>$2,636.76</td>
+<td>0.016424</td>
+<td>26.07%</td>
+<td>0.000000</td>
+<td>0.00%</td>
+</tr>
+<tr>
+<td>PGR</td>
+<td>0.000045</td>
+<td>$2,006.60</td>
+<td>0.015674</td>
+<td>24.88%</td>
+<td>-0.000000</td>
+<td>-0.00%</td>
+</tr>
+<tr>
+<td>BK</td>
+<td>0.000003</td>
+<td>$125.13</td>
+<td>0.014783</td>
+<td>23.47%</td>
+<td>0.000000</td>
+<td>0.00%</td>
+</tr>
+</tbody></table>
+</div><div class="card">
+<h3>Correlation Matrix — Top 20 by Weight</h3>
+<table>
+<caption>Correlation — Top 20 holdings by weight</caption>
+<thead><tr>
+<th>&amp;nbsp;</th>
+<th>NVDA</th>
+<th>GOOGL</th>
+<th>MU</th>
+<th>SPY</th>
+<th>TSM</th>
+<th>TQQQ</th>
+<th>SMH</th>
+<th>AVGO</th>
+<th>AMZN</th>
+<th>META</th>
+<th>PLTR</th>
+<th>GEV</th>
+<th>LRCX</th>
+<th>MRVL</th>
+<th>XLK</th>
+<th>QQQ</th>
+<th>ASML</th>
+<th>KLAC</th>
+<th>CEG</th>
+<th>PWR</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><b>NVDA</b></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.45</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.57</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.72</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.73</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.78</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.83</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.61</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.51</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.52</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.50</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.62</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.60</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.84</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.78</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.60</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.55</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.60</span></td>
+</tr>
+<tr>
+<td><b>GOOGL</b></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.45</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.43</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.61</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.66</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.56</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.44</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.55</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.47</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.35</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.34</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.48</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.42</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.66</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.45</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.46</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.30</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.37</span></td>
+</tr>
+<tr>
+<td><b>MU</b></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.57</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.43</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.62</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.65</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.67</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.78</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.55</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.46</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.41</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.33</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.78</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.48</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.67</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.64</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.68</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.45</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.52</span></td>
+</tr>
+<tr>
+<td><b>SPY</b></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.72</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.61</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.62</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.68</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.97</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.85</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.61</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.72</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.69</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.54</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.56</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.60</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.93</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.97</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.66</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.57</span></td>
+</tr>
+<tr>
+<td><b>TSM</b></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.73</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.65</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.68</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.74</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.86</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.69</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.48</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.42</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.62</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.72</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.78</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.74</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.72</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.55</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.64</span></td>
+</tr>
+<tr>
+<td><b>TQQQ</b></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.78</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.66</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.67</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.97</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.74</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.91</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.69</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.75</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.71</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.75</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.65</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.97</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.73</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.53</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.60</span></td>
+</tr>
+<tr>
+<td><b>SMH</b></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.83</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.56</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.78</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.85</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.86</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.91</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.74</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.61</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.48</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.64</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.87</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.69</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.94</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.91</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.81</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.85</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.57</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.67</span></td>
+</tr>
+<tr>
+<td><b>AVGO</b></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.61</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.44</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.55</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.61</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.69</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.69</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.74</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.43</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.43</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.42</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.72</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.69</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.54</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.56</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+</tr>
+<tr>
+<td><b>AMZN</b></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.51</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.55</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.46</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.72</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.48</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.75</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.61</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.43</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.64</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.42</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.39</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.47</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.68</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.75</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.46</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.46</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.34</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.34</span></td>
+</tr>
+<tr>
+<td><b>META</b></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.52</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.47</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.41</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.69</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.71</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.43</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.64</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.40</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.37</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.40</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.64</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.71</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.48</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.50</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.39</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.35</span></td>
+</tr>
+<tr>
+<td><b>PLTR</b></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.50</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.35</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.33</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.54</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.42</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.48</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.42</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.42</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.40</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.43</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.34</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.36</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.30</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.36</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.37</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.41</span></td>
+</tr>
+<tr>
+<td><b>GEV</b></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.62</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.34</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.56</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.62</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.64</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.39</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.37</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.43</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.50</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.54</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.63</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.46</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.48</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.57</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.70</span></td>
+</tr>
+<tr>
+<td><b>LRCX</b></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.60</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.48</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.78</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.72</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.75</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.87</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.34</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.50</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.52</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.77</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.75</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.82</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.89</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.45</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.55</span></td>
+</tr>
+<tr>
+<td><b>MRVL</b></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.42</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.48</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.60</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.65</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.69</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.47</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.40</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.36</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.54</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.52</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.65</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.65</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.52</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.45</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.52</span></td>
+</tr>
+<tr>
+<td><b>XLK</b></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.84</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.93</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.78</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.97</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.94</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.72</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.68</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.64</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.63</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.77</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.65</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.97</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.76</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.55</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.63</span></td>
+</tr>
+<tr>
+<td><b>QQQ</b></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.78</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.66</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.67</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.97</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.74</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.91</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.69</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.75</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.71</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.75</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.65</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.97</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.73</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.53</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.60</span></td>
+</tr>
+<tr>
+<td><b>ASML</b></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.58</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.45</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.64</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.66</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.81</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.54</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.46</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.48</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.30</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.46</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.82</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.80</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.43</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.50</span></td>
+</tr>
+<tr>
+<td><b>KLAC</b></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.60</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.46</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.68</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.72</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.73</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.85</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.56</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.46</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.50</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.36</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.48</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.89</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.52</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.76</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.73</span></td>
+<td><span style="display:block;background:#1a7a3c;color:#fff;padding:2px 4px;border-radius:2px;">0.80</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.46</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.54</span></td>
+</tr>
+<tr>
+<td><b>CEG</b></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.55</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.30</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.45</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.55</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.53</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.57</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.49</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.34</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.39</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.37</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.57</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.45</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.45</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.55</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.53</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.43</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.46</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.61</span></td>
+</tr>
+<tr>
+<td><b>PWR</b></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.60</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.37</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.52</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.57</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.64</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.60</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.67</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.59</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.34</span></td>
+<td><span style="display:block;background:#b8dfc6;color:#000;padding:2px 4px;border-radius:2px;">0.35</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.41</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.70</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.55</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.52</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.63</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.60</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.50</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.54</span></td>
+<td><span style="display:block;background:#5dbd7a;color:#000;padding:2px 4px;border-radius:2px;">0.61</span></td>
+<td><span style="display:block;background:#d0d9e4;color:#000;padding:2px 4px;border-radius:2px;">1.00</span></td>
+</tr>
+</tbody></table>
+</div><div class="card">
+<h3>Methodology</h3>
+<p>Portfolio variance = wᵀ Σ w where Σ is the daily covariance matrix of simple returns for tradable positions and w is the weight vector from the source CSV. Cash / money-market / delisted / short-history positions are detected and contribute 0 to variance but are still counted in the total portfolio weight, so the annualised std dev reflects the cash drag on realised portfolio volatility.</p><p>Portfolio beta: β_M = Cov(R_p, R_M) / Var(R_M), using daily simple returns on the intersection of portfolio and benchmark dates. Correlation: ρ_M = Cov(R_p, R_M) / (σ_p · σ_M).</p><p class='text-muted'>Full covariance matrix and matrix JSONs are cached on disk and are not embedded in this page — open the PDF for the full covariance view.</p>
+</div>
+</main>
+<footer>Generated 2026-04-29 20:30 &mdash; Market Research Skills</footer>
+</div>
+</body>
+</html>
