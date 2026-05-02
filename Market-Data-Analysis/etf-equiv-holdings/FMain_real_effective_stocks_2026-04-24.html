@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real/Effective Stocks holdings based upon ETF Positions</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+         "Helvetica Neue", Arial, sans-serif;
+         background: #f4f6f9; color: #1a2b4a; line-height: 1.5;
+         font-size: 13px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; }
+  header { background: #1a2b4a; color: #fff; padding: 20px 24px;
+            margin-bottom: 24px; }
+  header h1 { font-size: 20px; font-weight: 600; margin: 0; }
+  header .subtitle { color: #a0b4d0; font-size: 12px; margin-top: 4px; }
+  h2 { color: #1a2b4a; font-size: 15px; margin: 28px 0 10px;
+       border-bottom: 2px solid #2e5c9a; padding-bottom: 4px; }
+  h3 { color: #2e5c9a; font-size: 14px; margin: 20px 0 8px; }
+
+  /* Tables */
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px;
+           font-size: 12px; }
+  th { background: #2e5c9a; color: #fff; padding: 7px 10px;
+       text-align: left; font-size: 11px; text-transform: uppercase;
+       letter-spacing: 0.5px; }
+  td { padding: 6px 10px; border-bottom: 1px solid #dde3ec; }
+  tr:nth-child(even) { background: #f0f3f8; }
+  tr:hover { background: #e4eaf4; }
+  caption { text-align: left; font-weight: 600; color: #1a2b4a;
+            margin-bottom: 6px; font-size: 13px; }
+
+  /* Cards / sections */
+  .card { background: #fff; border-radius: 6px; padding: 18px 20px;
+           margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .card h3 { margin-top: 0; }
+
+  /* Utility */
+  .text-muted { color: #6b7a8d; font-size: 11px; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+  a { color: #2e5c9a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tag { display: inline-block; background: #e8edf5; color: #2e5c9a;
+          padding: 2px 8px; border-radius: 3px; font-size: 11px;
+          margin: 2px 2px; }
+
+  /* Footer */
+  footer { margin-top: 32px; padding-top: 12px;
+           border-top: 1px solid #dde3ec; color: #6b7a8d;
+           font-size: 11px; text-align: center; }
+
+  /* report_and_publish additions */
+  .at-a-glance ol { margin-left: 20px; }
+  .at-a-glance li { margin: 4px 0; }
+  .theme-card { background: #fff; border-radius: 6px; padding: 18px 20px;
+                margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .theme-card h3 { margin-top: 0; }
+  .theme-card .detail { margin: 8px 0 12px; }
+  .theme-card ul { margin-left: 20px; }
+  .source-table { font-size: 11px; margin: 8px 0 4px; }
+  .source-table td, .source-table th { padding: 4px 8px; }
+  .tier-label { font-size: 13px; color: #2e5c9a; font-weight: 600;
+                margin: 16px 0 6px; }
+  .exec-summary p { margin: 6px 0; }
+  .report-footer { font-size: 10px; color: #6b7a8d; margin-top: 30px;
+                   border-top: 1px solid #dde3ec; padding-top: 10px; }
+
+</style>
+</head>
+<body>
+<header>
+  <h1>Real/Effective Stocks holdings based upon ETF Positions</h1>
+  <div class='subtitle'>FMain • April-24-2026 • 578 tickers • $9.25M total exposure</div>
+</header>
+<div class="container">
+<main>
+<div class='card exec-summary'>
+<p><b>FMain</b> — by-ticker stock-equivalent exposure derived from ETF positions on <b>2026-04-24</b>. Each ETF position is fanned out into its underlying constituents (with leverage adjustments applied for funds like TQQQ, UPRO), then summed by ticker.</p>
+<p>Total stock-equivalent exposure: <b>$9.25M</b> across <b>578</b> unique underlying tickers.</p>
+<p>Concentration: top 10 = <b>44.7%</b>, top 25 = <b>64.1%</b> of book.</p>
+</div>
+<h3>Top 25 by Equivalent Exposure</h3>
+<table>
+<tr><th>#</th><th>Symbol</th><th>Name</th><th>Equivalent Value</th><th>Weight</th></tr>
+<tr><td>1</td><td>NVDA</td><td>NVIDIA Corp.</td><td>$899.2K</td><td>9.725%</td></tr>
+<tr><td>2</td><td>AAPL</td><td>Apple Inc.</td><td>$654.8K</td><td>7.083%</td></tr>
+<tr><td>3</td><td>MSFT</td><td>Microsoft Corp.</td><td>$576.7K</td><td>6.237%</td></tr>
+<tr><td>4</td><td>AMZN</td><td>Amazon.com, Inc.</td><td>$366.7K</td><td>3.967%</td></tr>
+<tr><td>5</td><td>AVGO</td><td>Broadcom Inc.</td><td>$344.9K</td><td>3.730%</td></tr>
+<tr><td>6</td><td>META</td><td>Meta Platforms, Inc.</td><td>$281.3K</td><td>3.042%</td></tr>
+<tr><td>7</td><td>GOOGL</td><td>Alphabet Inc.</td><td>$280.2K</td><td>3.031%</td></tr>
+<tr><td>8</td><td>TSLA</td><td>Tesla, Inc.</td><td>$275.8K</td><td>2.983%</td></tr>
+<tr><td>9</td><td>GOOG</td><td>Alphabet Inc.</td><td>$253.6K</td><td>2.743%</td></tr>
+<tr><td>10</td><td>AMD</td><td>Advanced Micro Devices, Inc.</td><td>$200.3K</td><td>2.167%</td></tr>
+<tr><td>11</td><td>MU</td><td>Micron Technology, Inc.</td><td>$182.7K</td><td>1.976%</td></tr>
+<tr><td>12</td><td>PLTR</td><td>Palantir Technologies Inc.</td><td>$159.9K</td><td>1.729%</td></tr>
+<tr><td>13</td><td>NFLX</td><td>Netflix, Inc.</td><td>$148.9K</td><td>1.611%</td></tr>
+<tr><td>14</td><td>COST</td><td>Costco Wholesale Corp.</td><td>$141.0K</td><td>1.525%</td></tr>
+<tr><td>15</td><td>INTC</td><td>Intel Corp.</td><td>$137.8K</td><td>1.491%</td></tr>
+<tr><td>16</td><td>LRCX</td><td>Lam Research Corp.</td><td>$126.8K</td><td>1.372%</td></tr>
+<tr><td>17</td><td>CSCO</td><td>Cisco Systems, Inc.</td><td>$126.0K</td><td>1.363%</td></tr>
+<tr><td>18</td><td>AMAT</td><td>Applied Materials, Inc.</td><td>$121.6K</td><td>1.315%</td></tr>
+<tr><td>19</td><td>TXN</td><td>Texas Instruments Inc.</td><td>$107.2K</td><td>1.159%</td></tr>
+<tr><td>20</td><td>QCOM</td><td>QUALCOMM Inc.</td><td>$106.7K</td><td>1.154%</td></tr>
+<tr><td>21</td><td>KLAC</td><td>KLA Corp.</td><td>$102.7K</td><td>1.111%</td></tr>
+<tr><td>22</td><td>ADI</td><td>Analog Devices, Inc.</td><td>$91.6K</td><td>0.990%</td></tr>
+<tr><td>23</td><td>TSM</td><td>Taiwan Semiconductor Manufacturing Compa</td><td>$82.2K</td><td>0.889%</td></tr>
+<tr><td>24</td><td>TMUS</td><td>T-Mobile US, Inc.</td><td>$80.0K</td><td>0.865%</td></tr>
+<tr><td>25</td><td>APP</td><td>AppLovin Corp.</td><td>$78.8K</td><td>0.852%</td></tr>
+</table>
+<div class='card exec-summary'>
+<p><i>Long tail: <b>553</b> additional tickers totaling <b>$3.32M</b> (35.9% of book). Full ticker list available in source CSV: <code>ETF-Equiv-Position-Holdings-by-Weight-April-24-2026.csv</code>.</i></p>
+</div>
+<div class='report-footer'>Skill: etf-equiv-holdings • Schema v1 • family: FMain • date: 2026-04-24 • tickers: 578 • total_value: 9245727.89 • source_csv: ETF-Equiv-Position-Holdings-by-Weight-April-24-2026.csv</div>
+</main>
+<footer>Generated 2026-05-02 15:19 &mdash; Market Research Skills</footer>
+</div>
+</body>
+</html>
