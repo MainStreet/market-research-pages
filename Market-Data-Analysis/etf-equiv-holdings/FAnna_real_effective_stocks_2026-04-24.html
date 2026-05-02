@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real/Effective Stocks holdings based upon ETF Positions</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+         "Helvetica Neue", Arial, sans-serif;
+         background: #f4f6f9; color: #1a2b4a; line-height: 1.5;
+         font-size: 13px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; }
+  header { background: #1a2b4a; color: #fff; padding: 20px 24px;
+            margin-bottom: 24px; }
+  header h1 { font-size: 20px; font-weight: 600; margin: 0; }
+  header .subtitle { color: #a0b4d0; font-size: 12px; margin-top: 4px; }
+  h2 { color: #1a2b4a; font-size: 15px; margin: 28px 0 10px;
+       border-bottom: 2px solid #2e5c9a; padding-bottom: 4px; }
+  h3 { color: #2e5c9a; font-size: 14px; margin: 20px 0 8px; }
+
+  /* Tables */
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px;
+           font-size: 12px; }
+  th { background: #2e5c9a; color: #fff; padding: 7px 10px;
+       text-align: left; font-size: 11px; text-transform: uppercase;
+       letter-spacing: 0.5px; }
+  td { padding: 6px 10px; border-bottom: 1px solid #dde3ec; }
+  tr:nth-child(even) { background: #f0f3f8; }
+  tr:hover { background: #e4eaf4; }
+  caption { text-align: left; font-weight: 600; color: #1a2b4a;
+            margin-bottom: 6px; font-size: 13px; }
+
+  /* Cards / sections */
+  .card { background: #fff; border-radius: 6px; padding: 18px 20px;
+           margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .card h3 { margin-top: 0; }
+
+  /* Utility */
+  .text-muted { color: #6b7a8d; font-size: 11px; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+  a { color: #2e5c9a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tag { display: inline-block; background: #e8edf5; color: #2e5c9a;
+          padding: 2px 8px; border-radius: 3px; font-size: 11px;
+          margin: 2px 2px; }
+
+  /* Footer */
+  footer { margin-top: 32px; padding-top: 12px;
+           border-top: 1px solid #dde3ec; color: #6b7a8d;
+           font-size: 11px; text-align: center; }
+
+  /* report_and_publish additions */
+  .at-a-glance ol { margin-left: 20px; }
+  .at-a-glance li { margin: 4px 0; }
+  .theme-card { background: #fff; border-radius: 6px; padding: 18px 20px;
+                margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .theme-card h3 { margin-top: 0; }
+  .theme-card .detail { margin: 8px 0 12px; }
+  .theme-card ul { margin-left: 20px; }
+  .source-table { font-size: 11px; margin: 8px 0 4px; }
+  .source-table td, .source-table th { padding: 4px 8px; }
+  .tier-label { font-size: 13px; color: #2e5c9a; font-weight: 600;
+                margin: 16px 0 6px; }
+  .exec-summary p { margin: 6px 0; }
+  .report-footer { font-size: 10px; color: #6b7a8d; margin-top: 30px;
+                   border-top: 1px solid #dde3ec; padding-top: 10px; }
+
+</style>
+</head>
+<body>
+<header>
+  <h1>Real/Effective Stocks holdings based upon ETF Positions</h1>
+  <div class='subtitle'>FAnna • April-24-2026 • 535 tickers • $508.4K total exposure</div>
+</header>
+<div class="container">
+<main>
+<div class='card exec-summary'>
+<p><b>FAnna</b> — by-ticker stock-equivalent exposure derived from ETF positions on <b>2026-04-24</b>. Each ETF position is fanned out into its underlying constituents (with leverage adjustments applied for funds like TQQQ, UPRO), then summed by ticker.</p>
+<p>Total stock-equivalent exposure: <b>$508.4K</b> across <b>535</b> unique underlying tickers.</p>
+<p>Concentration: top 10 = <b>41.0%</b>, top 25 = <b>57.1%</b> of book.</p>
+</div>
+<h3>Top 25 by Equivalent Exposure</h3>
+<table>
+<tr><th>#</th><th>Symbol</th><th>Name</th><th>Equivalent Value</th><th>Weight</th></tr>
+<tr><td>1</td><td>NVDA</td><td>NVIDIA CORP</td><td>$49.2K</td><td>9.685%</td></tr>
+<tr><td>2</td><td>AAPL</td><td>APPLE INC</td><td>$38.4K</td><td>7.552%</td></tr>
+<tr><td>3</td><td>MSFT</td><td>MICROSOFT CORP</td><td>$31.0K</td><td>6.099%</td></tr>
+<tr><td>4</td><td>AVGO</td><td>BROADCOM INC</td><td>$18.9K</td><td>3.709%</td></tr>
+<tr><td>5</td><td>AMZN</td><td>AMAZON.COM INC</td><td>$15.9K</td><td>3.132%</td></tr>
+<tr><td>6</td><td>GOOGL</td><td>ALPHABET INC CL A</td><td>$12.1K</td><td>2.389%</td></tr>
+<tr><td>7</td><td>META</td><td>META PLATFORMS INC CLASS A</td><td>$11.2K</td><td>2.200%</td></tr>
+<tr><td>8</td><td>GOOG</td><td>ALPHABET INC CL C</td><td>$10.9K</td><td>2.152%</td></tr>
+<tr><td>9</td><td>TSLA</td><td>TESLA INC</td><td>$10.4K</td><td>2.052%</td></tr>
+<tr><td>10</td><td>AMD</td><td>ADVANCED MICRO DEVICES</td><td>$10.4K</td><td>2.041%</td></tr>
+<tr><td>11</td><td>MU</td><td>MICRON TECHNOLOGY INC</td><td>$9.9K</td><td>1.957%</td></tr>
+<tr><td>12</td><td>INTC</td><td>INTEL CORP</td><td>$7.4K</td><td>1.449%</td></tr>
+<tr><td>13</td><td>PLTR</td><td>PALANTIR TECHNOLOGIES INC A</td><td>$7.2K</td><td>1.421%</td></tr>
+<tr><td>14</td><td>CSCO</td><td>CISCO SYSTEMS INC</td><td>$6.5K</td><td>1.287%</td></tr>
+<tr><td>15</td><td>LRCX</td><td>LAM RESEARCH CORP</td><td>$6.4K</td><td>1.253%</td></tr>
+<tr><td>16</td><td>AMAT</td><td>APPLIED MATERIALS INC</td><td>$6.1K</td><td>1.193%</td></tr>
+<tr><td>17</td><td>NFLX</td><td>NETFLIX INC</td><td>$5.2K</td><td>1.026%</td></tr>
+<tr><td>18</td><td>TXN</td><td>TEXAS INSTRUMENTS INC</td><td>$5.2K</td><td>1.016%</td></tr>
+<tr><td>19</td><td>COST</td><td>COSTCO WHOLESALE CORP</td><td>$5.1K</td><td>1.007%</td></tr>
+<tr><td>20</td><td>KLAC</td><td>KLA CORP</td><td>$4.8K</td><td>0.951%</td></tr>
+<tr><td>21</td><td>QCOM</td><td>QUALCOMM INC</td><td>$4.6K</td><td>0.899%</td></tr>
+<tr><td>22</td><td>ADI</td><td>ANALOG DEVICES INC</td><td>$4.3K</td><td>0.850%</td></tr>
+<tr><td>23</td><td>APP</td><td>APPLOVIN CORP CLASS A</td><td>$3.2K</td><td>0.623%</td></tr>
+<tr><td>24</td><td>BRK.B</td><td>BERKSHIRE HATHAWAY INC CL B</td><td>$3.0K</td><td>0.591%</td></tr>
+<tr><td>25</td><td>INTU</td><td>INTUIT INC</td><td>$2.9K</td><td>0.567%</td></tr>
+</table>
+<div class='card exec-summary'>
+<p><i>Long tail: <b>510</b> additional tickers totaling <b>$218.1K</b> (42.9% of book). Full ticker list available in source CSV: <code>ETF-Equiv-Position-Holdings-by-Weight-April-24-2026.csv</code>.</i></p>
+</div>
+<div class='report-footer'>Skill: etf-equiv-holdings • Schema v1 • family: FAnna • date: 2026-04-24 • tickers: 535 • total_value: 508400.43 • source_csv: ETF-Equiv-Position-Holdings-by-Weight-April-24-2026.csv</div>
+</main>
+<footer>Generated 2026-05-02 15:19 &mdash; Market Research Skills</footer>
+</div>
+</body>
+</html>
